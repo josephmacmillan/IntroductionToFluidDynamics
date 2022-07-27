@@ -1,0 +1,573 @@
+# Chapter 4 - Potential Flow
+
+Code used to generate figures and examples from Chapter 4 of [*Introduction to Fluid Dynamics*, by Joseph D. MacMillan](https://josephmacmillan.github.io/IntroFluidDynamics/).  This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0
+International License.](https://creativecommons.org/licenses/by-sa/4.0/)
+
+
+
+
+%matplotlib inline
+
+import matplotlib
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+from matplotlib import rc
+import numpy as np
+import sympy as sp
+
+rc('text.latex',preamble='\\usepackage{libertine}\n\\usepackage[libertine]{newtxmath}')
+rc('font',**{'family':'serif','serif':['Linux Libertine O']}, size=18)
+rc('text', usetex=True)
+rc('contour', negative_linestyle = 'solid')
+
+
+
+
+
+
+## Figure 4.2 - Basic Potential Flows
+
+Plots of the four basic potential flows:
+* Uniform flow, $w(z) = Uze^{-i\alpha}$.
+* Stagnation point, $w(z) = \frac{1}{2} \alpha z^2$.
+* Line vortex, $w(z) = -\frac{i\Gamma}{2\pi} \ln z$.
+* Line source, $w(z) = \frac{Q}{2\pi} \ln z$.
+
+
+
+
+
+
+
+
+x = sp.Symbol('x', real=True)
+y = sp.Symbol('y', real=True)
+z = sp.Symbol('z', complex=True)
+
+z = x + sp.I*y
+
+def uniform(z):
+    U = 1.0
+    alpha = sp.pi/6
+
+    return U * z * sp.exp(-sp.I * alpha)
+
+def stagnation(z):
+    alpha = 1.0
+
+    return 0.5 * alpha * z**2
+
+def vortex(z):
+    Gamma = 1.0
+
+    return -sp.I * Gamma / 2 / sp.pi * sp.ln(z)
+
+def source(z):
+    Q = 1.0
+    
+    return Q / 2 / sp.pi * sp.ln(z)
+
+xx = np.linspace(-3.0, 3.0, 1000)
+yy = np.linspace(-3.0, 3.0, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 6))
+
+ax = fig.add_subplot(2, 2, 1)
+plt.axis('off')
+psi = sp.im(uniform(z))
+psi = sp.lambdify((x, y), psi, 'numpy')
+plt.contour(xx, yy, psi(xx, yy), colors='black', levels=20)
+
+ax = fig.add_subplot(2, 2, 2)
+plt.axis('off')
+psi = sp.im(stagnation(z))
+psi = sp.lambdify((x, y), psi, 'numpy')
+plt.contour(xx, yy, psi(xx, yy), colors='black', levels=20)
+
+ax = fig.add_subplot(2, 2, 3)
+plt.axis('off')
+psi = sp.im(vortex(z))
+psi = sp.lambdify((x, y), psi, 'numpy')
+plt.contour(xx, yy, psi(xx, yy), colors='black', levels=20)
+
+ax = fig.add_subplot(2, 2, 4)
+plt.axis('off')
+psi = sp.im(source(z))
+psi = sp.lambdify((x, y), psi, 'numpy')
+plt.contour(xx, yy, psi(xx, yy), colors='black', levels=20)
+
+plt.savefig("fig_basic_flows.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+## Figure 4.3 - A line source in uniform flow
+
+Here we're combining a line source with horizontal uniform flow:
+$$
+w(z) = Uz + \frac{Q}{2\pi} \ln z.
+$$
+
+
+
+
+
+
+U = 1.0
+Q = 2.0
+w = U*z + Q/2/sp.pi * sp.ln(z)
+psi = sp.im(w)
+psi = sp.lambdify((x, y), psi, 'numpy')
+
+xx = np.linspace(-3.0, 3.0, 1000)
+yy = np.linspace(-2.0, 2.0, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 4))
+
+ax = fig.add_subplot(1, 1, 1)
+plt.axis('off')
+
+plt.contour(xx, yy, psi(xx, yy), colors='black', levels=31)
+plt.savefig("fig_uniform_source.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Figure 4.6 - Line vortex beside a wall
+
+The complex potential for a line vortex a distance $d$ from a wall at $x=0$ is
+$$
+w(z) = -\frac{i\Gamma}{2\pi} \ln \left( \frac{z - d}{z+d} \right).
+$$
+Here are the streamlines.
+
+
+
+
+
+
+
+
+
+
+Gamma = 1.0
+d = 1.0
+psi = -Gamma / 2.0 / sp.pi * sp.ln( sp.sqrt( (x**2 + y**2 - 2*x*d + d**2)/(x**2 + y**2 + 2*x*d + d**2)))
+psi = sp.lambdify((x, y), psi, 'numpy')
+
+xx = np.linspace(0.0, 4.1, 1000)
+yy = np.linspace(-2.0, 2.0, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 4))
+
+ax = fig.add_subplot(1, 1, 1)
+plt.axis('off')
+ax.set_aspect('equal')
+ax.set_xlabel("$x/d$")
+ax.set_ylabel("$y/d$")
+ax.set_xlim(-2, 4.1)
+ax.set_ylim(-2, 2)
+
+ax.contour(xx, yy, psi(xx, yy), colors='black', levels=31)
+ax.imshow([[0.,1.], [0.,1.]], extent=[-2, 0, -2, 2], interpolation = 'bicubic', cmap='binary', alpha=0.5)
+plt.savefig("fig_vortex_wall.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Figure  - Vortex in a Bucket Detail
+
+A line vortex in a bucket, with the mirror image shown.  This figure is to provide detail in how the streamlines combine to form a circle at the boundary.  (Not used in book.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a = 1.0
+c1 = 0.4
+c2 = a**2 / c1
+w1 = -sp.I * Gamma/2/sp.pi * sp.ln(z - c1)
+w2 = sp.I * Gamma/2/sp.pi * sp.ln(z - c2)
+
+psi1 = sp.lambdify((x, y), sp.im(w1), 'numpy')
+psi2 = sp.lambdify((x, y), sp.im(w2), 'numpy')
+psi_c = sp.lambdify((x, y), sp.im(w1 + w2), 'numpy')
+
+xx = np.linspace(-1.5, 3.0, 1000)
+yy = np.linspace(-1.5, 2.0, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 6))
+
+
+ax1 = fig.add_axes([0, 0, 0.8, 0.8])
+ax2 = fig.add_axes([0.5, 0.5, 0.5, 0.5])
+ax3 = fig.add_axes([0, 0, 1, 1])
+ax2.set_aspect('equal')
+ax1.set_aspect('equal')
+ax1.axis('off')
+#ax2.axis('off')
+ax3.axis('off')
+ax2.axes.xaxis.set_visible(False)
+ax2.axes.yaxis.set_visible(False)
+
+p1 = (np.sqrt(3)/2*a, a/2)
+p2 = (a/2, np.sqrt(3)/2*a)
+p3 = (1/np.sqrt(2), a/np.sqrt(2))
+#print(psi1(p1[0], p1[1]), psi1(p2[0], p2[1]), psi1(p3[0], p3[1]))
+#print(psi2(p1[0], p1[1]), psi2(p2[0], p2[1]), psi2(p3[0], p3[1]))
+#print(psi_c(p1[0], p1[1]), psi_c(p2[0], p2[1]), psi_c(p3[0], p3[1]))
+
+levs1 = [psi1(p2[0], p2[1]), psi1(p3[0], p3[1]), psi1(p1[0], p1[1])]
+levs2 = [psi2(p1[0], p1[1]), psi2(p3[0], p3[1]), psi2(p2[0], p2[1])]
+print(levs1, levs2)
+levs_c = [psi_c(p1[0], p1[1])]
+
+rect = matplotlib.patches.Rectangle((-1.5, -1.5), 4.5, 3.5, facecolor='lightgrey', zorder=0)
+ax1.add_patch(rect)
+rect = matplotlib.patches.Rectangle((0.25, 0.35), 0.75, 0.65, fill=False, color='black', zorder=10)
+ax1.add_patch(rect)
+
+ax1.contour(xx, yy, psi1(xx, yy), colors='blue', levels=31, alpha=0.3)
+ax1.contour(xx, yy, psi2(xx, yy), colors='red', levels=31, alpha=0.3)
+ax1.add_patch(plt.Circle((0,0),radius=a, fc='white', linewidth=2, fill=True, alpha=1, zorder=0, color="black"))
+
+ax2.contour(xx, yy, psi1(xx, yy), colors='blue', levels=levs1, alpha=0.5)
+ax2.contour(xx, yy, psi2(xx, yy), colors='red', levels=levs2, alpha=0.5)
+ax2.contour(xx, yy, psi_c(xx, yy), colors='black', levels=levs_c, alpha=1)
+#ax2.add_patch(plt.Circle((0,0),radius=a, fc='black', linewidth=2, fill=False, alpha=1, zorder=2, color="black"))
+ax2.add_patch(plt.Circle(p1,radius=0.02, fc='black', fill=True, alpha=1, zorder=2))
+ax2.add_patch(plt.Circle(p2,radius=0.02, fc='black', fill=True, alpha=1, zorder=2))
+ax2.add_patch(plt.Circle(p3,radius=0.02, fc='black', fill=True, alpha=1, zorder=2))
+ax2.add_patch(plt.Circle((c1, 0),radius=0.01, fc='blue', fill=True, alpha=1, zorder=2))
+ax2.add_patch(plt.Circle((c2, 0),radius=0.01, fc='red', fill=True, alpha=1, zorder=2))
+
+ax3.plot([0.315, 0.5], [0.535, 0.965], color='black', transform=ax3.transAxes, linewidth=1)
+ax3.plot([0.445, 1], [0.418, 0.533], color='black', transform=ax3.transAxes, linewidth=1)
+
+ax2.set_xlim(0.25, 1)
+ax2.set_ylim(0.35, 1)
+
+plt.savefig("fig_circular_inset.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Figure 4.8 - Vortex in a Bucket - Streamlines
+
+The streamlines of a line vortex in a cylindrical bucket.  The complex potential is given by
+$$
+w(z) = -\frac{i\Gamma}{2\pi} \ln (z - c) + \frac{i\Gamma}{2\pi} \ln (z - a^2/c),
+$$
+where $a$ is the radius of the cylinder and $c$ is the distance of the vortex from the centre.
+
+
+
+
+
+
+
+
+
+
+
+
+
+a = 1.0
+c1 = 0.4
+c2 = a**2 / c1
+w1 = -sp.I * Gamma/2/sp.pi * sp.ln(z - c1)
+w2 = sp.I * Gamma/2/sp.pi * sp.ln(z - c2)
+
+psi = sp.lambdify((x, y), sp.im(w1 + w2), 'numpy')
+
+xx = np.linspace(-1, 1, 1000)
+yy = np.linspace(-1, 1, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 6))
+ax = fig.add_subplot(1, 1, 1)
+plt.axis('off')
+ax.set_aspect('equal')
+
+rect = matplotlib.patches.Rectangle((-1.5, -1.5), 3, 3, facecolor='lightgrey', zorder=0)
+ax.add_patch(rect)
+
+ax.add_patch(plt.Circle((0,0),radius=a, fc='white', linewidth=2, fill=True, alpha=1, zorder=2, color="black"))
+
+levs = [0.16, 0.2,  0.24, 0.28, 0.32, 0.36, 0.4,  0.44, 0.48, 0.52, 0.56, 0.6,  0.64, 0.68, 0.72, 0.76, 0.8,  0.84, 0.88, 0.92, 0.96, 1.,   1.04,  1.12, 1.2 ]
+con = ax.contour(xx, yy, psi(xx, yy), colors='black', levels=levs)
+
+plt.savefig("fig_vortex_cylinder.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Figure 4.9
+
+Using the Circle Theorem to find flow that is uniform at inifinty with a circular streamline centred at the origin.  The complex potential is
+$$
+w(z) = U \left( z + \frac{a^2}{z} \right).
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a = 1.0
+U = 1.0
+w = U * (z + a**2/z)
+
+psi = sp.lambdify((x, y), sp.im(w), 'numpy')
+
+xx = np.linspace(-3, 3, 1000)
+yy = np.linspace(-2.1, 2.1, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 4))
+ax = fig.add_subplot(1, 1, 1)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-10, 10, 41)
+con = ax.contour(xx, yy, psi(xx, yy), colors='black', levels=levs)
+
+plt.savefig("fig_uniform_circle.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+
+
+
+
+## Figure 4.10 - Circulation around the cylinder
+
+I've added an angle $\alpha$ and circulation $\Gamma$ to the flow; the complex potential is
+$$
+w(z) = U \left( ze^{-i\alpha} + \frac{a^2}{z}e^{i\alpha} \right) - \frac{i\Gamma}{2\pi} \ln z.
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+def streamlines(xx, yy, alpha = 0, Gamma = 0):
+
+    a = 1.0
+    U = 1.0
+    w = U * (z * sp.exp(-sp.I * alpha) + a**2/z * sp.exp(sp.I * alpha)) - sp.I * Gamma / 2.0 / sp.pi * sp.ln(z)
+    psi = sp.lambdify((x, y), sp.im(w), 'numpy')
+    return psi(xx, yy)
+
+xx = np.linspace(-3, 3, 1000)
+yy = np.linspace(-3, 3, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+fig = plt.figure(figsize=(6, 6))
+
+ax = fig.add_subplot(2, 2, 1)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-10, 10, 41)
+con = ax.contour(xx, yy, streamlines(xx, yy, alpha=sp.pi/6, Gamma = 0), colors='black', levels=levs)
+ax.add_patch(plt.Circle((0,0),radius=a, fc='lightgrey', fill=True, alpha=1, zorder=2, color="black"))
+
+ax = fig.add_subplot(2, 2, 2)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-10, 10, 41)
+con = ax.contour(xx, yy, streamlines(xx, yy, alpha=sp.pi/6, Gamma = -2*sp.pi), colors='black', levels=levs)
+ax.add_patch(plt.Circle((0,0),radius=a, fc='lightgrey', fill=True, alpha=1, zorder=2, color="black"))
+
+ax = fig.add_subplot(2, 2, 3)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-10, 10, 41)
+con = ax.contour(xx, yy, streamlines(xx, yy, alpha=sp.pi/6, Gamma = -4*sp.pi), colors='black', levels=levs)
+ax.add_patch(plt.Circle((0,0),radius=a, fc='lightgrey', fill=True, alpha=1, zorder=2, color="black"))
+
+ax = fig.add_subplot(2, 2, 4)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-10, 10, 41)
+con = ax.contour(xx, yy, streamlines(xx, yy, alpha=sp.pi/6, Gamma = -6*sp.pi), colors='black', levels=levs)
+ax.add_patch(plt.Circle((0,0),radius=a, fc='lightgrey', fill=True, alpha=1, zorder=2, color="black"))
+
+plt.savefig("fig_cylinder_circ.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Figure 4.11 - A conformal map
+
+
+
+
+
+
+x = sp.Symbol('x', real=True)
+y = sp.Symbol('y', real=True)
+z = sp.Symbol('z', complex=True)
+z = x + sp.I*y
+
+X = sp.Symbol('X', real=True)
+Y = sp.Symbol('Y', real=True)
+Z = sp.Symbol('Z', complex=True)
+Z = X + sp.I*Y
+
+def conformal_map(z):
+    return z**2 / 5 + 2
+    
+def inverse_map(Z):
+    return sp.sqrt(5*(Z - 2))
+    
+def complex_potential(zz):
+    return zz
+    
+w = complex_potential(z)
+W = complex_potential(inverse_map(Z))
+
+phi = sp.lambdify((x, y), sp.re(w), 'numpy')
+psi = sp.lambdify((x, y), sp.im(w), 'numpy')
+
+Phi = sp.lambdify((X, Y), sp.re(W), 'numpy')
+Psi = sp.lambdify((X, Y), sp.im(W), 'numpy')
+
+fig = plt.figure(figsize=(6, 4))
+
+xx = np.linspace(-4, 4, 1000)
+yy = np.linspace(-4, 4, 1000)
+xx, yy = np.meshgrid(xx, yy)
+
+ax = fig.add_subplot(1, 2, 1)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-6, 6, 21)
+ax.contour(xx, yy, psi(xx, yy), colors='blue', levels=levs)
+ax.contour(xx, yy, phi(xx, yy), colors='red', levels=levs)
+
+XX = np.linspace(-4, 4, 1000)
+YY = np.linspace(-4, 4, 1000)
+XX, YY = np.meshgrid(XX, YY)
+
+ax = fig.add_subplot(1, 2, 2)
+ax.axis('off')
+ax.set_aspect('equal')
+
+levs = np.linspace(-6, 6, 21)
+ax.contour(XX, YY, Psi(XX, YY), colors='blue', levels=levs)
+ax.contour(XX, YY, Phi(XX, YY), colors='red', levels=levs)
+
+
+plt.savefig("fig_conformal_map.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
+

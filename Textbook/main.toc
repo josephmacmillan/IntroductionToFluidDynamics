@@ -1,0 +1,70 @@
+\contentsline {chapter}{Contents}{2}{section*.1}%
+\contentsline {chapter}{\chapternumberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Opening Thoughts}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Describing Fluid Flow}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Visualizing Fluid Flow}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Vector Plots}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Streamlines}{9}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Total Derivative and Acceleration}{10}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Incompressible and Irrotational Flow}{13}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}The Incompressibility Condition}{13}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Vorticity}{14}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}Viscosity}{16}{section.1.6}%
+\contentsline {section}{Problems}{19}{section*.12}%
+\contentsline {chapter}{\chapternumberline {2}Viscous Fluids}{22}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The Navier-Stokes Equations}{22}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Cartesian Coordinates}{23}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Simple Viscous Flows}{23}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Poiseuille Flow in One Dimension}{23}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Time Dependent Flow}{26}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}An Impulsively Moved Boundary}{31}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Self-Similar Flows}{34}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Circular Flow}{41}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}The Navier-Stokes Equations in Cylindrical Coordinates}{41}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Uniformly Rotating Fluid}{42}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Spin Down of Rotating Fluid}{44}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}The Line Vortex}{49}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Transport of Vorticity}{52}{section.2.4}%
+\contentsline {section}{Problems}{54}{section*.28}%
+\contentsline {chapter}{\chapternumberline {3}Ideal Fluids}{58}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Describing Ideal Flow}{58}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Static Fluids}{58}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Bernoulli's Principle}{59}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}The Vorticity Equation}{61}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Circulation}{63}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}The Surface of a Rotating Fluid}{65}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}The Velocity Potential and Stream Function}{67}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}The Velocity Potential}{67}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Flow Past a Cylinder}{70}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}The Stream Function}{75}{subsection.3.2.3}%
+\contentsline {section}{Problems}{78}{section*.38}%
+\contentsline {chapter}{\chapternumberline {4}Potential Flow}{81}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The Complex Potential}{81}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The Complex Plane}{82}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Basic Flows}{84}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Method of Images}{88}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}The Circle Theorem}{92}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Flow Past Objects}{95}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Flow Past a Cylinder}{95}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Conformal Mapping}{98}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Flow Past an Elliptical Cylinder}{101}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Flow Past a Flat Plate}{103}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Flow Past an Aerofoil}{105}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Vortex Motion}{108}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}The Helmholtz Vortex Theorems}{108}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}A Vortex Pair}{111}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Vortex Shedding}{114}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}The von K\'arm\'an Vortex Street}{117}{subsection.4.3.4}%
+\contentsline {section}{Problems}{122}{section*.70}%
+\contentsline {chapter}{\chapternumberline {5}Waves}{126}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Special Topics}{127}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Deriving the Navier-Stokes Equation}{127}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}The Stress Tensor and Vector}{127}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Cauchy's Equation of Motion}{129}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Newtonian Fluids}{131}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Boundary Layers}{134}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The Dam Break Problem}{137}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Spherical Flows}{137}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Astrophysical Flows}{138}{section.6.5}%
+\contentsline {section}{Problems}{138}{section*.77}%
+\contentsline {chapter}{\chapternumberline {7}Numerical Methods}{139}{chapter.7}%

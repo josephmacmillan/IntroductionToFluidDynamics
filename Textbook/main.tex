@@ -1,0 +1,130 @@
+%
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+%
+
+\documentclass[10pt, a5paper, twoside, openany]{memoir}
+
+\setsecnumdepth{subsection}
+
+\title{Introduction to Fluid Dynamics}
+\author{Joseph D. MacMillan}
+\date{}
+
+
+\usepackage{graphicx}
+\usepackage{color} 
+\usepackage{amsmath, amssymb}
+\usepackage{libertinus}
+\usepackage{microtype}
+\usepackage{layout}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage[hang, small, bf]{caption}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Introduction to Fluid Dynamics}}
+\hypersetup{pdfauthor={Joseph D. MacMillan}}
+\urlstyle{rm}
+
+
+% Set page margins, etc
+\setstocksize{9in}{6in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+\setlxvchars %define lenght 65 char of the used font
+\settypeblocksize{*}{1.05\lxvchars}{1.7}
+\setbinding{20pt} 
+\setlength{\headheight}{30pt}
+\setlength{\footskip}{20pt}
+
+\setulmargins{90pt}{*}{*}
+\setlrmargins{*}{*}{*}
+\setheaderspaces{*}{30pt}{*}
+
+\setmarginnotes{0.01pt}{20pt}{\onelineskip}
+\checkandfixthelayout
+
+\setcounter{tocdepth}{3}
+
+
+
+\newcommand{\uu}{\symbfup{u}}
+\newcommand{\grad}{\symbfup{\nabla}}
+\newcommand{\curl}{\symbfup{\nabla} \times}
+\newcommand{\dfdx}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\ddfdx}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\vort}{\symbfup{\omega}}
+\renewcommand\vec{\symbfup}
+\newcommand{\unit}[1]{\hat{\vec{#1}}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+
+
+%\DeclareMathAlphabet{\mathbfsf}{\encodingdefault}{\sfdefault}{bx}{sl}
+\newcommand{\tens}[1]{\mathbfsfit{#1}}
+
+
+\newcounter{example}[chapter]
+\def\theexample{\thechapter.\arabic{example}}
+\newenvironment{example}[1][ ]{\refstepcounter{example}
+\begin{tcolorbox}[breakable, sharp corners, boxrule = 0pt, frame empty, opacityframe=0, parbox=false]
+\textbf{Example \theexample \ -- #1.}
+}
+{ 
+\end{tcolorbox}
+}
+
+\newenvironment{theorem}[1][ ]{
+\begin{tcolorbox}[breakable, sharp corners, boxrule = 0pt, frame empty, opacityframe=0, parbox=false]
+\textbf{#1.}
+}
+{ 
+\end{tcolorbox}
+}
+
+\newcounter{problem}[chapter]
+\def\theproblem{\thechapter.\arabic{problem}}
+\newenvironment{problem}[1][ ]{\refstepcounter{problem} \noindent \textbf{Problem \theproblem \ -- #1.}}{\vspace{0.1in}}
+
+
+\begin{document}
+
+\maketitle
+
+{\small This work is licensed under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License}.}
+
+%\vspace{1in}
+
+%This version of the book was created on \today. You can always find the most up-to-date version at 
+%\begin{itemize}
+%\item \url{https://josephmacmillan.github.io/IntroFluidDynamics} (web)
+%\item \url{https://josephmacmillan.github.io/IntroFluidDynamics/IntroFluidDynamics.pdf} (PDF)
+%\end{itemize}
+
+\newpage
+
+\tableofcontents
+
+
+\include{1_introduction}
+
+\include{2_viscous_fluids}
+
+\include{3_ideal_fluids}
+
+\include{4_potential_flow}
+
+\include{5_waves}
+
+\include{6_special_topics}
+
+\include{7_numerical_methods}
+
+%\appendix
+
+%\include{appendix1}
+
+\end{document}

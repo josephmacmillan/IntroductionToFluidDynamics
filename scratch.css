@@ -1,0 +1,210 @@
+body {
+    position:relative;
+    padding:30px 0 10px 30px;
+    font-family:'Open Sans', sans;
+    max-width: 1200px;
+}
+
+h1 {
+    font-family: 'Lato', sans;
+}
+
+.box {
+    width: 560px;
+    background-color: #a7d5f7;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*
+
+#sidebar {
+    position:fixed;
+    top:200px;
+    bottom:0;
+    left:50px;
+    height:100%;
+    
+}
+
+#header {
+}
+
+#content {
+    width: 100%;
+    max-width: 600px;
+    margin-top:50px;
+	font-size:12px; 
+	font-family:'Open Sans', sans;
+	font-weight:400;
+	text-align:justify; 
+}
+
+#footer {
+    width: 100%;
+    max-width: 600px;
+	clear:both;
+}
+
+#sidebar ul
+{
+list-style-type:none;
+text-align:left;
+font-size:18px;  
+font-family: 'Open Sans', sans-serif;
+font-weight:400;
+margin:0;
+padding:0;
+line-height:250%;
+}
+
+ul
+{
+list-style-type:none;
+text-align:justify;
+font-size:12px; 
+font-family: 'Open Sans', sans-serif;
+font-weight:400;
+}
+
+li
+{
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.in
+{
+font-size:14px;
+margin-left:20px;
+}
+
+a
+{
+text-decoration:none;
+color:black;
+}
+
+a:hover
+{
+text-decoration:underline;
+}
+
+#header a:hover
+{
+text-decoration:none;
+}
+
+h1
+{
+text-align:left;
+font-size:50px;  
+font-family: 'Lato', sans-serif;
+font-weight:300;
+margin:0;
+padding:0;
+}
+
+h2
+{
+text-align:left;
+font-size:20px;  
+font-family: 'Open Sans', sans-serif;
+font-weight:400;
+margin:0;
+padding:0;
+}
+
+h3
+{
+text-align:left;
+font-size:17px;  
+font-family: 'Open Sans', sans-serif;
+font-weight:400;
+margin:20px 0px 20px 0px;
+padding:0;
+}
+
+h4
+{
+text-align:left;
+font-size:14px;  
+font-family: 'Open Sans', sans-serif;
+font-weight:400;
+margin:20px 0 20px 0;
+padding:0;
+}
+
+p
+{
+text-align:justify; 
+font-size:12px; 
+font-family:'Open Sans';
+font-weight:400;
+}
+
+
+#footer p
+{
+float:left;
+font-size:10px; 
+padding-right:75px;
+padding-top:50px;
+font-family: 'Open Sans', sans-serif;
+font-weight:400;
+
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+#content div.gallery img {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+#content img
+{
+float:right;
+align:right; 
+padding:10px;
+margin:10px;
+border-style:none;
+border-width:1px;
+}
+
+#content img.pics
+{
+float:left;
+padding:10px;
+margin:10px;
+border-style:none;
+}
+
+*/
+
+
+

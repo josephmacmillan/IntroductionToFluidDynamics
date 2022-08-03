@@ -1,18 +1,16 @@
 \chapter{Introduction}
 
-\section{Opening Thoughts}
+\section{Fluids}
 
 What, exactly, is a fluid? Well, it's anything that \emph{flows}, of course. But that can mean a surprising number of things.
 
-One obvious example is water, which we'll use extensively as our go-to fluid for a number of applications. Other fluids might be highly viscous -- syrup is a good example -- in which case the behaviour might be very different.  Later on in the book we'll take an introductory look at \emph{aerodynamics}, where the fluid is of course air.  
+One obvious example is water, which we'll use extensively as our go-to fluid for a number of applications. Some fluids are highly viscous -- syrup is a good example -- in which case the behaviour might be very different.  Later on in the book we'll take an introductory look at \emph{aerodynamics}, where the fluid is of course air.  
 
-These are all good examples of what's called a \emph{Newtonian fluid} -- the fluid has certain, fairly simple properties and can be modelled well by a set of equations called the \emph{Navier-Stokes} equations.  Other fluids, though, are more complicated (and, for the most part, beyond the scope of this book).
+These are all good examples of what's called a \emph{Newtonian fluid} -- the fluid has certain, fairly simple properties and can be modelled well by a set of equations called the \emph{Navier-Stokes} equations.  Other fluids, though, can be more complicated (and, for the most part, beyond the scope of this book).  For example, the behaviour of fluids with a net charge (e.g., a plasma) add interesting complications that must be dealt with by including the theory of electricity and magnetism.  Combining Maxwell's equations with the Navier-Stokes equations leads to the theory of magnetohydrodynamics, or MHD for short.
 
-For example, the behaviour of fluids with a net charge (e.g., a plasma) add interesting complications that must be dealt with by including the theory of electricity and magnetism.  Combining Maxwell's equations with the Navier-Stokes equations leads to the theory of magnetohydrodynamics, or MHD for short.
+Even something as commonplace as blood can be beyond the Navier-Stokes equations to model.  That's because blood is an example of a non-Newtonian fluid -- it's nonhomogeneous and is a ``shear-thinning'' fluid, which means it becomes less viscous at high shear strain.  Consider what happens to the blood during an anaphylactic shock -- an extreme allergic reaction.  The body's first response is to release histamine, which causes the blood vessels to widen.  When this happens, the blood will slow down, for reasons we'll learn have to do with conservation of mass.  But because blood is shear-thinning, it becomes more viscous as it goes slower.  This leads to a feedback loop -- increased viscosity causes the blood to slow further, causing it to be more viscous, which means the blood slows even more, and so on.  This is why anaphylaxis is so severe and needs to be treated right away with adrenaline, which increases blood flow.
 
-Even something as commonplace as blood, though, can be beyond the Navier-Stokes equations to model.  That's because blood is an example of a non-Newtonian fluid -- it's nonhomogeneous and is a ``shear-thinning'' fluid, which means it becomes less viscous at high shear strain.  Consider what happens to the blood during an anaphylactic shock -- an extreme allergic reaction.  The body's first response is to release histamine, which causes the blood vessels to widen.  When this happens, the blood will slow down, for reasons we'll learn have to do with conservation of mass.  But because blood is shear-thinning, it becomes more viscous as it goes slower.  This leads to a feedback loop -- increased viscosity causes the blood to slow further, causing it to be more viscous, which means the blood slows even more, and so on.  This is why anaphylaxis is so severe and needs to be treated right away with adrenaline, which increases blood flow.
-
-As a final, surprising, example, traffic can sometimes be modelled as a fluid -- even though cars are large, discrete objects.
+As a final, possibly surprising, example, traffic can be modelled as a fluid -- even though cars are large, discrete objects.
 
 Although the study of fluid dynamics is centered around solving the Navier-Stokes equations, in this first chapter we'll begin with some preliminary ideas about the flow of fluids, in particular how we can mathematically describe and visualize it.  Before we start with the heavy lifting of solving differential equations, we'll also need to be able to identify various properties of the fluid, such as its vorticity and viscosity, since in many cases understanding these can lead to significantly simpler methods of solving the equations of fluid dynamics.
 
@@ -95,7 +93,7 @@ For example, consider the fluid velocity vector field
 \label{eq_stag}
 \vec{u} = [\alpha x, -\alpha y, 0].
 \end{equation}
-This is an example of two-dimensional steady flow, and, as we'll see later, is the flow around a \emph{stagnation point}, which is a point in the fluid which is not flowing.  The vector plot for this flow is given in Figure \ref{fig_vector_plot}. 
+This is an example of two-dimensional steady flow, and represents the flow around a \emph{stagnation point}, which is a point in the fluid which is not flowing.  The vector plot for this flow is given in Figure \ref{fig_vector_plot}. 
 \end{example}
 
 \begin{figure}
@@ -108,9 +106,9 @@ This is an example of two-dimensional steady flow, and, as we'll see later, is t
 
 \subsection{Streamlines}
 
-A more common way to visualize fluids is with \emph{streamlines}.  A streamline is a curve that, at time \(t\), has the same direction as \(\vec{u}(\vec{r}, t)\) at each point. This is a concept you might be familiar with from electrodynamics -- electric field lines are very similar.  Like field lines, streamlines can't cross, since that would imply that a particular fluid element at that point would have two different velocities.  
+A more common way to visualize fluids is with \emph{streamlines}.  A streamline is a curve that, at time \(t\), has the same direction as \(\vec{u}(\vec{r}, t)\) at each point. This is a concept you might be familiar with from electrodynamics -- electric field lines are very similar.  Like field lines, streamlines can't cross, since that would imply that a particular fluid element at that point would have two different velocities.  There's one exception to this rule, of course -- streamlines can cross at points in the fluid where the velocity is \emph{zero}.
 
-How do we calculate (and plot) streamlines? Well, we first parameterize a streamline curve, using $\xi$ as the parameter, as 
+How do we calculate and plot streamlines? Well, we first parameterize a streamline curve, using $\xi$ as the parameter, as 
 \[
 x(\xi), \quad y(\xi), \quad z(\xi),
 \] 
@@ -124,15 +122,17 @@ where $k$ is some constant (and different streamlines will have different -- but
 \end{equation} 
 This means that, given the functional form of $u$, $v$, and $w$, we can find $x(\xi)$, $y(\xi)$, and $z(\xi)$.
 
-In addition to streamlines, \emph{pathlines} and \emph{streaklines} are sometimes used to visualize and describe fluid flow.  However, for steady flow -- which we'll mostly be dealing with -- they're the same as streamlines, so we won't worry about them too much.  You can watch a nice video about it (as well as some other aspects of visualizing fluids) at \url{https://youtu.be/nuQyKGuXJOs}\footnote{This is just one video in a whole series by the National Committee for Fluid Mechanics Films.  Despite their age, they're great, and I highly recommend watching the ones that are relevant to us.}, and Problem \ref{prob_unsteady} takes a look at an unsteady case where the path lines are different from the streamlines.
+In addition to streamlines, \emph{pathlines} and \emph{streaklines} are sometimes used to visualize and describe fluid flow.  However, for steady flow -- which we'll mostly be dealing with -- they're the same as streamlines, so we won't worry about them too much.  If you're interested, Problem \ref{prob_unsteady} takes a look at an unsteady case where the path lines are different from the streamlines.
+
+%You can watch a nice video about it (as well as some other aspects of visualizing fluids) at \url{https://youtu.be/nuQyKGuXJOs}\footnote{This is just one video in a whole series by the National Committee for Fluid Mechanics Films.  Despite their age, they're great, and I highly recommend watching the ones that are relevant to us.}, and Problem \ref{prob_unsteady} takes a look at an unsteady case where the path lines are different from the streamlines.
 
 \begin{example}[Plotting Streamlines]
 \label{ex_stag_stream}
 As an example of calculating and then plotting streamlines, let's go back to our flow about a stagnation point, Equation \ref{eq_stag}.  Since this is two dimensional flow, we can ignore $w$ and $z$ dependence and look at 
 \[
-\frac{dx/ds}{u} = \frac{dy/ds}{v}.
+\frac{dx/d\xi}{u} = \frac{dy/d\xi}{v}.
 \]
-Plugging in \(u\) and \(v\) for this case, and removing the parameter $s$ for simplicity, gives us
+Plugging in \(u\) and \(v\) for this case, and removing the parameter $\xi$ for simplicity, gives us
 \[
 \frac{dx}{\alpha x} = -\frac{dy}{\alpha y}.
 \] 
@@ -200,7 +200,7 @@ that implies that the quantity $f$ doesn't change \emph{for a particular fluid e
 \[
 (\vec{u} \cdot \vec{\nabla}) f = 0,
 \]
-that means that $f$ will be constant \emph{along a streamline.}  This isn't obvious (at least to me), so let's prove it.  Let $\unit{e}_s$ be a unit vector that is always parallel to a streamline in the direction of the flow.  Since a streamline is always tangent to the flow, we can write
+that means that $f$ will be constant \emph{along a streamline.}  This might not be immediately obvious, so let's prove it.  Let $\unit{e}_s$ be a unit vector that is always parallel to a streamline in the direction of the flow.  Since a streamline is always tangent to the flow, we can write
 \[
 \vec{u} = |\vec{u}| \, \unit{e}_s,
 \]
@@ -241,7 +241,7 @@ So the acceleration is
 \subsection{The Incompressibility Condition}
 \label{sec_incompressibility}
 
-Except in one notable case -- gas dynamics -- we'll be dealing with fluids that are \emph{incompressible}.  This essentially just means that the density of the fluid is constant under pressure -- you can't compress it; stated another way, it means that a ``dyed'' blob of fluid can't change in volume as it moves.  Water is a good example of an incompressible fluid, and we'll even treat air as incompressible in some cases.
+Except in one notable case -- gas dynamics -- we'll be dealing with fluids that are \emph{incompressible}.  This essentially just means that the density of the fluid is constant under pressure -- you can't compress it  Stated another way, it means that a ``dyed'' blob of fluid can't change in volume as it moves.  Water is a good example of an incompressible fluid, and we'll even treat air as incompressible in some cases.
 
 We need to be able to write down a mathematical statement of incompressibility.  To do this, consider a fixed, closed surface $S$ in the fluid.  By ``fixed,'' I mean that it's fixed in space, so fluid can move into this closed volume $V$ at some places and out at others; if the fluid is incompressible, though, then however much fluid is \emph{entering} the region must equal the amount that is \emph{leaving}.  
 
@@ -252,25 +252,25 @@ We need to be able to write down a mathematical statement of incompressibility. 
 \label{fig_closed_surface}
 \end{figure}
 
-Consider, then, an infinitesimally small piece of $S$ -- call it $dS$ (see Figure \ref{fig_closed_surface}).  The amount of fluid that is leaving $V$ through $dS$ is given by
+Consider, then, an infinitesimally small piece of $S$ -- call it $da$ (see Figure \ref{fig_closed_surface}).  The amount of fluid that is leaving $V$ through $da$ is given by
 \[
-\vec{u} \cdot \unit{n} \, dS.
+\vec{u} \cdot \unit{n} \, da.
 \]
-This expression, where $\vec{u}$ is the fluid velocity at the location of $dS$ and $\unit{n}$ points normal to the surface $dS$ in the outward direction, is a \emph{volume flow rate}.  It measures the volume of fluid that passes through $dS$ per unit time.  The dot product ensures we get only that fluid which is moving \emph{through} the tiny surface, whether it's flowing outward (positive dot product) or inward (negative dot product).
+This expression, where $\vec{u}$ is the fluid velocity at the location of $da$ and $\unit{n}$ points normal to the surface $da$ in the outward direction, is a \emph{volume flow rate}.  It measures the volume of fluid that passes through $da$ per unit time.  The dot product ensures we get only that fluid which is moving \emph{through} the tiny surface, whether it's flowing outward (positive dot product) or inward (negative dot product).
 
 To find the total amount of fluid leaving the entire surface $S$, we can just integrate over that surface:
 \[
-\int_S \vec{u} \cdot \hat{n} \, dS
+\int_S \vec{u} \cdot \hat{n} \, da
 \]
 is the net volume rate at which fluid is leaving.  However, for an incompressible fluid, we know this must be \emph{zero}.
 
-To write this in a form a little more usable, we can apply the divergence theorem (you remember that from vector calculus, right?),
+To write this in a form a little more usable, we can apply the divergence theorem, which states that
 \[
-\int_S \vec{F} \cdot \unit{n} \, dS = \int_V \vec{\nabla} \cdot \vec{F} \, dV,
+\int_S \vec{F} \cdot \unit{n} \, da = \int_V \vec{\nabla} \cdot \vec{F} \, d\tau.
 \]
-where $\vec{F}$ is some general vector field.  Our incompressibility condition then becomes
+Here, $\vec{F}$ is some general vector field and $d\tau$ is the infinitesimal volume element.  Our incompressibility condition then becomes
 \[
-\int_V \vec{\nabla} \cdot \vec{u} \, dV = 0.
+\int_V \vec{\nabla} \cdot \vec{u} \, d\tau = 0.
 \]
 However, this must be true \emph{anywhere} in the fluid and for any size volume; that means the integrand itself must be zero:
 \begin{equation}
@@ -375,7 +375,7 @@ The boundary layer comes from the viscosity of the fluid, which is defined (for 
 \label{eq_visc_def}
 \tau = \mu \frac{du}{dy}.
 \end{equation}
-We'll see where this comes from later on; for now, the quantity we want to focus on is the \emph{coefficient of viscosity} $\mu$.
+We'll see where this comes from later on, in Section \ref{sec_ns_deriv}; for now, the quantity we want to focus on is the \emph{coefficient of viscosity} $\mu$.
 
 Actually, we'll more frequently use the \emph{kinematic viscosity} $\nu$, defined by
 $$

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  5 JUL 2022 16:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  3 AUG 2022 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2314,7 +2314,7 @@ Sidefootvsep and sidefootheight: 12pt and 344.39996pt
 \c@problem=\count422
 (./main.aux (./1_introduction.aux) (./2_viscous_fluids.aux)
 (./3_ideal_fluids.aux) (./4_potential_flow.aux) (./5_waves.aux)
-(./6_special_topics.aux) (./7_numerical_methods.aux))
+(./6_special_topics.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
@@ -2375,13 +2375,13 @@ LaTeX Info: Redefining \nameref on input line 93.
 \openout7 = `main.out'.
 
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 96.
+(Font)              scaled to size 14.4pt on input line 98.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 14.4pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 96.
+(Font)              scaled to size 10.95pt on input line 98.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2415,7 +2415,7 @@ Requested font "cmmi8" at 8.0pt
 Requested font "cmmi6" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 96.
+(Font)              scaled to size 10.95116pt on input line 98.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;mapp
 ing=tex-text;" at 10.95116pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2423,7 +2423,7 @@ e=dflt;;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 96.
+(Font)              scaled to size 8.00085pt on input line 98.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=0;mapping=tex-text;" at 8.00085pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2431,7 +2431,7 @@ e=dflt;;+ssty=0;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 96.
+(Font)              scaled to size 6.00064pt on input line 98.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=1;mapping=tex-text;" at 6.00064pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2439,7 +2439,7 @@ e=dflt;;+ssty=1;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 96.
+(Font)              scaled to size 10.94882pt on input line 98.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;mapp
 ing=tex-text;" at 10.94882pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2447,7 +2447,7 @@ e=dflt;;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 96.
+(Font)              scaled to size 7.99915pt on input line 98.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=0;mapping=tex-text;" at 7.99915pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2455,14 +2455,14 @@ e=dflt;;+ssty=0;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 96.
+(Font)              scaled to size 5.99936pt on input line 98.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=1;mapping=tex-text;" at 5.99936pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
 e=dflt;;+ssty=1;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -2478,7 +2478,7 @@ Requested font "msam10" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 Requested font "msam7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -2495,22 +2495,23 @@ Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 97.
+(Font)              scaled to size 9.0pt on input line 99.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
  [1
 
+
 ]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 110.
+(Font)              scaled to size 20.74pt on input line 112.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 20.74pt on input line 110.
+(Font)              scaled to size 20.74pt on input line 112.
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2550,7 +2551,11 @@ Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;slan
 t=0.2;+tnum;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
- [3]) [4]
+ [3]) [4] [5
+
+] [6
+
+]
 \openout2 = `1_introduction.aux'.
 
  (./1_introduction.tex
@@ -2584,18 +2589,21 @@ Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
 ;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Italic.otf
- [5
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+ [1
 
 
 ]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 35.
+(Font)              scaled to size 8.0pt on input line 33.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 35.
+(Font)              scaled to size 6.0pt on input line 33.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2603,7 +2611,7 @@ inusSerif-Regular.otf
 File: Figures/Chapter1/fig_cyl_coord.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_cyl_coord.pdf>
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 44.
+(Font)              scaled to size 9.0pt on input line 42.
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 9.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2623,7 +2631,7 @@ inusMath-Regular.otf
 Requested font "cmmi9" at 9.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 44.
+(Font)              scaled to size 9.00096pt on input line 42.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;mapp
 ing=tex-text;" at 9.00096pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2631,7 +2639,7 @@ e=dflt;;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 44.
+(Font)              scaled to size 5.00053pt on input line 42.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=1;mapping=tex-text;" at 5.00053pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2639,7 +2647,7 @@ e=dflt;;+ssty=1;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 44.
+(Font)              scaled to size 8.99904pt on input line 42.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;mapp
 ing=tex-text;" at 8.99904pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2647,7 +2655,7 @@ e=dflt;;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 44.
+(Font)              scaled to size 4.99947pt on input line 42.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=1;mapping=tex-text;" at 4.99947pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2663,44 +2671,46 @@ Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 50.
+(Font)              scaled to size 10.0pt on input line 48.
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 50.
+(Font)              scaled to size 8.0pt on input line 48.
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 50.
- [6] [7]
+(Font)              scaled to size 6.0pt on input line 48.
+
+[2]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 10.95pt on input line 87.
+(Font)              scaled to size 10.95pt on input line 85.
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Bold.otf
+ [3]
 File: Figures/Chapter1/fig_vector_plot.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_vector_plot.pdf>
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 103.
+(Font)              scaled to size 9.0pt on input line 101.
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 103.
+(Font)              scaled to size 5.0pt on input line 101.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 5.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
- [8] [9]
+ [4] [5]
 File: Figures/Chapter1/fig_streamline_example.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_streamline_example.pdf>
- [10] [11]
-Underfull \vbox (badness 3118) has occurred while \output is active []
 
- [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+[7] [8]
 File: Figures/Chapter1/fig_closed_surface.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_closed_surface.pdf>
-
-[13] [14]
+ [9] [10]
 File: Figures/Chapter1/fig_shear_vector.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_shear_vector.pdf>
 File: Figures/Chapter1/fig_line_vortex_vector.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_line_vortex_vector.pdf>
- [15]
+ [11]
 File: Figures/Chapter1/fig_vorticity1.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_vorticity1.pdf>
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/it' will be
@@ -2709,15 +2719,20 @@ Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
 ;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Italic.otf
+
+Underfull \vbox (badness 2368) has occurred while \output is active []
+
+ [12]
 File: Figures/Chapter1/fig_boundary_layer.pdf Graphic file (type pdf)
 <use Figures/Chapter1/fig_boundary_layer.pdf>
- [16] [17]
+
+[13]
 File: Figures/Chapter1/fig_boundary_layer_sep.jpg Graphic file (type bmp)
 <Figures/Chapter1/fig_boundary_layer_sep.jpg>
- [18] [19] [20]) [21]
+ [14] [15]) [16]
 \openout2 = `2_viscous_fluids.aux'.
 
- (./2_viscous_fluids.tex [22
+ (./2_viscous_fluids.tex [17
 
 
 
@@ -2725,35 +2740,35 @@ File: Figures/Chapter1/fig_boundary_layer_sep.jpg Graphic file (type bmp)
 ]
 File: Figures/Chapter2/fig_poise_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_poise_setup.pdf>
-
-[23] [24] [25] [26]
+ [18] [19] [20] [21]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/it' will be
 (Font)              scaled to size 8.0pt on input line 153.
 Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
 ;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Italic.otf
- [27] [28] [29] [30]
+ [22]
+[23] [24] [25]
 File: Figures/Chapter2/fig_poise_time.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_poise_time.pdf>
- [31]
+ [26]
 Overfull \hbox (0.94339pt too wide) in paragraph at lines 286--287
 []\TU/LibertinusSerif(1)/m/n/10 They’re identical, though, to the above time-de
 pendent problem, Equa-
  []
 
-[32]
+[27]
 File: Figures/Chapter2/fig_poise_imp.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_poise_imp.pdf>
- [33]
+ [28]
 File: Figures/Chapter2/fig_self_sim_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_self_sim_setup.pdf>
- [34] [35]
+ [29] [30]
 File: Figures/Chapter2/fig_koch.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_koch.pdf>
 File: Figures/Chapter2/fig_fern.png Graphic file (type bmp)
 <Figures/Chapter2/fig_fern.png>
- [36] [37] [38]
+ [31] [32] [33]
 File: Figures/Chapter2/fig_ss_vel1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_ss_vel1.pdf>
 File: Figures/Chapter2/fig_ss_vel2.pdf Graphic file (type pdf)
@@ -2761,18 +2776,18 @@ File: Figures/Chapter2/fig_ss_vel2.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 1824) has occurred while \output is active []
 
- [39]
-[40] [41]
+ [34]
+[35] [36]
 File: Figures/Chapter2/fig_cyl_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_cyl_setup.pdf>
 
 Underfull \vbox (badness 5908) has occurred while \output is active []
 
- [42]
-[43] [44] [45]
+ [37]
+[38] [39] [40]
 File: Figures/Chapter2/fig_bessel.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_bessel.pdf>
- [46] [47] [48]
+ [41] [42] [43]
 File: Figures/Chapter2/fig_spin_vel.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_spin_vel.pdf>
 
@@ -2784,22 +2799,22 @@ that around
 
 File: Figures/Chapter2/fig_line_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_line_setup.pdf>
-[49] [50]
+[44] [45]
 File: Figures/Chapter2/fig_line_vortex.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_line_vortex.pdf>
- [51] [52]
+ [46] [47]
 File: Figures/Chapter2/fig_vorticity_transport.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_vorticity_transport.pdf>
- [53]
+ [48]
 File: Figures/Chapter2/fig_incline_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_incline_setup.pdf>
- [54]
+ [49]
 File: Figures/Chapter2/fig_poise_2d_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_poise_2d_setup.pdf>
- [55] [56]) [57]
+ [50] [51]) [52]
 \openout2 = `3_ideal_fluids.aux'.
 
- (./3_ideal_fluids.tex [58
+ (./3_ideal_fluids.tex [53
 
 
 
@@ -2810,50 +2825,50 @@ Overfull \hbox (2.1297pt too wide) in paragraph at lines 31--33
  usual, so that $[] [] [][][] [][] [][][]$,
  []
 
-[59]
+[54]
 File: Figures/Chapter3/fig_leaky_bucket.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_leaky_bucket.pdf>
- [60] [61]
+ [55] [56]
 File: Figures/Chapter3/fig_circ.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_circ.pdf>
- [62] [63] [64]
+ [57] [58] [59]
 File: Figures/Chapter3/fig_water_bucket.jpg Graphic file (type bmp)
 <Figures/Chapter3/fig_water_bucket.jpg>
- [65] [66]
+ [60] [61]
 File: Figures/Chapter3/fig_paraboloid.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_paraboloid.pdf>
- [67] [68]
+ [62] [63]
 Underfull \vbox (badness 3769) has occurred while \output is active []
 
- [69]
+ [64]
 File: Figures/Chapter3/fig_cyl_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cyl_setup.pdf>
 
-[70] [71] [72]
+[65] [66] [67]
 File: Figures/Chapter3/fig_cylinder_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cylinder_stream.pdf>
- [73]
+ [68]
 File: Figures/Chapter3/fig_cylinder_pressure.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cylinder_pressure.pdf>
- [74] [75]
+ [69] [70]
 Overfull \hbox (1.85674pt too wide) in paragraph at lines 604--606
 \TU/LibertinusSerif(1)/m/n/10 Remember what this means from Section []1.4[] – t
 hat $[]$ is constant on stream-
  []
 
-[76]
+[71]
 Overfull \hbox (1.57672pt too wide) in paragraph at lines 666--667
 []\TU/LibertinusSerif(1)/m/n/10 Like the velocity potential, the stream functio
 n satisfies Laplace’s equa-
  []
 
-[77]
+[72]
 Overfull \hbox (0.74893pt too wide) in paragraph at lines 679--681
 \TU/LibertinusSerif(1)/m/n/10 equation for two dimensional, irrotational, incom
 pressible flow. Although
  []
 
-[78]
+[73]
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2864,13 +2879,13 @@ lnum;mapping=tex-text;" at 6.0pt
 inusSerif-Bold.otf
 File: Figures/Chapter3/fig_cyl_force.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cyl_force.pdf>
- [79]
+ [74]
 File: Figures/Chapter3/fig_uniform_flow_angle.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_uniform_flow_angle.pdf>
-) [80]
+) [75]
 \openout2 = `4_potential_flow.aux'.
 
- (./4_potential_flow.tex [81
+ (./4_potential_flow.tex [76
 
 
 
@@ -2878,7 +2893,7 @@ File: Figures/Chapter3/fig_uniform_flow_angle.pdf Graphic file (type pdf)
 ]
 File: Figures/Chapter4/fig_complex_plane.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_complex_plane.pdf>
- [82] [83]
+ [77] [78]
 Overfull \hbox (1.07005pt too wide) in paragraph at lines 113--114
 \TU/LibertinusSerif(1)/m/n/10 Although we’re restricted to two dimensional, inc
 ompressible, irrotational
@@ -2886,32 +2901,32 @@ ompressible, irrotational
 
 File: Figures/Chapter4/fig_basic_flows.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_basic_flows.pdf>
-[84]
+[79]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [85]
-[86] [87]
+ [80]
+[81] [82]
 File: Figures/Chapter4/fig_uniform_source.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_uniform_source.pdf>
- [88]
+ [83]
 File: Figures/Chapter4/fig_mirror_wall.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_mirror_wall.pdf>
- [89]
+ [84]
 File: Figures/Chapter4/fig_mirror_image.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_mirror_image.pdf>
- [90] [91]
+ [85] [86]
 File: Figures/Chapter4/fig_vortex_wall.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_wall.pdf>
- [92]
+ [87]
 File: Figures/Chapter4/fig_circular_boundary.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_circular_boundary.pdf>
- [93]
+ [88]
 File: Figures/Chapter4/fig_vortex_cylinder.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_cylinder.pdf>
- [94]
+ [89]
 File: Figures/Chapter4/fig_uniform_circle.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_uniform_circle.pdf>
- [95] [96]
+ [90] [91]
 File: Figures/Chapter4/fig_cylinder_circ.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_cylinder_circ.pdf>
 
@@ -2920,29 +2935,29 @@ Overfull \hbox (4.14226pt too wide) in paragraph at lines 531--532
 own in Figure []4.10[]. Some-
  []
 
-[97]
+[92]
 Underfull \vbox (badness 2980) has occurred while \output is active []
 
- [98]
-[99]
+ [93]
+[94]
 File: Figures/Chapter4/fig_conformal_map.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_conformal_map.pdf>
- [100]
+ [95]
 File: Figures/Chapter4/fig_jt_ellipse.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_jt_ellipse.pdf>
- [101] [102]
+ [96] [97]
 File: Figures/Chapter4/fig_ellipse.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_ellipse.pdf>
- [103]
+ [98]
 File: Figures/Chapter4/fig_flat_plate.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_flat_plate.pdf>
- [104]
+ [99]
 File: Figures/Chapter4/fig_aerofoil.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_aerofoil.pdf>
- [105]
+ [100]
 File: Figures/Chapter4/fig_aerofoil_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_aerofoil_stream.pdf>
- [106]
+ [101]
 Overfull \hbox (4.88898pt too wide) in paragraph at lines 785--786
 []\TU/LibertinusSerif(1)/m/n/10 We need two bits of information. First, recall 
 from Section []3.1.4[] Kelvin’s
@@ -2954,48 +2969,48 @@ Overfull \hbox (0.38005pt too wide) in paragraph at lines 787--788
 starting takeoff (top panel),
  []
 
-[107]
+[102]
 File: Figures/Chapter4/fig_airplane.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_airplane.pdf>
 File: Figures/Chapter4/fig_starting_vortex.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_starting_vortex.pdf>
 File: Figures/Chapter4/fig_vortex_tube.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_tube.pdf>
- [108] [109] [110]
+ [103] [104] [105]
 File: Figures/Chapter4/fig_vortex_pair1.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_pair1.pdf>
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
 (Font)              scaled to size 5.0pt on input line 857.
- [111]
+ [106]
 File: Figures/Chapter4/fig_vortex_pair_pool.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_pair_pool.pdf>
 File: Figures/Chapter4/fig_vortex_pair3.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_pair3.pdf>
- [112] [113]
+ [107] [108]
 File: Figures/Chapter4/fig_vortex_shedding.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_shedding.pdf>
- [114] [115]
+ [109] [110]
 File: Figures/Chapter4/fig_attached_vortex1.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_attached_vortex1.pdf>
- [116]
+ [111]
 File: Figures/Chapter4/fig_attached_vortex2.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_attached_vortex2.pdf>
- [117]
+ [112]
 File: Figures/Chapter4/fig_vortex_street_clouds.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_street_clouds.pdf>
 File: Figures/Chapter4/fig_vortex_street1.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_street1.pdf>
- [118]
-[119] [120]
+ [113]
+[114] [115]
 File: Figures/Chapter4/fig_vortex_street2.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_street2.pdf>
- [121] [122]
+ [116] [117]
 File: Figures/Chapter4/fig_vortex_corner.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_vortex_corner.pdf>
- [123] [124]) [125]
+ [118] [119]) [120]
 \openout2 = `5_waves.aux'.
 
- (./5_waves.tex) [126
+ (./5_waves.tex) [121
 
 
 
@@ -3009,44 +3024,35 @@ File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
- [127
+ [122
 
 
 
 
-] [128] [129] [130] [131] [132] [133]
+] [123] [124] [125] [126] [127] [128]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [134]
-[135] [136]
+ [129]
+[130] [131]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [137]) [138]
-\openout2 = `7_numerical_methods.aux'.
-
- (./7_numerical_methods.tex) [139
-
-
-
-
-]
+ [132]) [133]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- (./main.aux
-(./1_introduction.aux) (./2_viscous_fluids.aux) (./3_ideal_fluids.aux)
-(./4_potential_flow.aux) (./5_waves.aux) (./6_special_topics.aux)
-(./7_numerical_methods.aux))
+ (./main.aux (./1_introduction.aux)
+(./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
+(./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 382EBFDD7676B3BC66ED6649223F1CD9;11225.
+(rerunfilecheck)             Checksum: 6BEAE33331F960DEF697F7B722074C14;11263.
  ) 
 Here is how much of TeX's memory you used:
- 39192 strings out of 478774
- 803114 string characters out of 5864471
- 1364546 words of memory out of 6000000
- 58461 multiletter control sequences out of 15000+600000
+ 39181 strings out of 478774
+ 802803 string characters out of 5864471
+ 1363341 words of memory out of 6000000
+ 58457 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s

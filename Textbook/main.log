@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  8 AUG 2022 10:55
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  8 AUG 2022 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2837,38 +2837,35 @@ File: Figures/Chapter3/fig_water_bucket.jpg Graphic file (type bmp)
  [60] [61]
 File: Figures/Chapter3/fig_paraboloid.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_paraboloid.pdf>
- [62] [63]
-Underfull \vbox (badness 3769) has occurred while \output is active []
-
- [64]
+ [62] [63] [64]
 File: Figures/Chapter3/fig_cyl_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cyl_setup.pdf>
-
-[65] [66] [67]
+ [65] [66]
 File: Figures/Chapter3/fig_cylinder_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cylinder_stream.pdf>
- [68]
+ [67] [68]
 File: Figures/Chapter3/fig_cylinder_pressure.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cylinder_pressure.pdf>
- [69] [70]
+
+[69]
 Overfull \hbox (1.85674pt too wide) in paragraph at lines 604--606
 \TU/LibertinusSerif(1)/m/n/10 Remember what this means from Section []1.4[] – t
 hat $[]$ is constant on stream-
  []
 
-[71]
+[70] [71]
 Overfull \hbox (1.57672pt too wide) in paragraph at lines 666--667
 []\TU/LibertinusSerif(1)/m/n/10 Like the velocity potential, the stream functio
 n satisfies Laplace’s equa-
  []
 
-[72]
+
 Overfull \hbox (0.74893pt too wide) in paragraph at lines 679--681
 \TU/LibertinusSerif(1)/m/n/10 equation for two dimensional, irrotational, incom
 pressible flow. Although
  []
 
-[73]
+[72]
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2879,10 +2876,10 @@ lnum;mapping=tex-text;" at 6.0pt
 inusSerif-Bold.otf
 File: Figures/Chapter3/fig_cyl_force.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cyl_force.pdf>
- [74]
+ [73]
 File: Figures/Chapter3/fig_uniform_flow_angle.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_uniform_flow_angle.pdf>
-) [75]
+ [74]) [75]
 \openout2 = `4_potential_flow.aux'.
 
  (./4_potential_flow.tex [76
@@ -3051,7 +3048,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  39181 strings out of 478774
  802803 string characters out of 5864471
- 1363341 words of memory out of 6000000
+ 1364341 words of memory out of 6000000
  58457 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

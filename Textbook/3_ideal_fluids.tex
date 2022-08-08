@@ -166,7 +166,7 @@ Finally, we can combine the two terms on the right hand side -- that's the defin
 
 This equation will prove useful every once in a while for us.  In particular, for a two dimensional flow, where 
 \[
-\vort = (0,0,\omega),
+\vort = [0,0,\omega],
 \]
 it's easy to see that the right hand side becomes zero, and we end up with
 \begin{equation}
@@ -205,7 +205,7 @@ The flow is given by
 \[
 \vec{u} = \frac{\Gamma_0}{2\pi s} \, \unit{\phi},
 \]
-and to calculate the circulation we'll use a circular path of constant radius $R$ (we don't necessarily need to fix the path, though, in this case, as we'll see).  The dot product in the integral becomes
+and to calculate the circulation we'll use a circular path of constant radius $R$.  The dot product in the integral becomes
 \[
 \vec{u} \cdot d\vec{l} = \left( \frac{\Gamma_0}{2\pi s} \, \unit{\phi} \right) \cdot \left( ds \, \unit{s} + s d\phi \, \unit{\phi} + dz \, \unit{z} \right),
 \]
@@ -225,7 +225,7 @@ We can write the defintion of the circulation in a different way using Stokes' t
 \label{eq_circ_curl}
 \Gamma = \oint_C \vec{u} \cdot d\vec{l} = \int_S (\grad \times \vec{u} ) \cdot d\vec{a},
 \end{equation}
-where $S$ is the surface inside the closed curve with area vector $d\vec{a}$.  Now, if $\grad \times \vec{u} = 0$, then $\Gamma = 0$ as well, which means that the circulation is zero inside any irrotational flow.  However, this is only true if the fluid is \emph{everywhere} irrotational; in particular, if there is an object (like a cylinder or an airplane wing, both examples we'll be doing soon), Stokes' theorem fails and it \emph{is} possible to have circulation in the fluid.
+where $S$ is the surface inside the closed curve with area vector $d\vec{a}$.  Now, if $\grad \times \vec{u} = \vec{0}$, then $\Gamma = 0$ as well, which means that the circulation is zero inside any irrotational flow.  However, this is only true if the fluid is \emph{everywhere} irrotational; in particular, if there is an object (like a cylinder or an airplane wing, both examples we'll be doing soon), Stokes' theorem fails and it \emph{is} possible to have circulation in the fluid.
 
 What if we suppose the closed curve actually moves with the fluid -- so that the curve always constists of the same fluid elements?  You can visualize this by prentending we put a bit of food colouring along the curve, so that as the fluid moves about and the curve changes shape, so too will the colouring -- but it will always remain a close curve.  We'll denote the curve now as $C(t)$ to indicate its dependence on time.  
 
@@ -239,7 +239,7 @@ and move the derivative into the integral.  Careful though -- this is the \emph{
 \[
 \frac{d\Gamma}{dt} = \oint_{C(t)} \frac{D\vec{u}}{Dt} \cdot d\vec{l}.
 \]
-But from equation \ref{eq_euler_bern} we can write 
+But from equation (\ref{eq_euler_bern}) we can write 
 \[
 \frac{D\vec{u}}{Dt} = -\grad \left(\frac{p}{\rho} + \Phi \right),
 \]
@@ -440,7 +440,7 @@ where $U$ is the constant speed of the flow far away from the cylinder.
 \label{fig_cyl_setup2}
 \end{figure}
 
-The other assumption we'll make is that the flow is irrotational.  This seems like a leap to make, though, since we don't even know what the flow \emph{is} yet.  But remember the vorticity equation (equation \ref{eq_vorticity}) -- for a steady two dimensional flow, the vorticity is conserved along streamlines.  Since the vorticity at infinity, where the flow is \emph{uniform}, is definitely zero, and every streamlines starts and ends at infinity, it follows that the flow is everywhere irrotational.
+The other assumption we'll make is that the flow is irrotational.  This seems like a leap to make, though, since we don't even know what the flow \emph{is} yet.  But remember the vorticity equation (equation \ref{eq_vorticity}) -- for a steady two dimensional flow, the vorticity is conserved along streamlines.  Since the vorticity at infinity, where the flow is \emph{uniform}, is definitely zero, and every streamline starts and ends at infinity, it follows that the flow is everywhere irrotational.
 
 Wait, is our flow \emph{steady}?  Yes, as long as we examine the problem from the point of view that the flow has been happening for a while and reached a steady state.  In practice, it doesn't take long for the fluid to do this.
 
@@ -543,7 +543,7 @@ At $\phi = 0$ and $\phi = \pi$, then $u_\phi = 0$ and there is a stagnation poin
 u_{\phi, \text{max}} = 2U \quad \text{at} \quad s=a.
 \]
 
-What about the pressure in the fluid?  Well, we could apply Euler's equation to find it, but Bernoulli's principle provides a shortcut.  Since the flow is irrotational, $\grad H = 0$ and $H = p/\rho + \tfrac{1}{2} \uu^2 + gz = $ constant everywhere in the fluid.  In our analysis, though, we'll neglect the gravity term; we're only looking at the $(r, \phi)$ dependence of the pressure here, and gravity will only impose an overall vertical pressure gradient.
+What about the pressure in the fluid?  Well, we could apply Euler's equation to find it, but Bernoulli's principle provides a shortcut.  Since the flow is irrotational, $\grad H = 0$ and $H = p/\rho + \tfrac{1}{2} \uu^2 + gz = $ constant everywhere in the fluid.  In our analysis, though, we'll neglect the gravity term; we're only looking at the $(s, \phi)$ dependence of the pressure here, and gravity will only impose an overall vertical pressure gradient.
 
 Let's first evaluate $H$ at infinity, where $\uu = (U,0,0)$ and we'll label the pressure $p_\infty$.  Then
 \[
@@ -649,7 +649,7 @@ For the line vortex flow, from Example \ref{ex_pot_vortex} with
 \]
 the process to finding the stream function is similar, but we have to use cylindrical coordinates.  From equation (\ref{eq_stream_cyl}), we get
 \[
-u_s = 0 = \frac{1}{s} \dfdx{\psi}{\phi} \quad \text{and} \quad u_\phi = \frac{\Gamma}{2\pi s} = -dfdx{\psi}{s}.
+u_s = 0 = \frac{1}{s} \dfdx{\psi}{\phi} \quad \text{and} \quad u_\phi = \frac{\Gamma}{2\pi s} = -\dfdx{\psi}{s}.
 \]
 From the first equation we just find that $\psi$ has no $\phi$ dependence, and from the second, upon integrating, we get
 \[
@@ -708,7 +708,7 @@ A Rankine vortex is defined by the flow (in cylindrical coordinates)
 \[
 \symbfup{u}  = \left\{
  \begin{array}{l l}
-    \Omega s \, \hat{\phi} & \quad \text{if $r < a$}\\
+    \Omega s \, \hat{\phi} & \quad \text{if $s < a$}\\
    \frac{\Omega a^2}{s} \, \hat{\phi} & \quad \text{if $s>a$,}
   \end{array} \right.
 \]

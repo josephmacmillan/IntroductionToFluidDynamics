@@ -6,9 +6,9 @@
 
 \section{The Navier-Stokes Equations}
 
-We've discussed a lot of different flows -- about a stagnation point, a shear flow, a line vortex flow -- but we haven't yet talked about how we \emph{find} $\vec{u}$.  That is, after all, the whole goal of fluid dynamics!
+We've discussed a lot of different flows already -- about a stagnation point, a shear flow, a line vortex flow -- but we haven't yet talked about how we \emph{find} the fluid velocity $\vec{u}$.  That is, after all, the whole goal of fluid dynamics!
 
-In short (and we'll come back to this in Section \ref{sec_ns_deriv} for a full derivation), fluid dynamics is governed by the Navier-Stokes equations,
+In short (and we'll come back to this in Section \ref{sec_ns_deriv} for a full derivation), fluid dynamics is governed by the \emph{Navier-Stokes equation},
 \begin{equation}
 \boxed{
 \frac{D \vec{u}}{Dt} = -\frac{1}{\rho} \grad p + \nu \nabla^2 \vec{u} +  \vec{g}.
@@ -21,7 +21,7 @@ We can recognize some of what's there -- the kinematic viscosity $\nu$ we've alr
 \item The gravitational field $\vec{g}$.  Usually -- but not always -- we'll be dealing with fluids at the surface of the Earth, and define our coordinate system so that $\vec{g} = [0,0,-g]$ where $g = 9.8$ m/s$^2$ as usual. 
 \end{itemize}
 
-The Navier-Stokes equations, named after Claude-Louis Navier and George Gabriel Stokes who (independently) derived them, are famously difficult to solve -- they're a set of coupled nonlinear second order partial differential equations.  In fact, showing that solutions to the Navier-Stokes equations always exist and are smooth is one of the seven ``Millennium Prize Problems'' from the Clay Mathematics Institute.  We won't be doing anything so difficult here; for some simple situations, the equations are readily solvable, even if they require some thought and a few tricks.
+The Navier-Stokes equations, named after Claude-Louis Navier and George Gabriel Stokes who (independently) derived them, are famously difficult to solve -- they're a set of coupled nonlinear second order partial differential equations.  In fact, showing that solutions to the Navier-Stokes equation always exist and are smooth is one of the seven ``Millennium Prize Problems'' from the Clay Mathematics Institute.  We won't be doing anything so difficult here; for some simple situations, the equations are readily solvable, even if they require some thought and a few tricks.
 
 % SUBSECTION - CARTESIAN COORDS
 
@@ -41,7 +41,7 @@ Furthermore, we'll assume our fluids are \emph{incompressible}, so that they mus
 \dfdx{u}{x}  + \dfdx{v}{y} + \dfdx{w}{z} = 0.
 \end{equation}
 
-Those are an impressively complicated looking set of equations.  To solve them, however, we'll first make some assumptions based on the \emph{physical} nature of the problem we're examining; as we'll see in a moment, that will allow us to remove some terms and will simplify things considerably.
+Those are an impressively complicated looking set of equations.  To solve them, we'll first make some assumptions based on the \emph{physical} nature of the problem we're examining; as we'll see in a moment, that will allow us to remove some terms and simplify things considerably.
 
 %
 % --- SECTION - SIMPLE VISCOUS FLOWS ---
@@ -79,7 +79,7 @@ Furthermore, since the walls are also infinite in extent along the $x$-direction
 \[
 \vec{u} = [u(y), v(y), 0].
 \]
-That's pretty simple, but we can do even better by looking at the incompressibility condition.  In our flow, $\partial u /\partial x = 0$ since the flow only depends on $y$, so Equation \ref{eq_incomp_cart} becomes
+That's pretty simple, but we can do even better by looking at the incompressibility condition.  In our flow, $\partial u /\partial x = 0$ since the flow only depends on $y$, so equation (\ref{eq_incomp_cart}) becomes
 \[
 \dfdx{v}{y} = 0.
 \]
@@ -144,7 +144,7 @@ What happens to the fluid for $t>0$?  Well, presumably it will slowly come to re
 \dfdx{u}{t} = \nu \ddfdx{u}{y}.
 \end{equation}
 
-Our boundary conditions are the same as before -- that $u = 0$ at the walls -- but the initial condition is our steady solution, Equation \ref{eq_poise_steady},
+Our boundary conditions are the same as before -- that $u = 0$ at the walls -- but the initial condition is our steady solution, equation (\ref{eq_poise_steady}),
 \begin{equation}
 \label{eq_poise_ic}
 u(y, t=0) = \frac{P}{2\nu \rho} (hy - y^2).
@@ -183,7 +183,7 @@ T(t) = C e^{-k^2 \nu t},
 \end{equation}
 where $C$ is the integration constant.  We're not quite done with this yet -- we still don't know the value of $C$, or $k$ for that matter -- but let's move on to the second equation.  
 
-Equation \ref{eq_poise_sho} one should look familiar,\footnote{If it doesn't, time to brush up on some of your mathematics -- having some familiarity with differential equations is necessary to be successful in learning fluid dynamics.} and it has the general solution
+Equation (\ref{eq_poise_sho}) one should look familiar,\footnote{If it doesn't, time to brush up on some of your mathematics -- having some familiarity with differential equations is necessary to be successful in learning fluid dynamics.} and it has the general solution
 \[
 Y(y) = A \sin (ky) + B \cos (ky).
 \]
@@ -199,9 +199,9 @@ Somehow, this must equal zero as well.  One possibility is to make $A = 0$ -- bu
 \[
 kh = n\pi, \quad n = 1, 2, 3, \dots,
 \]
-then that will work, since the zeros of the sine function are at every integer multiple of $\pi$.
+then that will work, since the zeros of the sine function are every integer multiple of $\pi$.
 
-This (almost) completes our full solution; combining $Y(y)$ with $T(t)$ to make the velocity, we get
+This almost completes our full solution; combining $Y(y)$ with $T(t)$ to make the velocity, we get
 \[
 u(y, t) = Y(y)T(t) = A \sin (n\pi y / h) \, e^{-n^2 \pi^2 \nu t / h^2},
 \]
@@ -212,7 +212,7 @@ u(y, t) = \sum_{n=1}^\infty A_n \sin(n \pi y / h) \, e^{-n^2 \pi^2 \nu t / h^2}.
 \end{equation}
 Note that the constant $A$ could be different in each term in the sum, so it has an index $n$ on it.
 
-All we have left to do is find the values of the $A_n$s, which we do by using the initial conditions.  In fact, our solution can fit \emph{any} initial conditions we want; that's part of the magic of separation of variables.  If we evaluate Equation \ref{eq_poise_sol} at $t=0$ and equate it to our initial conditions, Equation \ref{eq_poise_ic}, we get
+All we have left to do is find the values of the $A_n$s, which we do by using the initial condition.  In fact, our solution can fit \emph{any} initial condition we want; that's part of the magic of separation of variables.  If we evaluate equation (\ref{eq_poise_sol}) at $t=0$ and equate it to our initial conditions, equation (\ref{eq_poise_ic}), we get
 \[
 \sum_{n=1}^\infty A_n \sin(n \pi y / h) =  \frac{P}{2\nu \rho} (hy - y^2).
 \]
@@ -230,7 +230,7 @@ We can combine these two results into one, using the Kronecker delta,
 \begin{equation}
 \delta_{mn} = \begin{cases} 0 \quad \text{if } m \neq n, \\ 1 \quad \text{if } m = n. \end{cases}
 \end{equation}
-Thus the left hand side of Equation \ref{eq_poise_coeff} becomes
+Thus the left hand side of equation (\ref{eq_poise_coeff}) becomes
 \[
 \sum_{n=1}^\infty A_n \int_0^h \sin(m\pi y/h) \, \sin(n \pi y / h) \, dy = \frac{h}{2} \sum_{n=1}^\infty A_n  \delta_{mn}.
 \]
@@ -243,7 +243,7 @@ Phew!  That takes care of the left hand side, but we still have to do the right 
 \[
 \int_0^h (hy - y^2) \sin(m\pi y / h)\, dy = \frac{2h^3}{\pi^3 m^3} \left( 1 - \cos(m\pi) \right).
 \]
-Why messy?  Because the cosine evaluates to either $+1$ (if $m$ is even, and we get zero) or $-1$ (if $m$ is odd, and we get $2$).  That means we have to handle both of those cases separately.  Putting both sides of Equation \ref{eq_poise_coeff} together and solving for $A_m$ gives
+Why messy?  Because the cosine evaluates to either $+1$ (if $m$ is even, and we get zero) or $-1$ (if $m$ is odd, and we get $2$).  That means we have to handle both of those cases separately.  Putting both sides of equation (\ref{eq_poise_coeff}) together and solving for $A_m$ gives
 \begin{equation}
 A_m = \begin{cases}
        0, \quad & m \text{ even}, \\
@@ -251,7 +251,7 @@ A_m = \begin{cases}
 \end{cases}
 \end{equation}
 
-Finally, we can write down our full solution to this problem.  Inserting this expression for $A_m$ into Equation \ref{eq_poise_sol} gives us
+Finally, we can write down our full solution to this problem.  Inserting this expression for $A_m$ into equation (\ref{eq_poise_sol}) gives us
 \begin{equation}
 \label{eq_poise_time_sol}
 u(y, t) = \frac{4Ph^2}{\pi^3 \nu \rho} \sum_{n=1, 3, 5 \dots}^\infty \frac{1}{n^3} \sin(n \pi y / h) \, e^{-n^2 \pi^2 \nu t / h^2}.
@@ -281,9 +281,9 @@ I'd like to do one more example with the two rigid boundaries before moving on -
 
 This time, we'll start with the fluid at rest in between the two boundaries; the set up is the same as in the above examples and  once again Figure \ref{fig_poise_setup} shows the coordinate system.  In this case, though, there won't be any pressure gradient -- we'll take $dp/dx = 0$ for the whole problem.  Once again, since nothing changes physically about the problem, we have a fluid dependent only on $y$ and flowing only in the $x$-direction, so this is still plane-parallel shear flow.  
 
-We'll put the fluid in motion by, at $t = 0$,  suddenly \emph{jerking} the bottom boundary (the one at $y=0$)  -- we'll pull it to the right with constant speed $U$.  There won't be a period of acceleration here -- it's \emph{impulsively} moved and goes from at rest to moving instantaneously.  Thanks to the no-slip theorem, the bottom boundary will pull on the fluid elements in contact with it, which will in turn exert viscous forces on the fluid above, and so on.  To find out how the fluid responds to the impulsively moved boundary, we'll need to once again solve the Navier-Stokes equations.
+We'll put the fluid in motion by, at $t = 0$,  suddenly \emph{jerking} the bottom boundary (the one at $y=0$)  -- we'll pull it to the right with constant speed $U$.  There won't be a period of acceleration here -- it's \emph{impulsively} moved and goes from at rest to moving instantaneously.  Thanks to the no-slip theorem, the bottom boundary will pull on the fluid elements in contact with it, which will in turn exert viscous forces on the fluid above, and so on.  To find out how the fluid responds to the impulsively moved boundary, we'll need to once again solve the Navier-Stokes equation.
 
-They're identical, though, to the above time-dependent problem, Equation \ref{eq_poise_pde},
+It's identical, though, to the above time-dependent problem, equation (\ref{eq_poise_pde}),
 \begin{equation}
 \label{eq_imp_diffeq}
 \dfdx{u}{t} = \nu \ddfdx{u}{y}.
@@ -333,11 +333,11 @@ The initial condition has also changed, since we need to cancel off the steady s
 u_1(y, 0) = -u_\text{steady} = -U \left( 1 - \frac{y}{h} \right).
 \end{equation}
 
-Now we're ready to solve by separation of variables.  The process and most of the steps are identical to what we just went over in Section \ref{sec_poise_time}, so I'll skip most of the details.  Thanks to the same differential equation and boundary conditions for $u_1$, the solution is once again
+Now we're ready to solve by separation of variables.  The process and most of the steps are identical to what we just went over in Section \ref{sec_poise_time}, so I'll skip some of the details.  Thanks to the same differential equation and boundary conditions for $u_1$, the solution is once again
 \[
 u_1(y, t) = \sum_{n=1}^\infty A_n \sin(n \pi y / h) \, e^{-n^2 \pi^2 \nu t / h^2}.
 \]
-All that's left is to find the $A_n$s that fit the initial conditions, Equation \ref{eq_poise_imp_ic}.  Using Fourier's trick again (multiplying by $\sin(m \pi y / h)$ and integrating) leads to 
+All that's left is to find the $A_n$s that fit the initial conditions, equation (\ref{eq_poise_imp_ic}).  Using Fourier's trick again (multiplying by $\sin(m \pi y / h)$ and integrating) leads to 
 \[
 A_n = -\frac{2U}{n\pi}.
 \]
@@ -395,7 +395,7 @@ u(\infty, t) = 0.
 
 Now, we could, if we wanted, go through the same procedure as before -- find a steady-state solution, apply separation of variables, and build our final answer as a superposition of solutions.  But that process is cumbersome (and we've already done it once!), and this problem can actually be solved in a completely different way, first done by Stokes.\footnote{This example is actually known as Stokes' first problem.}
 
-Consider, first, some dimensional analysis.  Examining Equations \ref{eq_ss_diffeq}-\ref{eq_ss_bc2} we can see that our problem depends, at best, on four variables: $U$, $\nu$, $y$, and $t$.  But if we write the velocity as a non-dimensional variable,
+Consider, first, some dimensional analysis.  Examining equations (\ref{eq_ss_diffeq})-(\ref{eq_ss_bc2}) we can see that our problem depends, at best, on four variables: $U$, $\nu$, $y$, and $t$.  But if we write the velocity as a non-dimensional variable,
 \[
 \tilde{u} = \frac{u}{U},
 \]
@@ -418,9 +418,9 @@ Okay, where are we going with this?  Well, since $f$ must be dimensionless, and 
 \[
 \frac{y}{\sqrt{\nu t}}.
 \]
-All this is to suggest that, in our final solution to Equation \ref{eq_ss_diffeq_tilde}, $y$ and $t$ and $\nu$ can \emph{only} appear in the above combination.  This powerful idea will allow us to turn the partial differential equation into an ordinary one that we can integrate to solve -- much simpler than going through separation of variables.
+All this is to suggest that, in our final solution to equation (\ref{eq_ss_diffeq_tilde}), $y$ and $t$ and $\nu$ can \emph{only} appear in the above combination.  This powerful idea will allow us to turn the partial differential equation into an ordinary one that we can integrate to solve -- much simpler than going through separation of variables.
 
-This whole idea -- having the solution depend only on a dimensionless quantity -- is called \emph{self-similarity}, for reasons we'll see in a bit.  It's due to the fact that there is no \emph{physical scale} involved in the problem -- it doesn't involve a length scale at all, nor a time scale.  This is in contrast to the previous problem with a boundary at $y=h$ -- the value of $h$ sets the physical scale along the $y$-direction, and we wouldn't be able to write down a single combination of variables that was dimensionless in that case.  If you're finding it difficult to imagine the scale-free nature of the problem, imagine ``zooming'' in or out in Figure \ref{fig_self_sim_setup} -- because the fluid goes to infinity above the boundary, there's nothing to tell you that actually \emph{have} zoomed in or out, and the figure would look exactly the same.
+This whole idea -- having the solution depend only on a dimensionless quantity -- is called \emph{self-similarity}, for reasons we'll see in a bit.  It's due to the fact that there is no \emph{physical scale} involved in the problem -- it doesn't involve a length scale at all, nor a time scale.  This is in contrast to the previous problem with a boundary at $y=h$ -- the value of $h$ sets the physical scale along the $y$-direction, and we wouldn't be able to write down a single combination of variables that was dimensionless in that case.  If you're finding it difficult to imagine the scale-free nature of the problem, imagine ``zooming'' in or out in Figure \ref{fig_self_sim_setup} -- because the fluid goes to infinity above the boundary, there's nothing to tell you that you actually \emph{have} zoomed in or out, and the figure would look exactly the same.
 
 Self-similarity is a powerful concept in fluid dynamics and many other fields, from mathematics to finance.  The most common example of it is probably the nature of some fractals, such as the Koch snowflake shown in Figure \ref{fig_koch}.  As you zoom in on the snowflake, the perimeter continues to look exactly the same.  A great example of a self-similar system in nature is the fronds on a fern, as shown in Figure \ref{fig_fern}.  Note that the overall structure of the fern is repeated on smaller scales, all the way down to the individual leaves.  As we'll see, along with the scale-free situation, our solution to this problem will be self-similar in the same way.
 
@@ -450,7 +450,7 @@ where the prime indicates a derivative with respect to $\eta$, and
 \[
 \ddfdx{\tilde{u}}{y} = \frac{d^2 f}{d\eta^2} \left( \dfdx{\eta}{y} \right)^2 + \dfdx{f}{\eta} \ddfdx{\eta}{y} = \left( \frac{1}{\nu t} \right) f''.
 \]
-Careful with the second derivative calculation -- it uses a product rule as well as the chain rule, so go over it yourself to make sure you known where the terms come from.  Plugging these two derivatives back into Equation \ref{eq_ss_diffeq_tilde} gives, after a bit of rearranging,
+Careful with the second derivative calculation -- it uses a product rule as well as the chain rule, so go over it yourself to make sure you know where the terms come from.  Plugging these two derivatives back into equation (\ref{eq_ss_diffeq_tilde}) gives, after a bit of rearranging,
 \begin{equation}
 f'' + \frac{1}{2} \eta f' = 0.
 \end{equation}
@@ -533,9 +533,9 @@ y = {10}{\sqrt{\nu t}}
 \subsection{The Navier-Stokes Equations in Cylindrical Coordinates}
 \label{sec_ns_cyl}
 
-The Navier-Stokes equations are trickier to write down in cylindrical coordinates, mainly due to the fact that the cylindrical unit vectors $\unit{s}$ and $\unit{\phi}$ in Equation \ref{eq_u_cyl} are not \emph{constant} -- they depend on $\phi$:
+The Navier-Stokes equations are trickier to write down in cylindrical coordinates, mainly due to the fact that the cylindrical unit vectors $\unit{s}$ and $\unit{\phi}$ in equation (\ref{eq_u_cyl}) are not \emph{constant} -- they depend on $\phi$:
 \begin{align*}
-\unit{r} & = \cos \phi \unit{x} + \sin \phi \unit{y} \\
+\unit{r} & = \cos \phi \unit{x} + \sin \phi \unit{y}, \\
 \unit{\phi} & = - \sin \phi \unit{x} + \cos \phi \unit{y}.
 \end{align*}
 When evaluating the derivatives in the Navier-Stokes equation, then, you have to be very careful to take this dependence into account.  For example, note that
@@ -578,7 +578,7 @@ Already this is two dimensional flow -- we'll assume the cylinder is infinitely 
 \begin{equation}
 \vec{u} = u_\phi (s, t) \, \unit{\phi}.
 \end{equation}
-This means that the flow is always \emph{circular}, with streamlines that are circles.  Furthermore, the speed of the fluid only depends on the distance $r$ from the origin, giving us the cylindrical symmetry.  One nice benefit to a flow of this form is that the incompressibility condition is automatically satisfied, which you can check yourself with Problem \ref{prob_cyl_incomp}.
+This means that the flow is always \emph{circular}, with streamlines that are circles.  Furthermore, the speed of the fluid only depends on the distance $s$ from the origin, giving us the cylindrical symmetry.  One nice benefit to a flow of this form is that the incompressibility condition is automatically satisfied, which you can check yourself with Problem \ref{prob_cyl_incomp}.
 
 \begin{figure}
 \centering
@@ -599,7 +599,7 @@ Note that I've completely dropped the gravity terms here -- but see Problem \ref
 
 Now, the third equation above -- the one for $z$ -- just says that the pressure $p$ doesn't depend on $z$ at all, not surprising given the symmetry of the problem.  The first equation gives us a relationship between the fluid velocity $u_\phi$ and the radial pressure gradient, so if we know one we can get the other.  The second equation is the important one, but we can clean it up a bit more.  
 
-Since $u_\phi = u_\phi(s, t)$ only, Equation \ref{eq_ns_theta2} says that $\partial p / \partial \phi$ must also be a function of only $s$ and $t$.  So we can write
+Since $u_\phi = u_\phi(s, t)$ only, equation (\ref{eq_ns_theta2}) says that $\partial p / \partial \phi$ must also be a function of only $s$ and $t$.  So we can write
 \[
 \dfdx{p}{\phi} = P(s, t),
 \]
@@ -607,9 +607,9 @@ where $P(s, t)$ is some unknown function.  If we integrate this to find $p$, we 
 \[
 p = P(s, t) \phi + f(s, t),
 \]
-where $f(s, t)$ is the integration ``constant'' -- remember, we have a partial derivative here (and note that there's no $z$ dependence thanks to Equation \ref{eq_ns_z2}).  But this shows us that the function $P(s, t)$ \emph{must} be zero, since otherwise the pressure would be a multivalued function of position; it would take on different values for $\phi = 0$ and $\phi = 2 \pi$, for example, even though those two angles represent the same point in space.
+where $f(s, t)$ is the integration ``constant'' -- remember, we have a partial derivative here (and note that there's no $z$ dependence thanks to equation (\ref{eq_ns_z2})).  But this shows us that the function $P(s, t)$ \emph{must} be zero, since otherwise the pressure would be a multivalued function of position; it would take on different values for $\phi = 0$ and $\phi = 2 \pi$, for example, even though those two angles represent the same point in space.
 
-Equation \ref{eq_ns_theta2} then becomes, with $P(s, t) = \partial p / \partial \phi = 0$, 
+Equation (\ref{eq_ns_theta2}) then becomes, with $P(s, t) = \partial p / \partial \phi = 0$, 
 \begin{equation}
 \label{eq_ns_evol}
 \boxed{
@@ -618,7 +618,7 @@ Equation \ref{eq_ns_theta2} then becomes, with $P(s, t) = \partial p / \partial 
 \end{equation}
 This equation determines the evolution of the fluid velocity, and holds for any flow with circular streamlines.
 
-Now we can go back to our original problem -- fluid inside a rotating cylinder.  We'll first assume the fluid is \emph{steady}, so that $\partial u_\phi / \partial t = 0$.  Multiplying Equation \ref{eq_ns_evol} by $s^2$ gives us
+Now we can go back to our original problem -- fluid inside a rotating cylinder.  We'll first assume the fluid is \emph{steady}, so that $\partial u_\phi / \partial t = 0$.  Multiplying equation (\ref{eq_ns_evol}) by $s^2$ gives us
 \begin{equation}
 \label{eq_spin_diffeq}
 s^2 \frac{d^2 u_\phi}{ds^2} + s \frac{d u_\phi}{ds} - u_\phi = 0.
@@ -653,9 +653,9 @@ This flow is in \emph{solid body rotation} -- in other words, the fluid rotates 
 
 \subsection{Spin Down of Rotating Fluid}
 
-What happens to the fluid if the rotating cylinder is suddenly brought to rest?  Now we have time-dependent flow, and we'll have to use the full Equation \ref{eq_ns_evol} to model what happens.  Just a warning before we proceed:  this is a pretty complicated problem to solve, and will require some knowledge about Bessel functions.  We'll take it slow, but it might help to read up on them first.
+What happens to the fluid if the rotating cylinder is suddenly brought to rest?  Now we have time-dependent flow, and we'll have to use the full equation (\ref{eq_ns_evol}) to model what happens.  Just a warning before we proceed:  this is a pretty complicated problem to solve, and will require some knowledge about Bessel functions.  We'll take it slow, but it might help to read up on them first.
 
-We'll use separation of variables to solve the partial differential equation, but first we should write out the initial and boundary conditions.  The initial condition is of course our steady state solution we just found, Equation \ref{eq_cyl_steady_sol},
+We'll use separation of variables to solve the partial differential equation, but first we should write out the initial and boundary conditions.  The initial condition is of course our steady state solution we just found, equation (\ref{eq_cyl_steady_sol}),
 \begin{equation}
 \label{eq_spin_ic}
 u_\phi (s, t=0) = \Omega s.
@@ -670,7 +670,7 @@ Let
 \[
 u_\phi(s, t) = S(s) T(t)
 \]
-and plug that into Equation \ref{eq_ns_evol}.  Dividing both sides by $ST$ gives
+and plug that into equation (\ref{eq_ns_evol}).  Dividing both sides by $ST$ gives
 \[
 \frac{1}{\nu T} \frac{dT}{dt} = \frac{1}{S} \frac{d^2S}{ds^2} + \frac{1}{sS} \frac{dS}{ds} - \frac{1}{s^2}.
 \]
@@ -756,7 +756,7 @@ u_\phi(s, t) = \sum_{n=1}^\infty A_n \, J_1(\lambda_n s / a) \, e^{-\lambda_n^2 
 
 Even though we've been dealing with Bessel function, the process of separation of variables is the same as we went through in Section \ref{sec_poise_time} -- if you can follow that discussion, you should be okay here, too.  We just have one more step:  finding the values of the constants $A_n$ that will match our initial conditions.  This part is similar to before, too, but does require a bit of advanced knowledge of Bessel functions, so watch carefully.
 
-Our initial conditions, from Equation \ref{eq_spin_ic} say
+Our initial conditions, from equation (\ref{eq_spin_ic}), say
 \begin{equation}
 \label{eq_spin_ic2}
 u_\phi(s,0) =  \sum_{n=1}^\infty A_n \, J_1(\lambda_n s / a) = \Omega s.
@@ -771,7 +771,7 @@ if $m \neq n$.  If $m = n$, then the result is
 \]
 (notice that's the second order Bessel function showing up on the right hand side).
 
-We can use these results to solve for the $A_n$s.  Multiply both sides of Equation \ref{eq_spin_ic2} by $s \, J_1(\lambda_m s /a)$ and integrate from $0$ to $a$:
+We can use these results to solve for the $A_n$s.  Multiply both sides of equation (\ref{eq_spin_ic2}) by $s J_1(\lambda_m s /a)$ and integrate from $0$ to $a$:
 \[
 \sum_{n=1}^\infty A_n \int_0^a J_1(\lambda_n s / a) J_1(\lambda_m s /a) \, s\, ds = \Omega \int_0^a s^2 \, J_1(\lambda_m s/a) \, ds.
 \]
@@ -816,11 +816,11 @@ Our last two examples involved fluid \emph{inside} a cylinder; let's flip that a
 \label{fig_line_setup}
 \end{figure}
 
-We once again have circular flow, and the steady-state is described by Equation \ref{eq_spin_diffeq} and its general solution, Equation \ref{eq_cyl_steady_gen_sol},
+We once again have circular flow, and the steady-state is described by equation (\ref{eq_spin_diffeq}) and its general solution, equation (\ref{eq_cyl_steady_gen_sol}),
 \[
 u_\phi (s) = As + \frac{B}{s}.
 \]
-Although the boundary condition is \emph{also} the same -- that $u_\phi(a) = \Omega a$ -- the difference here comes from keeping the fluid velocity finite.  Since the fluid extends out to infinity, we set $A = 0$; since there's no fluid at $s=0$, the second term won't be a problem.  Fitting the boundary condition leads to our answer,
+Although the boundary condition is \emph{also} the same -- that $u_\phi(a) = \Omega a$ -- the difference here comes from keeping the fluid velocity finite.  Since the fluid extends out to infinity, we set $A = 0$; with no fluid at $s=0$, the second term won't be a problem.  Fitting the boundary condition leads to our answer,
 \[
 u_\phi(s) = \frac{\Omega a^2}{s}.
 \]
@@ -832,7 +832,7 @@ u_\phi(s) = \frac{\Gamma_0}{2\pi s},
 \end{equation}
 where the constant $\Gamma_0$ is called the \emph{circulation}.  We'll explore the concept of circulation more later on in the book.
 
-Now let's take the cylinder away.  But we'll do it carefully -- we'll let $a \to 0$ at $t=0$, and the radius will shrink to zero instantaneously (kind of like how the boundary started moving in Section \ref{sec_imp}).  That means Equation \ref{eq_line_vortex} will give us the initial conditions, but now the evolution of the system is governed by Equation \ref{eq_ns_evol},
+Now let's take the cylinder away.  But we'll do it carefully -- we'll let $a \to 0$ at $t=0$, and the radius will shrink to zero instantaneously (kind of like how the boundary started moving in Section \ref{sec_imp}).  That means equation (\ref{eq_line_vortex}) will give us the initial conditions, but now the evolution of the system is governed by equation (\ref{eq_ns_evol}),
 \[
 \dfdx{u_\phi}{t} =  \nu \left( \ddfdx{u_\phi}{s} + \frac{1}{s} \dfdx{u_\phi}{s} - \frac{u_\phi}{s^2} \right).
 \]
@@ -864,7 +864,7 @@ and assume that the solution is some function a $\eta$ alone,
 \[
 \Gamma(s, t) = f(\eta).
 \]
-I'll let you plug this into Equation \ref{eq_evol_gamma} and find the similarity solution yourself (Problem \ref{prob_sim}).  The answer is
+I'll let you plug this into equation (\ref{eq_evol_gamma}) and find the similarity solution yourself (Problem \ref{prob_sim}).  The answer is
 \[
 \Gamma(s, t) = \Gamma_0 \left(1 - e^{-s^2 / 4\nu t} \right),
 \]
@@ -897,9 +897,9 @@ This looks like solid body rotation again, with $u_\phi \propto s$.  Thus, at sm
 
 \section{Transport of Vorticity}
 
-So far, all we've done is solve the Navier-Stokes equations for a variety of different situations.  Actually, the variety hasn't been all that great -- we've really only covered two kinds of flow, \emph{plane parallel shear flow} and \emph{circular flow}.  In both cases, the flow direction is parallel to the flow dependence; in the case of plane parallel shear flow, we had the fluid moving in the $x$ direction, but the speed changed along the $y$ direction only.  For circular flow, the fluid flowed in the $\phi$ direction but all dependence was along the radius $r$.  
+So far, all we've done is solve the Navier-Stokes equations for a variety of different situations.  Actually, the variety hasn't been all that great -- we've really only covered two kinds of flow, \emph{plane parallel shear flow} and \emph{circular flow}.  In both cases, the flow direction is parallel to the flow dependence; in the case of plane parallel shear flow, we had the fluid moving in the $x$ direction, but the speed changed along the $y$ direction only.  For circular flow, the fluid flowed in the $\phi$ direction but all dependence was along the radius $s$.  
 
-For flows of this type, the second term in the acceleration (Equation \ref{eq_accel}) -- the so-called convective term -- is zero:
+For flows of this type, the second term in the acceleration (equation (\ref{eq_accel})) -- the so-called convective term -- is zero:
 \[
 (\vec{u} \cdot \vec{\nabla}) \vec{u} = 0.
 \]
@@ -951,7 +951,7 @@ In Section \ref{sec_poise_1d} we examined Poiseuille flow in one dimension, but 
 \begin{problem}[Flow down an incline]
 Suppose fluid has been flowing down an inclined plane for a long time, as shown in Figure \ref{fig_incline_setup}.  The fluid has a height $h$ above the plane, and above the fluid is air.  Gravity points straight down, making an angle $\alpha$ with the $y$ axis.  What is the pressure and velocity of the fluid?  
 
-\emph{Hint:} One of the boundary conditions is obvious, but the second is trickier.  Assume the pressure at the surface of the fluid is at atmospheric pressure, and also that there is no tangential stress across the surface (otherwise it wouldn't be a stable surface); see Equation \ref{eq_visc_def}.
+\emph{Hint:} One of the boundary conditions is obvious, but the second is trickier.  Assume the pressure at the surface of the fluid is at atmospheric pressure, and also that there is no tangential stress across the surface (otherwise it wouldn't be a stable surface); see equation (\ref{eq_visc_def}).
 \end{problem}
 
 \begin{figure}
@@ -1027,7 +1027,7 @@ where
 \[
 \eta = \frac{s}{\sqrt{\nu t}},
 \]
-and show that the velocity is given by Equation (\ref{eq_line_vortex_vel}).  Plot the circulation $\Gamma(s, t)$ at two different times; scale your axis appropriately to show that the curve is self-similar.
+and show that the velocity is given by equation (\ref{eq_line_vortex_vel}).  Plot the circulation $\Gamma(s, t)$ at two different times; scale your axis appropriately to show that the curve is self-similar.
 \end{problem}
 
 %\begin{problem}[Flow with a spinning bottom]
@@ -1052,9 +1052,9 @@ and show that the velocity is given by Equation (\ref{eq_line_vortex_vel}).  Plo
 \begin{problem}[Vorticity of simple flows]
 \label{prob_vorticity}
 
-(a) Find the vorticity of the fluid in the impulsively moved single plate example (Section \ref{sec_self_similar}) and show that it is given by Equation (\ref{eq_vort_1}).
+(a) Find the vorticity of the fluid in the impulsively moved single plate example (Section \ref{sec_self_similar}) and show that it is given by equation (\ref{eq_vort_1}).
 
-(b) Find the vorticity of the fluid in the line vortex example (Section \ref{sec_line_vortex}) and show that it is given by Equation (\ref{eq_vort_2}).
+(b) Find the vorticity of the fluid in the line vortex example (Section \ref{sec_line_vortex}) and show that it is given by equation (\ref{eq_vort_2}).
 \end{problem}
 
 

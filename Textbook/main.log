@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  8 AUG 2022 11:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  11 AUG 2022 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2848,19 +2848,19 @@ File: Figures/Chapter3/fig_cylinder_pressure.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cylinder_pressure.pdf>
 
 [69]
-Overfull \hbox (1.85674pt too wide) in paragraph at lines 604--606
+Overfull \hbox (1.85674pt too wide) in paragraph at lines 605--607
 \TU/LibertinusSerif(1)/m/n/10 Remember what this means from Section []1.4[] – t
 hat $[]$ is constant on stream-
  []
 
 [70] [71]
-Overfull \hbox (1.57672pt too wide) in paragraph at lines 666--667
+Overfull \hbox (1.57672pt too wide) in paragraph at lines 667--668
 []\TU/LibertinusSerif(1)/m/n/10 Like the velocity potential, the stream functio
 n satisfies Laplace’s equa-
  []
 
 
-Overfull \hbox (0.74893pt too wide) in paragraph at lines 679--681
+Overfull \hbox (0.74893pt too wide) in paragraph at lines 680--682
 \TU/LibertinusSerif(1)/m/n/10 equation for two dimensional, irrotational, incom
 pressible flow. Although
  []
@@ -2955,12 +2955,6 @@ File: Figures/Chapter4/fig_aerofoil.pdf Graphic file (type pdf)
 File: Figures/Chapter4/fig_aerofoil_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter4/fig_aerofoil_stream.pdf>
  [101]
-Overfull \hbox (4.88898pt too wide) in paragraph at lines 785--786
-[]\TU/LibertinusSerif(1)/m/n/10 We need two bits of information. First, recall 
-from Section []3.1.4[] Kelvin’s
- []
-
-
 Overfull \hbox (0.38005pt too wide) in paragraph at lines 787--788
 []\TU/LibertinusSerif(1)/m/n/10 When the airplane is initially at rest, before 
 starting takeoff (top panel),
@@ -3007,35 +3001,41 @@ File: Figures/Chapter4/fig_vortex_corner.pdf Graphic file (type pdf)
  [118] [119]) [120]
 \openout2 = `5_waves.aux'.
 
- (./5_waves.tex) [121
+ (./5_waves.tex
+File: Figures/Chapter5/fig_pond_waves.jpg Graphic file (type bmp)
+<Figures/Chapter5/fig_pond_waves.jpg>
+ [121
 
 
 
 
 ]
+File: Figures/Chapter5/fig_generic_wave.pdf Graphic file (type pdf)
+<use Figures/Chapter5/fig_generic_wave.pdf>
+ [122] [123]
+[124]) [125]
 \openout2 = `6_special_topics.aux'.
 
-
-(./6_special_topics.tex
+ (./6_special_topics.tex
 File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
- [122
+ [126
 
 
 
 
-] [123] [124] [125] [126] [127] [128]
+] [127] [128] [129] [130] [131]
+[132]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [129]
-[130] [131]
+ [133] [134] [135]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [132]) [133]
+ [136]) [137]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -3043,15 +3043,15 @@ File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 (./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
 (./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6BEAE33331F960DEF697F7B722074C14;11263.
+(rerunfilecheck)             Checksum: D507F636070B9DA9880A7F2B92AE045F;11804.
  ) 
 Here is how much of TeX's memory you used:
- 39181 strings out of 478774
- 802803 string characters out of 5864471
- 1364341 words of memory out of 6000000
- 58457 multiletter control sequences out of 15000+600000
+ 39226 strings out of 478774
+ 804223 string characters out of 5864471
+ 1364675 words of memory out of 6000000
+ 58495 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (139 pages).
+Output written on main.pdf (143 pages).

@@ -51,7 +51,7 @@ z = x + iy = s \cos \phi + is \sin \phi.
 \]
 Using Euler's famous formula,
 \[
-e^{i \phi} = cos \phi + i \sin \phi,
+e^{i \phi} = \cos \phi + i \sin \phi,
 \]
 this becomes
 \begin{equation}
@@ -123,7 +123,7 @@ To start, consider a simple flow that is uniform everywhere.  We'll suppose it f
 \begin{equation}
 \vec{u} = [U\cos \alpha, U\sin \alpha, 0].
 \end{equation}
-Problem \ref{prob_uniform_pot} asks you to work out the details, but the velocity potential in this case is
+Problem \ref{prob_uniform_pot} asked you to work out the details, but the velocity potential in this case is
 \begin{equation}
 \varphi (x, y) = U(x \cos\alpha + y\sin\alpha)
 \end{equation}
@@ -603,7 +603,7 @@ Z_0 = \frac{2i}{5} + 2,
 \]
 but the complex potential $W(Z_0)$ has the same value as $w(z_0)$:
 \[
-W(Z_0) = U\sqrt{5(1+i - 2)} = U(1+i).
+W(Z_0) = U\sqrt{5(2i/5 + 2 - 2)} = U\sqrt{2i} = U(1+i).
 \]
 
 \end{example}
@@ -778,11 +778,11 @@ Then, given the pressure, we could integrate around the aerofoil to find the for
 \begin{equation}
 \vec{F} = - \rho U \Gamma \, \unit{y},
 \end{equation}
-where the coordinates system is chosen such that the uniform flow far away is directed along the positive $x$ axis.  This is the same result as for a circular cylinder, equation (\ref{eq_force1}), and it's correct for the aerofoil as well.  This general result is called the \emph{Kutta-Joukowski theorem.}
+where the coordinate system is chosen such that the uniform flow far away is directed along the positive $x$ axis.  This is the same result as for a circular cylinder, equation (\ref{eq_force1}), and it's correct for the aerofoil as well.  This general result is called the \emph{Kutta-Joukowski theorem.}
 
 That brings us finally to a classic fluid dynamics question:  how do airplanes fly?  The answer, of course, as anyone who has stuck their hand out the window of a moving car knows, is that the wing deflects the air downward, causing an upward force on the wing itself.  However, the Kutta-Joukowski condition and theorem give an alternative explanation.
 
-We need two bits of information.  First, recall from Section \ref{sec_circulation} Kelvin's Circulation Theorem, which says that the circulation $\Gamma$ around a dyed, closed curve $C(t)$ in the fluid is constant.  And second, we know that for there to be a singularity-free flow around an aerofoil, there must be circulation $\Gamma = -4\pi Ua \sin \alpha$, and that this circulation is what provides upward lift on the aerofoil.  Consider, then, what happens as an airplane starts moving down the runway to take off -- see Figure \ref{fig_airplane}.
+We need two bits of information.  First, recall Kelvin's Circulation Theorem from Section \ref{sec_circulation}, which says that the circulation $\Gamma$ around a dyed, closed curve $C(t)$ in the fluid is constant.  And second, we know that for there to be a singularity-free flow around an aerofoil, there must be circulation $\Gamma = -4\pi Ua \sin \alpha$, and that this circulation is what provides upward lift on the aerofoil.  Consider, then, what happens as an airplane starts moving down the runway to take off -- see Figure \ref{fig_airplane}.
 
 When the airplane is initially at rest, before starting takeoff (top panel), the circulation around the curve $C(t)$ is obviously \emph{zero} -- the wing and fluid are at rest.  Then the wing starts to move to the left, or, as in our reference frames above where the object is at rest, the fluid starts to move to the right.  For there to be no singularities in the flow, there must be circulation around the wing -- but the \emph{total} circulation is still zero from Kelvin's Circulation Theorem.  So there must be some \emph{additional} circulation within $C(t)$, and in the opposite sense to balance out.  This is called a \emph{starting vortex}, and is easily seen in real airplanes or even with some water, food colouring, and a plastic card, as shown in Figure \ref{fig_starting_vortex}.  Notice the vortex is counterclockwise, as expected.  Why does the airplane fly?  Because the circulation generated around the wing provides \emph{lift}.  As the airplane travels faster (so larger $U$), both the circulation and the lift force increase.
 
@@ -910,7 +910,7 @@ So, as expected, $u_R = 0$ and $v_R = 0$ -- the vortex on the right is at rest i
 
 \subsection{Vortex Shedding}
 
-We've been discussing ideal fluids exclusively for the last two chapters, and will continue with them for the next one as well.  But I want to return for a moment to the major difference between viscous and inviscid flow at high Reynolds number: the presence of a boundary layer.  In an ideal fluid, flow around a circular cylinder looks like our solution (Figures \ref{fig_uniform_circle} and \ref{fig_cylinder_circ}) regardless of how fast the fluid is flowing.  In reality, for high speed flow (or equivalently high Reynolds number flow), the viscous boundary layer plays in important role in the behaviour of the fluid downstream.  
+We've been discussing ideal fluids exclusively for the last two chapters, and will continue with them for the next one as well.  But I want to return for a moment to the major difference between viscous and inviscid flow at high Reynolds number: the presence of a boundary layer.  In an ideal fluid, flow around a circular cylinder looks like our solution (Figures \ref{fig_uniform_circle} and \ref{fig_cylinder_circ}) regardless of how fast the fluid is flowing.  In reality, for high speed flow (or equivalently high Reynolds number flow), the viscous boundary layer plays an important role in the behaviour of the fluid downstream.  
 
 \begin{figure}
 \centering\includegraphics[width=0.9\linewidth]{Figures/Chapter4/fig_vortex_shedding}
@@ -1100,7 +1100,7 @@ Consider a vortex located at $z = a + ib$, where $a$ and $b$ are both positive, 
 
 (a) What is the complex potential for the fluid in the region $x \ge 0, y \ge 0$?
 
-(b) Plot the streamlines for the region $x \ge 0, y \ge 0$?
+(b) Plot the streamlines for the region $x \ge 0, y \ge 0$.
 
 (c) Show explicitly that the fluid velocity is zero at the corner.
 

@@ -63,15 +63,15 @@
 \contentsline {subsection}{\numberline {5.1.2}The Kinematic and Pressure Conditions}{123}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}Small Amplitude Waves}{125}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Sinusoidal Waves}{126}{subsection.5.1.4}%
-\contentsline {section}{Problems}{129}{section*.77}%
-\contentsline {chapter}{\chapternumberline {6}Special Topics}{130}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Deriving the Navier-Stokes Equation}{130}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}The Stress Tensor and Vector}{130}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Cauchy's Equation of Motion}{132}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Newtonian Fluids}{134}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Boundary Layers}{137}{section.6.2}%
-\contentsline {section}{\numberline {6.3}The Dam Break Problem}{140}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Spherical Flows}{140}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Astrophysical Flows}{141}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Numerical Methods}{141}{section.6.6}%
-\contentsline {section}{Problems}{141}{section*.83}%
+\contentsline {section}{Problems}{129}{section*.78}%
+\contentsline {chapter}{\chapternumberline {6}Special Topics}{131}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Deriving the Navier-Stokes Equation}{131}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}The Stress Tensor and Vector}{131}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Cauchy's Equation of Motion}{133}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Newtonian Fluids}{135}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Boundary Layers}{138}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The Dam Break Problem}{141}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Spherical Flows}{141}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Astrophysical Flows}{142}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Numerical Methods}{142}{section.6.6}%
+\contentsline {section}{Problems}{142}{section*.84}%

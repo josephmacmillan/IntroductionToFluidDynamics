@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  13 AUG 2022 17:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  15 AUG 2022 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3022,7 +3022,14 @@ File: Figures/Chapter5/fig_gravity_ripples.jpg Graphic file (type bmp)
  [128]
 File: Figures/Chapter5/fig_circle_paths.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_circle_paths.pdf>
- [129]) [130]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [129]
+File: Figures/Chapter5/fig_surface_tension.pdf Graphic file (type pdf)
+<use Figures/Chapter5/fig_surface_tension.pdf>
+
+[130] [131]) [132]
 \openout2 = `6_special_topics.aux'.
 
  (./6_special_topics.tex
@@ -3030,37 +3037,37 @@ File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
- [131
+ [133
 
 
 
 
-]
-[132] [133] [134] [135] [136] [137]
+] [134] [135] [136] [137]
+[138] [139]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [138] [139] [140]
+ [140] [141] [142]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [141]) [142]
+ [143]) [144]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- (./main.aux
-(./1_introduction.aux) (./2_viscous_fluids.aux) (./3_ideal_fluids.aux)
-(./4_potential_flow.aux) (./5_waves.aux) (./6_special_topics.aux))
+ (./main.aux (./1_introduction.aux)
+(./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
+(./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 05444F8ED08656855E9A59A0E87D8861;12264.
+(rerunfilecheck)             Checksum: 12E158CC0E0543A13A80E59B35FE1DF3;12404.
  ) 
 Here is how much of TeX's memory you used:
- 39282 strings out of 478774
- 806255 string characters out of 5864471
- 1367480 words of memory out of 6000000
- 58548 multiletter control sequences out of 15000+600000
+ 39297 strings out of 478774
+ 806803 string characters out of 5864471
+ 1368097 words of memory out of 6000000
+ 58562 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (148 pages).
+Output written on main.pdf (150 pages).

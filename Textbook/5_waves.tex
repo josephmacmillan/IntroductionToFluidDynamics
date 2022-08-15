@@ -56,6 +56,7 @@ This lays out the guiding equations behind our discussion of waves; all that's l
 % 5.1.2 - The Kinematic and Pressure Conditions
 
 \subsection{The Kinematic and Pressure Conditions}
+\label{sec_kin_press_cond}
 
 The first boundary condition comes from the fact that any fluid particle at the surface must remain at the surface.  You might be able to visualize this by imagining dyeing the fluid at the surface; as the surface moves up or down, the dyed fluid stays at the surface.  This means that those fluid particles at the surface must follow the vertical motion of the wave.  We can model this mathematically by defining a new function, $F(x, y, t)$, such that
 \begin{equation}
@@ -115,9 +116,10 @@ G(t) = \frac{p_0}{\rho}.
 Note that that's the constant atmospheric pressure $p_0$ in that equation.
 
 Our next step is to evaluate equation (\ref{eq_euler_wave}) at the surface $y = \eta(x, t)$:
-\[
+\begin{equation}
+\label{eq_pressure_surface}
 \dfdx{\varphi}{t} + \frac{p_0}{\rho} + \frac{1}{2} \vec{u}^2 + \Phi = \frac{p_0}{\rho} \quad \text{on} \quad y = \eta(x, t).
-\]
+\end{equation}
 Now we see why that choice of $G(t)$ was made, since the pressure terms cancel out.  Writing $\Phi = gy$ and $\vec{u}^2 = u^2 + v^2$, this becomes
 \begin{equation}
 \label{eq_pressure_cond}
@@ -306,6 +308,66 @@ As time goes on and the surface wave travels horizontally, the fluid particles u
 
 % 5.1.5 - Capillary Waves (surface tension effects, new BCs, surface tension-dominated waves, etc; include pic of the two types of waves, plus downstream/upstream stuff and pic of that)
 
+
+\subsection{Capillary Waves}
+
+In Section \ref{sec_kin_press_cond} we took the pressure to be continuous across the fluid-air interface, so that the pressure at the surface of the fluid was atmospheric pressure $p_0$.  However, this isn't quite true -- if the surface is \emph{curved}, as ours of course will be, then there is a small pressure discontinuity across the surface due to the \emph{surface tension} of the fluid.  Surface tension is related to the cohesion of fluid molecules and results in a force (per unit length) that is tangential to the surface of the fluid.  Water, for example, has a surface tension of 72.8 mN/m at a temperature of 20 C.  
+
+This tangential force will change the surface boundary conditions we just derived, although in many cases the effect can be neglected and gravity waves are a good approximation.  However, for small disturbances to the surface or short wavelengths, surface tension can have a noticeable and interesting effect.  In cases where surface tension is the dominant force, the waves are called \emph{capillary waves}, and where both gravity and surface tension are important the waves generated are sometimes called \emph{gravity-capillary waves}.
+
+\begin{figure}
+\centering\includegraphics[width=0.8\linewidth]{Figures/Chapter5/fig_surface_tension}
+\caption{Surface tension creates a force tangential to the surface of the fluid.}
+\label{fig_surface_tension}
+\end{figure}
+
+We can derive the pressure discontinuity across the surface by considering a small element of the fluid $ds$ as shown in Figure \ref{fig_surface_tension}.  Remember that although we're treating $ds$ as a line element, our fluid is two-dimensional and so $ds$ is actually an infinitesimally thin strip of area along the face of the wave.  Surface tension exerts a force at either end of $ds$ ($T_1$ on the left side and  $T_2$ on the right), and it's this difference we want to calculate.  Since we're still assuming small amplitude waves only, we can take the slope $d\eta/dx$ to be small.  This has a number of consequences:
+\begin{itemize}
+\item The angles $\theta_1$ and $\theta_2$ are small, and we can use small-angles approximations for sine and cosine, dropping any terms quadratic or higher in $\theta$.
+\item The fluid element executes \emph{vertical} motion only -- it goes up and down but not side-to-side.  This means that there should be no net force in the horizontal ($x$) direciton.
+\item We can take $ds = \sqrt{dx^2 + d\eta^2} \approx dx$.
+\end{itemize}
+
+Examining the horizontal components of the tensions, we see that
+\[
+T_{2x} - T_{1x} = T_2 \cos\theta_2 - T_1 \cos \theta_1 \approx T_2 - T_1.
+\]
+But because there is no net force in this direction, we must have $T_2 - T_1$.  In the vertical direction, we have
+\[
+T_{2y} - T_{1y} = T_2 \sin\theta_2 - T_1 \sin \theta_1 = T ( \theta_2 - \theta_1),
+\]
+but we can write the angles in terms of the slopes as
+\[
+\theta_2 \approx \frac{\partial\eta}{\partial x}\bigg|_{x + dx} \quad \text{and} \quad \theta_1 \approx \frac{\partial\eta}{\partial x}\bigg|_{x - dx}
+\]
+where $x$ is the location of the fluid element we're considering.  The difference in the vertical surface tensions is therefore
+\begin{equation}
+T_{2y} - T_{1y} = T \left( \frac{\partial\eta}{\partial x}\bigg|_{x+dx} - \frac{\partial\eta}{\partial x} \bigg|_{x-dx} \right) = T \ddfdx{\eta}{x} \, dx,
+\end{equation}
+where the \emph{second} derivative comes from the difference of two \emph{first} derivatives.
+
+Now, the quantity $T \partial^2\eta / \partial x^2$ is the net force on the fluid per unit \emph{area} -- it's a pressure.  This pressure must be balanced by the difference in pressure above (atmospheric pressure $p_0$) and below ($p$) the surface, so 
+\begin{equation}
+p_0 - p = T \ddfdx{\eta}{x} \quad \text{at} \quad y = \eta(x, t).
+\end{equation}
+If the surface is concave up, then the second derivative is positive, and the pressure just above the fluid is greater than the pressure just below the surface.  If the surface is concave down, the opposite happens:  pressure is greater just below the surface.
+
+We can incorporate this pressure difference into our pressure condition by repeating the steps in Section \ref{sec_kin_press_cond}; when we get to equation (\ref{eq_pressure_surface}), we need to use the new pressure at the surface, 
+\[
+p = p_0 - T \ddfdx{\eta}{x},
+\]
+in place of just the atmospheric pressure $p_0$.  That just adds an extra term in the pressure condition, which becomes
+\begin{equation}
+\label{eq_pressure_cond_cap}
+\dfdx{\varphi}{t} +  \frac{1}{2}(u^2 + v^2) + g\eta  - \frac{T}{\rho} \ddfdx{\eta}{x} = 0 \quad \text{on} \quad y = \eta(x, t).
+\end{equation}
+Linearizing as we did above gives
+\begin{equation}
+\label{eq_pressure_cond_cap_lin}
+\boxed{
+\dfdx{\varphi}{t} + g\eta - \frac{T}{\rho} \ddfdx{\eta}{x} = \quad \text{on} \quad y=0.
+}
+\end{equation}
 
 %
 %  SECTION 5.2 - Group Waves

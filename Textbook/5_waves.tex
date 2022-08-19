@@ -446,6 +446,13 @@ Now, for a surface wave, we'll need to include \emph{time} as well, but that's s
 \end{equation}
 where $k_n$ and $\omega_n$ are the wave number and frequency of the $n$th wave.
 
+\begin{figure}
+\centering\includegraphics[width=0.8\linewidth]{Figures/Chapter5/fig_two_cosines}
+\caption{A surface wave formed by the addition of two cosine waves with similar wavenumber.}
+\label{fig_two_cosines}
+\end{figure}
+
+\begin{example}[Two cosines]
 Let's try a simple example and consider a travelling wave comprised of two cosines of equal amplitude,
 \begin{equation}
 \label{eq_two_cosines}
@@ -465,12 +472,9 @@ If we substitute these expressions into equation (\ref{eq_two_cosines}), we can 
 \eta(x, t) = 2A \cos(\Delta k \, x - \Delta \omega \, t) \cos(kx - \omega t).
 \end{equation}
 This is just the equation of a single sinusoidal wave travelling with speed $c = \omega/k$, but the amplitude of this sinusoidal wave is \emph{modulated} by the term in front, sometimes called the \emph{envelope}.  This is shown in Figure \ref{fig_two_cosines}, with the envelope shown in red.
+\end{example}
 
-\begin{figure}
-\centering\includegraphics[width=0.8\linewidth]{Figures/Chapter5/fig_two_cosines}
-\caption{Wave speed $c$ versus wavelength of water waves.}
-\label{fig_two_cosines}
-\end{figure}
+
 
 We've seen, then, that it's possible to represent more complicated wave shapes by adding together sinusoidal waves.  However, a Fourier series like this will also be \emph{periodic}, which is not always the case in nature -- think of a single disturbance in a body of water generating a wave.  To describe a \emph{wave packet} like this, we need to instead use a Fourier integral.
 
@@ -547,7 +551,31 @@ But the first exponential term is now \emph{constant} -- it doesn't depend on $k
 
 This might not seem like much of an accomplishment, but this equation is easy to interpret, especially if you compare with equation \ref{eq_two_cosines_ans} from our example with adding two cosines together.  Like that result, our equation here has two parts:  a pure sinusoidal wave, of wave number $k_0$ and frequency $\omega_0$, and an \emph{envelope} (the entire integral).  Now, in principle this integral could be difficult or impossible to compute, depending on how complicated the initial surface disturbance was, but the important point is this: \emph{the envelope moves with the group speed $c_g$.}
 
-XXX Would like an example or something here; how does the wave packet move? XXX
+\begin{example}[Deep water waves]
+To illustrate this, let's suppose that we have gravity waves on deep water, in which case the dispersion relation is given by equation (\ref{eq_disp_relation})
+\[
+\omega(k) = \sqrt{gk}.
+\]
+As we've seen, this leads to a \emph{phase} velocity (meaning the velocity of a single sinusoidal wave of frequency $\omega$ and wavenumber $k$) of
+\[
+c = \sqrt{\frac{g}{k}}.
+\]
+In a wave packet, which includes multiple sinusoidal components of different wave numbers, each component will have a different phase speed; as long as the function $a(k)$ is narrow, however, these speeds will be very similar.
+
+The wave packet itself moves with the group speed, which in this example is
+\[
+c_g = \frac{d\omega}{dk} = \frac{1}{2} \sqrt{\frac{g}{k} },
+\]
+precisely half the phase speed.  That means that individual sinusoidal components of the wave packet move \emph{faster} than the wave packet.  This is shown in Figure \ref{fig_wave_packet_motion}, which plots the motion of a wave packet at three different times.  A single component is highlighted with a red dot; note that it moves toward the front of the wave packet as the wave packet travels to the right.  This is because of the faster phase speed.
+\end{example}
+
+\begin{figure}
+\centering\includegraphics[width=0.6\linewidth]{Figures/Chapter5/fig_wave_packet_motion}
+\caption{A wave packet in motion.  The dispersion relation is that for deep water waves, and the individual peaks in the wave packet (one is highlighted with the red dot) move twice as fast as the wave packet itself. The time units here are arbitrary.}
+\label{fig_wave_packet_motion}
+\end{figure}
+
+One last note about the group velocity -- energy.  Maybe the problem from acheson, but would be nice to see if anything better.
 
 % 5.2.3 - Group Velocity
 

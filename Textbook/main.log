@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  18 AUG 2022 15:42
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  19 AUG 2022 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3037,10 +3037,18 @@ File: Figures/Chapter5/fig_stream_obstacle.jpg Graphic file (type bmp)
 File: Figures/Chapter5/fig_two_cosines.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_two_cosines.pdf>
 
+Overfull \hbox (0.15608pt too wide) in paragraph at lines 468--470
+\TU/LibertinusSerif(1)/m/n/10 If we substitute these expressions into equation 
+([]5.31[]), we can write
+ []
+
 [136]
 File: Figures/Chapter5/fig_fourier_example.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_fourier_example.pdf>
- [137] [138]) [139]
+ [137] [138] [139]
+File: Figures/Chapter5/fig_wave_packet_motion.pdf Graphic file (type pdf)
+<use Figures/Chapter5/fig_wave_packet_motion.pdf>
+) [140] [141]
 \openout2 = `6_special_topics.aux'.
 
  (./6_special_topics.tex
@@ -3048,21 +3056,21 @@ File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
- [140
+ [142
 
 
 
 
-] [141] [142] [143]
-[144] [145] [146]
+] [143]
+[144] [145] [146] [147] [148]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [147] [148] [149]
+ [149] [150] [151]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [150]) [151]
+ [152]) [153]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -3070,15 +3078,15 @@ File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 (./1_introduction.aux) (./2_viscous_fluids.aux) (./3_ideal_fluids.aux)
 (./4_potential_flow.aux) (./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0252121A893A5B1E66AC8BE2E22E78B6;12901.
+(rerunfilecheck)             Checksum: 4BE119C7B03293432B9DA65D731D1B72;12901.
  ) 
 Here is how much of TeX's memory you used:
- 39385 strings out of 478774
- 810158 string characters out of 5864471
- 1371457 words of memory out of 6000000
- 58645 multiletter control sequences out of 15000+600000
+ 39399 strings out of 478774
+ 810698 string characters out of 5864471
+ 1372050 words of memory out of 6000000
+ 58658 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (157 pages).
+Output written on main.pdf (159 pages).

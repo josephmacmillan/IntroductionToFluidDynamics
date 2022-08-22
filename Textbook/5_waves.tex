@@ -178,6 +178,7 @@ We can make similar arguments for the pressure condition, equation (\ref{eq_pres
 
 As a simple but important example, suppose the surface can be described by a sinusoidal travelling wave, given by
 \begin{equation}
+\label{eq_sin_eta}
 \eta(x, t) = A \cos(kx - \omega t),
 \end{equation}
 where $k = 2\pi / \lambda$ is the wave number and $\omega = 2\pi \nu$ is the angular frequency of the wave.
@@ -224,6 +225,7 @@ kC = \omega A.
 \end{equation}
 Thus, the velocity potential is
 \begin{equation}
+\label{eq_sin_pot}
 \varphi(x, y, t) = \frac{\omega A}{k} e^{ky} \sin (kx - \omega t).
 \end{equation}
 This holds \emph{everywhere} in the fluid, not just at the surface, and we can use it to explore the motion of the fluid below the waves -- we'll do that in a moment.  But first, what about the pressure condition?  We haven't applied that yet.
@@ -575,9 +577,95 @@ precisely half the phase speed.  That means that individual sinusoidal component
 \label{fig_wave_packet_motion}
 \end{figure}
 
-One last note about the group velocity -- energy.  Maybe the problem from acheson, but would be nice to see if anything better.
+% 5.2.3 - Energy and Group Velocity
 
-% 5.2.3 - Group Velocity
+\subsection{Group Velocity and Energy}
+
+Perhaps not surprisingly when looking at wave motion like that shown in Figure \ref{fig_wave_packet_motion}, the energy in a wave is transported at the \emph{group velocity} $c_g$.  What is more surprising is that this is very general -- even our simple sinusoidal waves will transport energy at this speed rather than the phase speed, which is what the actual wave crests travel at.
+
+We can show this easily enough, and while doing so explore the ideas of energy in fluids which we haven't touched on much.  For example, let's start with the kinetic energy.  The kinetic energy of a fluid element is of course
+\[
+T = \frac{1}{2} m \vec{u}^2,
+\]
+where $m = \rho \, d\tau$ is the mass of the element with infinitesimal volume $d\tau$ and $\vec{u}^2 = u^2 + v^2$ as usual.  The kinetic energy of some volume of the fluid requires an integral over the volume to add up the contributions from each element:
+\begin{equation}
+T = \frac{1}{2} \int \rho \vec{u}^2 \, d \tau.
+\end{equation}
+In our case, however, dealing with a two-dimensional fluid, we'll calculate the kinetic energy over an area $da = dx \, dy$, so that we'll have the kinetic energy per unit length in the $z$ direction.  We'll also only make use of one full wavelength as shown in Figure \ref{fig_wave_energy}. The kinetic energy is then
+\begin{equation}
+T = \frac{1}{2} \rho \int_{x_0}^{x_0 + \lambda} \int_{-\infty}^{\eta} (u^2 + v^2) \, dy \, dx.
+\end{equation} 
+
+Making use of the small-amplitude approximation and assuming a sinusoidal wave with a surface given by equation (\ref{eq_sin_eta}) and velocity potential by equation (\ref{eq_sin_pot}), you can show that the result is given by (see Problem \ref{prob_energy})
+\begin{equation}
+T = \frac{1}{4} \rho g A^2 \lambda.
+\end{equation}
+This is the kinetic energy (per unit length) in the fluid below one wavelength $\lambda$ of a sinusoidal surface wave.
+
+\begin{figure}
+\centering\includegraphics[width=0.8\linewidth]{Figures/Chapter5/fig_wave_energy}
+\caption{We'll calculate the energy in the fluid within one wavelength.}
+\label{fig_wave_energy}
+\end{figure}
+
+In addition, the fluid will have gravitational potential energy as it changes in height.  For a single fluid element, the potential energy is
+\[
+U = mgy,
+\]
+and integrating throughout the fluid gives
+\begin{equation}
+U = \int \rho g y d\tau.
+\end{equation}
+As with the kinetic energy, we'll only integrate over the area shown in Figure \ref{fig_wave_energy}, so the potential energy becomes
+\begin{equation}
+U = \int_{x_0}^{x_0 + \lambda} \int_{0}^{\eta} \rho g y \, dy \, dx.
+\end{equation}
+Notice that the lower bound for the inner integral is $y=0$ -- we're setting the zero-point of potential energy there.  For our small-amplitude sinusoidal waves, you can show (Problem \ref{prob_energy} again) the total potential energy in one wavelength of fluid is
+\begin{equation}
+U = \frac{1}{4} \rho g A^2 \lambda. 
+\end{equation}
+This is identical to the kinetic energy, and the total energy per unit length along $z$ is
+\[
+E = \frac{1}{2} \rho g A^2 \lambda.
+\]
+However, it's more customary to work with the total wave energy \emph{per wavelength,} or
+\begin{equation}
+\label{eq_wave_energy}
+\bar{E} = \frac{1}{2} \rho g A^2.
+\end{equation} 
+
+We want to find the \emph{rate} at which this energy flows as the wave moves.  To do that, we'll calculate the \emph{power}, 
+\[
+P = \frac{dE}{dt} = \int d\vec{F} \cdot \vec{u}.
+\]
+Consider Figure \ref{fig_wave_energy} again.  The force of the fluid on a small area $da = dy dz$ (the red region) will be $d\vec{F} = p \ da \unit{x}$.  Now, as above, we'll make this calculation per unit length in the $z$ direction, so the power will be
+\begin{equation}
+P = \int_{-\infty}^\eta pu \, dy.
+\end{equation}
+The value of the pressure in this integral is that which is a result of the waves themselves, not the hydrostatic pressure due to gravity that was discussed in Section \ref{sec_static}.  We can find that from Euler's equation in the form of (\ref{eq_euler_wave}); rearranging for pressure (and dropping the quadratically small velocity term), it is
+\begin{equation}
+\frac{dE}{dt} = -\rho \dfdx{\varphi}{dt}.
+\end{equation}
+Substituting this and $u = \partial \varphi / \partial x$ into the integral, we get
+\[
+\frac{dE}{dt} = \frac{1}{2} \rho g \frac{\omega}{k} A^2 \cos^2(kx -\omega t).
+\]
+If we average this expression over one full period ($2\pi / \omega$) and use the phase speed, $c = \omega / k$, it becomes
+\begin{equation}
+\frac{d\bar{E}}{dt} = \frac{1}{4} \rho g A^2 c.
+\end{equation}
+This is the rate of energy transferred along the $x$ direction by the wave motion; notice that it's the \emph{average} energy.  But we calculated the average energy per wavelength above, and using equation (\ref{eq_wave_energy}) we can write
+\[
+\frac{d\bar{E}}{dt} = \bar{E} \left( \frac{1}{2} c \right)
+\]
+or, since the group speed is one half the phase speed,
+\begin{equation}
+\frac{d\bar{E}}{dt} = \bar{E} c_g.
+\end{equation}
+
+So, even in the case of pure sinusoidal waves, the energy is still transferred at the group speed rather than the phase speed.  It turns out this is actually a general result, valid for any dispersive  wave system.
+
+% 5.2.4 - Long Time Response
 
 
 %
@@ -608,6 +696,11 @@ To come
 
 \begin{problem}[Adding two cosines]
 \label{prob_two_cosines}
+To come
+\end{problem}
+
+\begin{problem}[Calculating energy]
+\label{prob_energy}
 To come
 \end{problem}
 

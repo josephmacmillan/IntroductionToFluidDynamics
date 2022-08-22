@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  19 AUG 2022 12:19
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  22 AUG 2022 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2820,7 +2820,7 @@ File: Figures/Chapter2/fig_poise_2d_setup.pdf Graphic file (type pdf)
 
 
 ]
-Overfull \hbox (2.1297pt too wide) in paragraph at lines 31--33
+Overfull \hbox (2.1297pt too wide) in paragraph at lines 32--34
 \TU/LibertinusSerif(1)/m/n/10 If we take the direction of gravity to be down as
  usual, so that $[] [] [][][] [][] [][][]$,
  []
@@ -2848,19 +2848,19 @@ File: Figures/Chapter3/fig_cylinder_pressure.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cylinder_pressure.pdf>
 
 [69]
-Overfull \hbox (1.85674pt too wide) in paragraph at lines 605--607
+Overfull \hbox (1.85674pt too wide) in paragraph at lines 606--608
 \TU/LibertinusSerif(1)/m/n/10 Remember what this means from Section []1.4[] – t
 hat $[]$ is constant on stream-
  []
 
 [70] [71]
-Overfull \hbox (1.57672pt too wide) in paragraph at lines 667--668
+Overfull \hbox (1.57672pt too wide) in paragraph at lines 668--669
 []\TU/LibertinusSerif(1)/m/n/10 Like the velocity potential, the stream functio
 n satisfies Laplace’s equa-
  []
 
 
-Overfull \hbox (0.74893pt too wide) in paragraph at lines 680--682
+Overfull \hbox (0.74893pt too wide) in paragraph at lines 681--683
 \TU/LibertinusSerif(1)/m/n/10 equation for two dimensional, irrotational, incom
 pressible flow. Although
  []
@@ -3037,7 +3037,7 @@ File: Figures/Chapter5/fig_stream_obstacle.jpg Graphic file (type bmp)
 File: Figures/Chapter5/fig_two_cosines.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_two_cosines.pdf>
 
-Overfull \hbox (0.15608pt too wide) in paragraph at lines 468--470
+Overfull \hbox (0.15608pt too wide) in paragraph at lines 470--472
 \TU/LibertinusSerif(1)/m/n/10 If we substitute these expressions into equation 
 ([]5.31[]), we can write
  []
@@ -3048,7 +3048,10 @@ File: Figures/Chapter5/fig_fourier_example.pdf Graphic file (type pdf)
  [137] [138] [139]
 File: Figures/Chapter5/fig_wave_packet_motion.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_wave_packet_motion.pdf>
-) [140] [141]
+ [140]
+File: Figures/Chapter5/fig_wave_energy.pdf Graphic file (type pdf)
+<use Figures/Chapter5/fig_wave_energy.pdf>
+ [141] [142] [143]) [144]
 \openout2 = `6_special_topics.aux'.
 
  (./6_special_topics.tex
@@ -3056,37 +3059,38 @@ File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
- [142
+
+[145
 
 
 
 
-] [143]
-[144] [145] [146] [147] [148]
+] [146] [147] [148] [149] [150] [151]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [149] [150] [151]
+ [152] [153] [154]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [152]) [153]
+ [155]) [156]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- (./main.aux
-(./1_introduction.aux) (./2_viscous_fluids.aux) (./3_ideal_fluids.aux)
-(./4_potential_flow.aux) (./5_waves.aux) (./6_special_topics.aux))
+
+(./main.aux (./1_introduction.aux) (./2_viscous_fluids.aux)
+(./3_ideal_fluids.aux) (./4_potential_flow.aux) (./5_waves.aux)
+(./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4BE119C7B03293432B9DA65D731D1B72;12901.
+(rerunfilecheck)             Checksum: 54A12E31BDB9B14D505AC2E9367B6437;13097.
  ) 
 Here is how much of TeX's memory you used:
- 39399 strings out of 478774
- 810698 string characters out of 5864471
- 1372050 words of memory out of 6000000
- 58658 multiletter control sequences out of 15000+600000
+ 39415 strings out of 478774
+ 811178 string characters out of 5864471
+ 1372725 words of memory out of 6000000
+ 58673 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (159 pages).
+Output written on main.pdf (162 pages).

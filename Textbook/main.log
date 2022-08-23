@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  22 AUG 2022 17:29
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  23 AUG 2022 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3051,7 +3051,17 @@ File: Figures/Chapter5/fig_wave_packet_motion.pdf Graphic file (type pdf)
  [140]
 File: Figures/Chapter5/fig_wave_energy.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_wave_energy.pdf>
- [141] [142] [143]) [144]
+ [141] [142] [143]
+File: Figures/Chapter5/fig_long_response.pdf Graphic file (type pdf)
+<use Figures/Chapter5/fig_long_response.pdf>
+ [144] [145]
+File: Figures/Chapter5/fig_local_wave_example.pdf Graphic file (type pdf)
+<use Figures/Chapter5/fig_local_wave_example.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [146])
+[147]
 \openout2 = `6_special_topics.aux'.
 
  (./6_special_topics.tex
@@ -3059,38 +3069,37 @@ File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
-
-[145
-
+ [148
 
 
 
-] [146] [147] [148] [149] [150] [151]
+
+] [149] [150] [151] [152] [153] [154]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [152] [153] [154]
+
+[155] [156] [157]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [155]) [156]
+ [158]) [159]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
-
-(./main.aux (./1_introduction.aux) (./2_viscous_fluids.aux)
-(./3_ideal_fluids.aux) (./4_potential_flow.aux) (./5_waves.aux)
-(./6_special_topics.aux))
+ (./main.aux (./1_introduction.aux)
+(./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
+(./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 54A12E31BDB9B14D505AC2E9367B6437;13097.
+(rerunfilecheck)             Checksum: 435546F7E64EBF07EF7F9B882086D6C1;13731.
  ) 
 Here is how much of TeX's memory you used:
- 39415 strings out of 478774
- 811178 string characters out of 5864471
- 1372725 words of memory out of 6000000
- 58673 multiletter control sequences out of 15000+600000
+ 39443 strings out of 478774
+ 812199 string characters out of 5864471
+ 1376144 words of memory out of 6000000
+ 58699 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (162 pages).
+Output written on main.pdf (165 pages).

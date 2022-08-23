@@ -596,7 +596,7 @@ In our case, however, dealing with a two-dimensional fluid, we'll calculate the 
 T = \frac{1}{2} \rho \int_{x_0}^{x_0 + \lambda} \int_{-\infty}^{\eta} (u^2 + v^2) \, dy \, dx.
 \end{equation} 
 
-Making use of the small-amplitude approximation and assuming a sinusoidal wave with a surface given by equation (\ref{eq_sin_eta}) and velocity potential by equation (\ref{eq_sin_pot}), you can show that the result is given by (see Problem \ref{prob_energy})
+Assuming a sinusoidal wave with a surface given by equation (\ref{eq_sin_eta}) and velocity potential by equation (\ref{eq_sin_pot}), you can show that the result is given by (see Problem \ref{prob_energy})
 \begin{equation}
 T = \frac{1}{4} \rho g A^2 \lambda.
 \end{equation}
@@ -620,7 +620,7 @@ As with the kinetic energy, we'll only integrate over the area shown in Figure \
 \begin{equation}
 U = \int_{x_0}^{x_0 + \lambda} \int_{0}^{\eta} \rho g y \, dy \, dx.
 \end{equation}
-Notice that the lower bound for the inner integral is $y=0$ -- we're setting the zero-point of potential energy there.  For our small-amplitude sinusoidal waves, you can show (Problem \ref{prob_energy} again) the total potential energy in one wavelength of fluid is
+Notice that the lower bound for the inner integral is $y=0$ -- we're setting the zero-point of potential energy there.  For our sinusoidal waves, you can show (Problem \ref{prob_energy} again) the total potential energy in one wavelength of fluid is
 \begin{equation}
 U = \frac{1}{4} \rho g A^2 \lambda. 
 \end{equation}
@@ -667,14 +667,117 @@ So, even in the case of pure sinusoidal waves, the energy is still transferred a
 
 % 5.2.4 - Long Time Response
 
+\subsection{Long-Time Response}
+
+Suppose there's some kind of disturbance in the middle of an otherwise calm pond.  Although the initial response of the water will be very complicated (top panel of Figure \ref{fig_long_response}), after enough time has passed and at a far enough distance from the disturbance, the wave structure will become more regular (bottom panels of Figure \ref{fig_long_response}).  This is because of \emph{dispersion} -- each Fourier sinusoidal component will travel at a particular speed, $c = \sqrt{g/k}$, according to its wavelength $\lambda = 2\pi/k$, with longer wavelengths travelling faster.  As you can see in Figure \ref{fig_long_response}, the wave has become approximately sinusoidal, but with a slowly varying wavelength, frequency, and amplitude.  At time $t_1$, far from the initial disturbance, the wavelength slowly increases.  A short time later at $t_2$, the wavelengths have become smaller in the same region.
+
+\begin{figure}
+\centering\includegraphics[width=0.7\linewidth]{Figures/Chapter5/fig_long_response}
+\caption{An initially messy disturbance (top panel, $t_0$) will eventually become regular at long times and far distances (bottom panels, $t_1$ and $t_2$). }
+\label{fig_long_response}
+\end{figure}
+
+Let's describe this long-time response to the disturbance by a \emph{local wavenumber} $k(x, t)$ and \emph{local frequency} $\omega(x, t)$.  We can then write for the surface the equation
+\begin{equation}
+\eta(x, t) = A(x, t) e^{i\theta(x, t)},
+\end{equation}
+where $A(x, t)$ describes the gradual modulation of the wave amplitude, and $\theta(x, t)$ the oscillatory aspect of it.  Presumably the amplitude is complicated and depends on the initial disturbance, but we can explore the oscillatory nature of the wave by connecting the function $\theta(x, t)$ to the local wavenumber and frequency.
+
+To do that, consider first a single sinusoidal wave; in that case we'd have
+\[
+\theta(x, t) = kx - \omega t,
+\]
+as usual for a travelling wave.  That suggests we can write, in a more general sense,
+\begin{equation}
+k = \dfdx{\theta}{x}, \quad \text{and} \quad \omega = -\dfdx{\theta}{t}.
+\end{equation}
+Then note that 
+\[
+\dfdx{k}{t} = \frac{\partial^2 \theta}{\partial t \partial x} = -\dfdx{\omega}{x} = \frac{\partial^2 \theta}{\partial x \partial t},
+\]
+which means that
+\begin{equation}
+\label{eq_locals}
+\dfdx{k}{t} + \dfdx{\omega}{x} = 0.
+\end{equation}
+But we know that the frequency is a function of wavenumber, $\omega = \omega(k)$, so
+\[
+\dfdx{\omega}{x} = \frac{d\omega}{dk}\dfdx{k}{x} = c_g \dfdx{k}{x},
+\]
+where I've used the group velocity $c_g = d\omega/dk$.  Equation (\ref{eq_locals}) then becomes
+\begin{equation}
+\label{eq_local_group}
+\dfdx{k}{t} + c_g \dfdx{k}{x} = 0.
+\end{equation}
+
+This is a key result, although you may not recognize it.  Compare this equation to the definition of the material derivative,
+\[
+\frac{Df}{Dt} = \dfdx{f}{t} + (\vec{u} \cdot \grad ) f;
+\]
+they're the same, or would be if the velocity was purely in the $x$-direction.  Now, if $Df/Dt = 0$, then $f$ is constant for a particular fluid element.  If we apply that line of thought to the wave result, equation (\ref{eq_local_group}), it suggests that \emph{the local wavenumber $k(x, t)$ is constant for an observer moving with the group velocity $c_g$}.
+
+\begin{example}[Deep water waves]
+For deep water gravity waves, the dispersion relation is $\omega(k) = \sqrt{gk}$ and the group velocity is
+\[
+c_g = \frac{d\omega}{dk} \frac{1}{2} \sqrt{ \frac{g}{k} }.
+\]
+Our result above suggests that if we race along beside a wave with speed $c_g$, we'll always see the same wavenumber $k$ (or wavelength $\lambda$).
+
+Let's pretend to do exactly that -- suppose a disturbance happens at $x=0$ and $t = 0$, and we start running (somehow on top of the water!) away from it with speed $c_g$.  After a time $t$ has passes, we're at position
+\[
+x = c_g t.
+\]
+Rearranging for the speed gives
+\[
+c_g = \frac{x}{t} = \frac{1}{2} \sqrt{ \frac{g}{k} },
+\]
+or
+\begin{equation}
+k = \frac{gt^2}{4x^2}.
+\end{equation}
+This equation tells us what wavenumber we'll see at position $x$ and time $t$.
+
+Now, we also have
+\begin{equation}
+\omega = \sqrt{gk} = \frac{gt}{2x}.
+\end{equation}
+Returning to our idea of a local wavenumber and frequency, we can write
+\[
+\dfdx{\theta}{x} = k = \frac{gt^2}{4x^2} \quad \text{and} \quad \dfdx{\theta}{t} = -\omega = -\frac{gt}{2x}.
+\]
+Integrating gives
+\begin{equation}
+\theta(x, t) = -\frac{gt^2}{4x}
+\end{equation}
+(plus a constant which fixes the phase that I've dropped for simplicity), so the surface is given by
+\begin{equation}
+\label{eq_surface_reponse}
+\eta(x, t) = A(x, t) e^{-i gt^2/4x}.
+\end{equation}
+The real part of this equation (for constant amplitude $A$) is plotted in Figure \ref{fig_local_wave_example} for two different times.  This surface matches what we saw in Figure \ref{fig_long_response}, which plotted the motion of a complicated wave packet; in both cases the wavenumber and frequency slowly change with time and space.
+\end{example}
+
+\begin{figure}
+\centering\includegraphics[width=0.7\linewidth]{Figures/Chapter5/fig_local_wave_example}
+\caption{Equation (\ref{eq_surface_reponse}) plotted at two different long times, far from the disturbance at $x=0$.}
+\label{fig_local_wave_example}
+\end{figure}
+
+
 
 %
 %  SECTION 5.3 - Sound waves
 %
 
+\section{Sound Waves}
+
 % 5.3.1 - Compressible Fluids
 
+\subsection{Compressible Fluids}
+
 % 5.3.2 - Small Amplitude Sound waves
+
+\subsection{Small Amplitude Sound Waves}
 
 
 

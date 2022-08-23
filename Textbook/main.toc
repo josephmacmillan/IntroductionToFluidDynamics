@@ -68,15 +68,19 @@
 \contentsline {subsection}{\numberline {5.2.1}Fourier Series}{134}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Wave Packets}{137}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}Group Velocity and Energy}{140}{subsection.5.2.3}%
-\contentsline {section}{Problems}{143}{section*.86}%
-\contentsline {chapter}{\chapternumberline {6}Special Topics}{145}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Deriving the Navier-Stokes Equation}{145}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}The Stress Tensor and Vector}{145}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Cauchy's Equation of Motion}{147}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Newtonian Fluids}{149}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Boundary Layers}{152}{section.6.2}%
-\contentsline {section}{\numberline {6.3}The Dam Break Problem}{155}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Spherical Flows}{155}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Astrophysical Flows}{156}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Numerical Methods}{156}{section.6.6}%
-\contentsline {section}{Problems}{156}{section*.92}%
+\contentsline {subsection}{\numberline {5.2.4}Long-Time Response}{143}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Sound Waves}{147}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Compressible Fluids}{147}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Small Amplitude Sound Waves}{147}{subsection.5.3.2}%
+\contentsline {section}{Problems}{147}{section*.88}%
+\contentsline {chapter}{\chapternumberline {6}Special Topics}{148}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Deriving the Navier-Stokes Equation}{148}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}The Stress Tensor and Vector}{148}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Cauchy's Equation of Motion}{150}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Newtonian Fluids}{152}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Boundary Layers}{155}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The Dam Break Problem}{158}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Spherical Flows}{158}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Astrophysical Flows}{159}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Numerical Methods}{159}{section.6.6}%
+\contentsline {section}{Problems}{159}{section*.94}%

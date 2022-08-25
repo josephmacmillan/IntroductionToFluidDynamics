@@ -175,6 +175,7 @@ We can make similar arguments for the pressure condition, equation (\ref{eq_pres
 % 5.1.4 - Sinusoidal Waves (dispersion relation, potential, example of fluid path under wave)
 
 \subsection{Sinusoidal Waves on Deep Water}
+\label{sec_sin_waves}
 
 As a simple but important example, suppose the surface can be described by a sinusoidal travelling wave, given by
 \begin{equation}
@@ -455,6 +456,7 @@ where $k_n$ and $\omega_n$ are the wave number and frequency of the $n$th wave.
 \end{figure}
 
 \begin{example}[Two cosines]
+\label{ex_two_cos}
 Let's try a simple example and consider a travelling wave comprised of two cosines of equal amplitude,
 \begin{equation}
 \label{eq_two_cosines}
@@ -598,6 +600,7 @@ T = \frac{1}{2} \rho \int_{x_0}^{x_0 + \lambda} \int_{-\infty}^{\eta} (u^2 + v^2
 
 Assuming a sinusoidal wave with a surface given by equation (\ref{eq_sin_eta}) and velocity potential by equation (\ref{eq_sin_pot}), you can show that the result is given by (see Problem \ref{prob_energy})
 \begin{equation}
+\label{eq_kin_energy_wave}
 T = \frac{1}{4} \rho g A^2 \lambda.
 \end{equation}
 This is the kinetic energy (per unit length) in the fluid below one wavelength $\lambda$ of a sinusoidal surface wave.
@@ -622,6 +625,7 @@ U = \int_{x_0}^{x_0 + \lambda} \int_{0}^{\eta} \rho g y \, dy \, dx.
 \end{equation}
 Notice that the lower bound for the inner integral is $y=0$ -- we're setting the zero-point of potential energy there.  For our sinusoidal waves, you can show (Problem \ref{prob_energy} again) the total potential energy in one wavelength of fluid is
 \begin{equation}
+\label{eq_pot_energy_wave}
 U = \frac{1}{4} \rho g A^2 \lambda. 
 \end{equation}
 This is identical to the kinetic energy, and the total energy per unit length along $z$ is
@@ -669,7 +673,7 @@ So, even in the case of pure sinusoidal waves, the energy is still transferred a
 
 \subsection{Long-Time Response}
 
-Suppose there's some kind of disturbance in the middle of an otherwise calm pond.  Although the initial response of the water will be very complicated (top panel of Figure \ref{fig_long_response}), after enough time has passed and at a far enough distance from the disturbance, the wave structure will become more regular (bottom panels of Figure \ref{fig_long_response}).  This is because of \emph{dispersion} -- each Fourier sinusoidal component will travel at a particular speed, $c = \sqrt{g/k}$, according to its wavelength $\lambda = 2\pi/k$, with longer wavelengths travelling faster.  As you can see in Figure \ref{fig_long_response}, the wave has become approximately sinusoidal, but with a slowly varying wavelength, frequency, and amplitude.  At time $t_1$, far from the initial disturbance, the wavelength slowly increases.  A short time later at $t_2$, the wavelengths have become smaller in the same region.
+Suppose there's some kind of disturbance in the middle of an otherwise calm pond.  Although the initial response of the water will be very complicated, after enough time has passed and at a far enough distance from the disturbance, the wave structure will become more regular.  This is because of \emph{dispersion} -- each Fourier sinusoidal component will travel at a particular speed, $c = \sqrt{g/k}$, according to its wavelength $\lambda = 2\pi/k$, with longer wavelengths travelling faster. This is shown in Figure \ref{fig_long_response}; the top panel, at time $t_0$, displays  a complicated wave packet, generated from a superposition of 20 different random frequencies. The wave packet evolves according to equation (\ref{eq_fourier_int}), and the middle panel, at a much later time $t_1$ and far from the region where the wave packet was located at $t_0$, shows that the surface wave has now smoothed out and become approximately sinusoidal, but with a slowly varying wavelength, frequency, and amplitude.  At time $t_1$, far from the initial disturbance, the wavelength slowly increases.  A short time later at $t_2$, and in the exact same region, the wavelengths have become smaller.
 
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{Figures/Chapter5/fig_long_response}
@@ -717,9 +721,10 @@ This is a key result, although you may not recognize it.  Compare this equation 
 they're the same, or would be if the velocity was purely in the $x$-direction.  Now, if $Df/Dt = 0$, then $f$ is constant for a particular fluid element.  If we apply that line of thought to the wave result, equation (\ref{eq_local_group}), it suggests that \emph{the local wavenumber $k(x, t)$ is constant for an observer moving with the group velocity $c_g$}.
 
 \begin{example}[Deep water waves]
+\label{ex_deep_water_waves}
 For deep water gravity waves, the dispersion relation is $\omega(k) = \sqrt{gk}$ and the group velocity is
 \[
-c_g = \frac{d\omega}{dk} \frac{1}{2} \sqrt{ \frac{g}{k} }.
+c_g = \frac{d\omega}{dk} = \frac{1}{2} \sqrt{ \frac{g}{k} }.
 \]
 Our result above suggests that if we race along beside a wave with speed $c_g$, we'll always see the same wavenumber $k$ (or wavelength $\lambda$).
 
@@ -775,9 +780,183 @@ The real part of this equation (for constant amplitude $A$) is plotted in Figure
 
 \subsection{Compressible Fluids}
 
+
+We turn, at long last, to relaxing the one constraint on our fluids that has been in place since the very beginning -- we'll allow our fluid to be \emph{compressible}.  The means that the divergence of the velocity is no longer zero; what else changes?
+
+Well, since we're still considering inviscid fluids, Euler's equation continues to hold, which I'll write here as
+\begin{equation}
+\rho \left( \dfdx{\vec{u}}{t} + \vec{u} \cdot \grad \vec{u} \right) = -\grad p.
+\end{equation}
+The difference, now, though, is that the density of the fluid is no longer constant -- $\rho = \rho(\vec{r}, t)$.  We can also replace the incompressibility equation with the \emph{continuity equation}, which expresses conservation of mass (see Problem \ref{prob_conserve_mass}),
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{u} ) = 0.
+\end{equation}
+
+That gives us two equations, but we actually have three unknowns:  the velocity $\vec{u}$ (all three components), the pressure $p(\vec{r}, t)$, and the density $\rho(\vec{r}, t)$.  We need a third equation -- something to connect the pressure and density.  This is called an \emph{equation of state}, and a classic example -- and the one we'll assume for our fluid here -- is an ideal gas.
+
+The ideal gas law is the equation of state for an ideal or perfect gas (which of course is idealized but can model real gases under a range of conditions), and is the familiar equation
+\[
+PV = nRT,
+\]
+where $V$ is the volume of the gas, $n$ is the number of moles, and $T$ is the temperature.  It can also be written in terms of the density as
+\begin{equation}
+p = \rho \kappa T,
+\end{equation}
+where $\kappa = R/M$ and $M$ is the molar mass.
+
+This gives us a third equation, linking the pressure and density, but unfortunately it also gives us another state variable:  the temperature $T$.  However, if we make another assumption -- that each fluid element conserves its \emph{entropy} -- there is a simpler relation we can use.  In this case, any change in the gas is \emph{adiabatic}, meaning no heat will flow between fluid elements.  This is reasonable as long as any compression or expansion of the fluid is much faster than heat can be conducted.  From basic thermodynamics of ideal gases\footnote{As always, I'm giving only the bare essentials here; any basic thermodynamics textbook can fill in the gaps for you.}, adiabatic processes obey the relation
+\begin{equation}
+\label{eq_adiabat}
+pV^\gamma = \text{constant},
+\end{equation}
+where $\gamma$ is the ratio of specific heats,
+\[
+\gamma = \frac{C_p}{C_V}.
+\]
+This ratio is $\gamma = 5/3$ for monatomic gases and $\gamma = 7/5$ for diatomic gases; air, made mostly of diatomic nitrogen and oxygen molecules, has $\gamma \approx 1.4$.
+
+If we use $\rho = m/V$ and absorb the mass into the constant, we can rewrite equation (\ref{eq_adiabat}) in terms of the density:
+\[
+p\rho^{-\gamma} = \text{constant}.
+\]
+Taking the material derivative of both sides gives
+\begin{equation}
+\frac{D}{Dt} \left( p \rho^{-\gamma} \right) = 0.
+\end{equation}
+This is the third equation we need -- a relationship between pressure and density.  In words, it says that for an adiabatic process, each fluid element conserves the product $p\rho^{-\gamma}$.
+
+
 % 5.3.2 - Small Amplitude Sound waves
 
 \subsection{Small Amplitude Sound Waves}
+
+Let's recap the equations that describe compressible fluids:
+\begin{align*}
+\rho \left( \dfdx{\vec{u}}{t} + \vec{u} \cdot \grad \vec{u} \right) & =  -\grad p, \\
+\frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{u} ) &  = 0,\quad  \text{and} \\
+\frac{D}{Dt} \left( p \rho^{-\gamma} \right) & =  0.
+\end{align*}
+
+The simplest solution -- the trivial one -- to these equations is for a fluid at rest.  Then $\vec{u} = \vec{0}$ and we get
+\[
+\rho = \text{constant} = \rho_0 \quad \text{and} \quad p = \text{constant} = p_0.
+\]
+That's obviously \emph{too} simple, but suppose a small disturbance happens in this initially static fluid.  Then the fluid won't deviate \emph{too} much from this solution -- it will have a small velocity $\vec{u} = \vec{u}_1$ and a small deviation from the constant pressure and density,
+\begin{equation}
+\rho = \rho_0 + \rho_1(\vec{r}, t), \quad \text{and} \quad p = p_0 + p_1(\vec{r}, t).
+\end{equation}
+In these equations, the subscript ``1'' indicates the deviation from the static solution, and those quantities can be taken as small.  As usual, that means we can drop terms that have quadratic or higher products of those quantities.
+
+Since the fluid was initially at rest, with constant density and pressure, the product $p\rho^{-\gamma}$ initially has the value $p_0 \rho_0^{-\gamma}$, which is itself constant. But that product is constant for each fluid element and can't change even after the disturbance, so the third equation above says
+\[
+(p_0 + p_1) (\rho_0 + \rho_1)^{-\gamma} = p_0 \rho_0^{-\gamma}.
+\]
+By pulling out $p_0$ and $\rho_0$ on the left hand side, we can rewrite this as
+\[
+\left( 1 + \frac{p_1}{p_0} \right) \left( 1 + \frac{\rho_1}{\rho_0} \right)^{-\gamma} = 1.
+\]
+Since $\rho_1$ is small we can expand the second term on the left as
+\[
+\left( 1 + \frac{\rho_1}{\rho_0} \right)^{-\gamma} \approx 1 - \gamma \frac{\rho_1}{\rho_0},
+\]
+giving us, after some multiplication,
+\[
+1 - \gamma \frac{\rho_1}{\rho_0} + \frac{p_1}{p_0} - \gamma \frac{p_1}{p_0} \frac{\rho_1}{\rho_0} = 1.
+\]
+But that last term on the left is quadratic in smallness and can be dropped.  The ones cancel, and we're left with
+\[
+\frac{p_1}{p_0} = \gamma \frac{\rho_1}{\rho_0}.
+\]
+If we define the quantity
+\begin{equation}
+a_0 = \sqrt{\frac{\gamma p_0}{\rho_0}},
+\end{equation}
+we have that the pressure and density are proportional to each other:
+\begin{equation}
+\label{eq_pres_dens}
+p_1 = a_0^2 \rho_1.
+\end{equation}
+What exactly does $a_0$ represent?  I'll leave it for later, but you can get a hint by realizing that the units of $a_0$ are units of velocity.
+
+Now, let's return to Euler's equation; substituting in the pressure and density deviations, it becomes
+\[
+(\rho_0 + \rho_1) \left( \dfdx{\vec{u}_1}{t} + \vec{u}_1 \cdot \grad \vec{u}_1 \right) = - \grad (p_0 + p_1).
+\]
+This can be simplified quite a bit -- any time two small quantities are multiplied together they'll be dropped, and the pressure $p_0$ on the right hand side is constant, so its derivative will be zero.  We're left with the much better
+\begin{equation}
+\label{eq_euler_sound}
+\rho_0 \dfdx{\vec{u}_1}{t} = -\grad p_1.
+\end{equation}
+
+Next up is the continuity equation, which becomes
+\[
+\frac{\partial}{\partial t} \left( \rho_0 + \rho_1 \right) + \grad \cdot \left[ (\rho_0 + \rho_1) \vec{u}_1 \right] = 0
+\]
+and simplifies to
+\begin{equation}
+\label{eq_cont_sound}
+\dfdx{\rho_1}{t} + \rho_0 \grad \cdot \vec{u}_1 = 0.
+\end{equation}
+Under the assumption of a small disturbance in an initially static fluid, we have been able to linearize the equations that describe compressible fluids.  The response of the fluid is given by equations (\ref{eq_pres_dens}), (\ref{eq_euler_sound}), and (\ref{eq_cont_sound}).  We just have a little bit more work to do -- these are coupled equations and we need to uncouple them.
+
+Here's how we do that.  First, take the divergence of equation (\ref{eq_euler_sound}):
+\[
+\rho_0 \dfdx{}{t} (\grad \cdot \vec{u}_1 )= -\nabla^2 p_1.
+\]
+From equation (\ref{eq_cont_sound}), the divergence is
+\[
+\grad \cdot \vec{u}_1 = -\frac{1}{\rho_0} \dfdx{\rho_1}{t},
+\]
+and plugging this into the equation above and simplifying gives
+\[
+\ddfdx{\rho_1}{t} = \nabla^2 p_1.
+\]
+Finally, using equation (\ref{eq_pres_dens}) to replace the density, we have a single equation for the pressure:
+\begin{equation}
+\boxed{
+\ddfdx{p_1}{t} = a_0^2 \nabla^2 p_1.
+}
+\end{equation}
+
+This is a famous differential equation called the (three dimensional) \emph{wave equation}.  As its name suggests, it describes a wave; in this case, a pressure wave.  The constant $a_0$ we defined above is the \emph{speed} of the wave; in air at standard pressure and temperature it takes on the value $a_0 \approx 334$ m/s.  We're talking, of course, about \emph{sound waves}.
+
+\begin{example}[Sound waves in one dimension]
+If $p_1 = p_1(x, t)$ only, the wave equation becomes
+\[
+\ddfdx{p_1}{t} = a_0^2 \ddfdx{p_1}{x}.
+\]
+As you can show in Problem \ref{prob_wave_sol}, the general solution to this differential equation is
+\begin{equation}
+p_1(x, t) = f(x - a_0t) + g(x + a_0t),
+\end{equation}
+where $f$ and $g$ are arbitrary functions.  This solution describes a wave propagating to the right ($f$) and left ($g$) with speed $a_0$ and no change of shape.  The fact that there's no change of shape means that sound waves are \emph{dispersionless}, unlike water waves.
+\end{example}
+
+\begin{example}[Spherical sound waves]
+Let's now suppose that the pressure only depends on the \emph{distance} $r$ from the disturbance.  In that case, the wave is spherically symmetric, and the wave equation in spherical coordinates with no dependence on the angular variables is
+\begin{equation}
+\ddfdx{p_1}{t} = a_0^2 \frac{1}{r^2} \dfdx{}{r} \left( r^2 \dfdx{p_1}{r} \right).
+\end{equation}
+We can solve this by defining a new variable, $\beta$, such that
+\[
+p_1(r, t) = \frac{1}{r} \beta(r, t).
+\]
+Working out the derivatives, the wave equation surprisingly reduces to 
+\[
+\ddfdx{\beta}{t} = a_0^2 \ddfdx{\beta}{r},
+\]
+exactly the one-dimensional form from the example above.  That means the solution is the same for $\beta$, as well, and we have the pressure given by
+\[
+p_1(r, t) = \frac{1}{r} \bigl[ F(r - a_0t) + G(r + a_0t) \bigr].
+\]
+In this case, $F$ represents an \emph{outgoing} wave and $G$ an \emph{incoming}.  For a spherically symmetric disturbance in the fluid, however, we can drop the wave coming in from infinity since it doesn't make sense physically, and we have
+\begin{equation}
+p_1 (r, t) = \frac{1}{r} F(r - a_0 t).
+\end{equation}
+This describes a spherical wave expanding outward at the sound speed $a_0$, but there's one big difference from the one dimensional example -- the amplitude of the pressure wave \emph{decreases} with distance as $1/r$.  This of course is well-known -- sounds are harder to hear the further away you are.
+\end{example}
+
+Although the examples above dealt with the pressure wave, notice that the density acts the same way because of equation (\ref{eq_pres_dens}) -- they're proportional to each other, so as the pressure increases, so too does the density.  We could just as easily describe sound waves as density waves within the fluid.
 
 
 
@@ -789,21 +968,89 @@ The real part of this equation (for constant amplitude $A$) is plotted in Figure
 
 \begin{problem}[Effects of finite depth]
 \label{prob_finite_depth}
-To come
+Consider small-amplitude sinusoidal water waves, as in Section \ref{sec_sin_waves}, but assume the water has a finite depth at $y = -h$.  Ignore any surface tension effects.
+
+(a) Show that the dispersion relation is
+\begin{equation}
+\omega^2 = gk \tanh kh.
+\end{equation}
+
+(b) Calculate the phase speed $c$ and group speed $c_g$.  What is the fastest phase speed these waves can have?
+
+(c) For \emph{shallow} water, $h \ll \lambda$, show that these waves are non-dispersive.  What is their speed?
+
 \end{problem}
 
 \begin{problem}[Gravity-capillary dispersion relation]
 \label{prob_grav_cap_dispersion}
-To come
+Using the pressure condition with surface tension, equation (\ref{eq_pressure_cond_cap_lin}), show that the dispersion relation for sinusoidal gravity-capillary waves is given by
+\[
+\omega^2 = gk + \frac{Tk^3}{\rho}.
+\]
+Calculate and plot the phase speed $c$ and group speed $c_g$ of these waves.
 \end{problem}
 
 \begin{problem}[Adding two cosines]
 \label{prob_two_cosines}
-To come
+Consider a surface wave consisting of two cosine waves as in Example \ref{ex_two_cos}:
+\[
+\eta(x, t) = A \cos(k_1 x - \omega_1 t) + A \cos(k_2 x - \omega_2 t).
+\]
+Show that, if $k_1 = k - \Delta k$, $k_2 = k + \Delta k$, and $\omega_1 = \omega - \Delta \omega$, $\omega_2 = \omega + \Delta \omega$, you can write the shape of the wave as
+\[
+\eta(x, t) = 2A \cos(\Delta k \, x - \Delta \omega \, t) \cos(kx - \omega t),
+\]
+so that it consists of a single sinusoidal wave modulated by an envelope.
 \end{problem}
 
-\begin{problem}[Calculating energy]
+
+
+
+\begin{problem}[Calculating the energy of a wave]
 \label{prob_energy}
-To come
+
+(a) Show that the kinetic energy of a wave, integrated over a single wavelength, is given by equation (\ref{eq_kin_energy_wave}).
+
+(b) Show that the potential energy of a wave, integrated over a single wavelength, is given by equation (\ref{eq_pot_energy_wave}).
 \end{problem}
+
+
+
+\begin{problem}[Long time response of capillary waves]
+Following Example \ref{ex_deep_water_waves}, suppose a small disturbance in a pond creates \emph{capillary} waves.  After a long time and far from the disturbance, show that the surface is given by the real part of
+\[
+\eta(x, t) = A(x, t) e^{4i\rho x^3 / 27 T t^2}.
+\]
+Plot the surface at two different times.
+\end{problem}
+
+
+\begin{problem}[Wave packet problem?]
+Maybe?
+\end{problem}
+
+
+\begin{problem}[Solving the wave equation]
+\label{prob_wave_sol}
+The one dimensional wave equation for the pressure perturbation $p_1(x, t)$ is
+\[
+\ddfdx{p_1}{t} = a_0^2 \ddfdx{p_1}{x}.
+\]
+Define two new variables,
+\[
+\xi = x - a_0t \quad \text{and}\quad \eta = x + a_0t,
+\]
+and show that the wave equation becomes
+\[
+\frac{\partial ^2 p_1}{\partial \xi \partial \eta} = 0.
+\]
+Solve this by direct integration and show that the general solution to the wave equation is
+\[
+p_1(x, t) = f(x - a_0t) + g(x + a_0t).
+\]
+\end{problem}
+
+
+
+
 

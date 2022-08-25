@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  23 AUG 2022 09:52
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  25 AUG 2022 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3037,7 +3037,7 @@ File: Figures/Chapter5/fig_stream_obstacle.jpg Graphic file (type bmp)
 File: Figures/Chapter5/fig_two_cosines.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_two_cosines.pdf>
 
-Overfull \hbox (0.15608pt too wide) in paragraph at lines 470--472
+Overfull \hbox (0.15608pt too wide) in paragraph at lines 472--474
 \TU/LibertinusSerif(1)/m/n/10 If we substitute these expressions into equation 
 ([]5.31[]), we can write
  []
@@ -3055,13 +3055,23 @@ File: Figures/Chapter5/fig_wave_energy.pdf Graphic file (type pdf)
 File: Figures/Chapter5/fig_long_response.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_long_response.pdf>
  [144] [145]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [146]
 File: Figures/Chapter5/fig_local_wave_example.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_local_wave_example.pdf>
 
+[147] [148] [149] [150] [151]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [146])
-[147]
+ [152]
+Overfull \hbox (0.27612pt too wide) in paragraph at lines 980--981
+[]\TU/LibertinusSerif(1)/m/n/10 (c) For \TU/LibertinusSerif(0)/m/it/10 shallow 
+\TU/LibertinusSerif(1)/m/n/10 water, $[] [] []$, show that these waves are non-
+dispersive.
+ []
+
+[153]) [154]
 \openout2 = `6_special_topics.aux'.
 
  (./6_special_topics.tex
@@ -3069,21 +3079,21 @@ File: Figures/Chapter2/fig_deform.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_deform.pdf>
 File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_stress_tensor.pdf>
- [148
+ [155
 
 
 
 
-] [149] [150] [151] [152] [153] [154]
+] [156] [157] [158] [159] [160]
+[161]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
-
-[155] [156] [157]
+ [162] [163] [164]
 File: Figures/Chapter2/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result1.pdf>
 File: Figures/Chapter2/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_result2.pdf>
- [158]) [159]
+ [165]) [166]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -3094,12 +3104,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 435546F7E64EBF07EF7F9B882086D6C1;13731.
  ) 
 Here is how much of TeX's memory you used:
- 39443 strings out of 478774
- 812199 string characters out of 5864471
- 1376144 words of memory out of 6000000
- 58699 multiletter control sequences out of 15000+600000
+ 39457 strings out of 478774
+ 812427 string characters out of 5864471
+ 1376830 words of memory out of 6000000
+ 58713 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 115i,16n,152p,1203b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,16n,152p,1263b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (165 pages).
+Output written on main.pdf (172 pages).

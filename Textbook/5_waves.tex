@@ -19,7 +19,7 @@ We turn our attention now to the \emph{interface} between two fluids -- in our d
 \label{fig_pond}
 \end{figure}
 
-These waves are called \emph{gravity waves} since, as we'll see, the main force determining their behaviour is gravity.  However, in some cases -- typically when the wavelengths are very short -- \emph{surface tension} can be the dominant force in attempting to restore equilibrium to the surface.  In that case the waves can behave very differently, and often both forces must be considered.
+These waves are called \emph{gravity waves} since, as we'll see, the main force determining their behaviour is gravity.  However, in some cases -- typically when the wavelengths are very short -- \emph{surface tension} can instead be the dominant force in attempting to restore equilibrium to the surface.  In that case the waves can behave very differently, and often both forces must be considered.
 
 To begin our discussion, consider a generic example of a surface wave as shown in Figure \ref{fig_generic_wave}.  The shape of the surface -- the interface between the two fluids -- will be described by the function $\eta(x, t)$, so that the surface itself is given by the equation
 \begin{equation}
@@ -41,7 +41,7 @@ We'll also take the flow to be irrotational, so that $\curl \vec{u} = \vec{0}$. 
 \[
 \dfdx{v}{x} - \dfdx{u}{y} = 0.
 \]
-It might seem like a leap to assume irrotationality, but if we imagine starting with a perfectly static fluid, with no wave at the interface, then the flow is obviously initially irrotational.  But as time goes on, Kelvin's circulation theorem (see Section \ref{sec_circulation}) guarantees that the flow will remain irrotational -- the circulation must remain zero.
+It might seem like a leap to assume irrotationality, but if we imagine starting with a perfectly static fluid, with no wave at the interface, then the flow is obviously initially irrotational.  But as time goes on, Kelvin's circulation theorem (see Section \ref{sec_circulation}) guarantees that the flow will continue to be irrotational -- the circulation must remain zero.
 
 Since our flow is irrotational, we're free to describe it with the velocity potential $\varphi(x, y, t)$.  In two dimensions, $\vec{u} = \grad \varphi$ becomes
 \begin{equation}
@@ -92,9 +92,9 @@ or
 \dfdx{\eta}{t} + u\dfdx{\eta}{x} = v \quad \text{on} \quad y = \eta(x, t).
 }
 \end{equation}
-This is called the \emph{kinematic condition} at the surface; it ensures that fluid particles move with the surface wave.
+This is called the \emph{kinematic condition} at the surface; it ensures that fluid particles there move with the surface wave.
 
-The second boundary condition at the surface follows from considering the pressure in the fluid:  it must be \emph{continuous} across the interface.  Since we're usually assuming air above the fluid, we'll take the pressure at the surface to be atmospheric pressure, $p_0$, which is of course constant along the surface.  
+The second boundary condition at the surface follows from considering the pressure in the fluid:  it must be \emph{continuous} across the interface.  Since we're usually assuming air above the fluid, we'll take the pressure at the surface to be atmospheric pressure $p_0$, which is of course constant along the surface.  
 
 Consider Euler's equation in the form of equation (\ref{eq_euler_bernoulli}),
 \[
@@ -109,7 +109,7 @@ Integrating leads to
 \label{eq_euler_wave}
 \dfdx{\varphi}{t} + \frac{p}{\rho} + \frac{1}{2} \vec{u}^2 + \Phi = G(t),
 \end{equation}
-where $G(t)$ is the integration ``constant'' -- it can still be a function of time.  But we're free to take $G(t)$ to be anything we want, since it will go away once we take the space derivative. So, for reasons we'll see in a second, let's take it to be
+where $G(t)$ is the integration ``constant'' -- it can still be a function of time.  Of course, we're free to take $G(t)$ to be anything we want, since it will go away once we take the space derivative. So, for reasons we'll see in a second, let's take it to be
 \begin{equation}
 G(t) = \frac{p_0}{\rho}.
 \end{equation}
@@ -244,9 +244,9 @@ or
 \end{equation}
 This is an important relationship between the frequency of a wave and its wavelength, and is called the \emph{dispersion relation} for deep water gravity waves.  You might be more familiar with \emph{disperionless} waves like waves on a string or even electromagnetic waves.  In these kinds of waves, $\omega \propto k$.  Because sinusoidal waves travel with speed
 \begin{equation}
-c = \frac{\omega}{k},
+c = \frac{\omega}{k}
 \end{equation}
-the speed of the wave won't depend on the wavelength.  But for water waves, with $\omega \propto \sqrt{k}$, different wavelengths will travel at different speeds, since
+(called the \emph{phase velocity}), the speed of the wave won't depend on the wavelength.  But for water waves, with $\omega \propto \sqrt{k}$, different wavelengths will travel at different speeds, since
 \[
 c = \sqrt{\frac{g}{k}} = \sqrt{\frac{g\lambda}{2\pi}}.
 \]
@@ -260,7 +260,7 @@ Thus, longer wavelengths will travel \emph{faster} than shorter ones.  This lead
 
 \begin{example}[Fluid motion under the surface]
 
-Now that we have the velocity potential $\varphi(x, y, t)$, we can examine the entire fluid flow.  In particular, imagine a single fluid particle initially at some depth under the surface.  What path does the particle take as the surface waves propagate to the right?
+Now that we have the velocity potential $\varphi(x, y, t)$, we can examine the entire fluid flow.  In particular, imagine a single fluid particle initially at some depth under the surface.  What path does the particle take as the surface waves propagate above?
 
 Start with the fluid velocity, which we find from the potential:
 \[
@@ -310,7 +310,7 @@ As time goes on and the surface wave travels horizontally, the fluid particles u
 
 In Section \ref{sec_kin_press_cond} we took the pressure to be continuous across the fluid-air interface, so that the pressure at the surface of the fluid was atmospheric pressure $p_0$.  However, this isn't quite true -- if the surface is \emph{curved}, as ours of course will be, then there is a small pressure discontinuity across the surface due to the \emph{surface tension} of the fluid.  Surface tension is related to the cohesion of fluid molecules and results in a force (per unit length) that is tangential to the surface of the fluid.  Water, for example, has a surface tension of $T = 72.8$ mN/m at a temperature of 20 C.  
 
-This tangential force will change the surface boundary conditions we just derived, although in many cases the effect can be neglected and gravity waves are a good approximation.  However, for small disturbances to the surface or short wavelengths, surface tension can have a noticeable and interesting effect.  In cases where surface tension is the dominant force, the waves are called \emph{capillary waves}, and where both gravity and surface tension are important the waves generated are sometimes called \emph{gravity-capillary waves}.
+This tangential force will change the surface boundary conditions we just derived, although in many cases the effect can be neglected and gravity waves are a good approximation.  However, for small disturbances to the surface or short wavelengths, surface tension can have noticeable and interesting effects.  In cases where surface tension is the dominant force, the waves are called \emph{capillary waves}, and where both gravity and surface tension are important the waves generated are sometimes called \emph{gravity-capillary waves}.
 
 \begin{figure}
 \centering\includegraphics[width=0.8\linewidth]{Figures/Chapter5/fig_surface_tension}
@@ -318,7 +318,7 @@ This tangential force will change the surface boundary conditions we just derive
 \label{fig_surface_tension}
 \end{figure}
 
-We can derive the pressure discontinuity across the surface by considering a small element of the fluid $ds$ as shown in Figure \ref{fig_surface_tension}.  Remember that although we're treating $ds$ as a line element, our fluid is two-dimensional and so $ds$ is actually an infinitesimally thin strip of area along the face of the wave.  Surface tension exerts a force at either end of $ds$ ($T_1$ on the left side and  $T_2$ on the right), and it's this difference we want to calculate.  Since we're still assuming small amplitude waves only, we can take the slope $d\eta/dx$ to be small.  This has a number of consequences:
+We can derive the pressure discontinuity across the surface by considering a small element of the fluid $ds$ as shown in Figure \ref{fig_surface_tension}.  Remember that although we're treating $ds$ as a line element, our fluid is two-dimensional and so $ds$ is actually an infinitesimally thin strip of area along the face of the wave.  Surface tension exerts a force at either end of $ds$ ($T_1$ on the left side and  $T_2$ on the right), and it's the difference between these we want to calculate.  Since we're still assuming small amplitude waves only, we can take the slope $d\eta/dx$ to be small.  This has a number of consequences:
 \begin{itemize}
 \item The angles $\theta_1$ and $\theta_2$ are small, and we can use small-angle approximations for sine and cosine, dropping any terms quadratic or higher in $\theta$.
 \item The fluid element executes \emph{vertical} motion only -- it goes up and down but not side-to-side.  This means that there should be no net force in the horizontal ($x$) direciton.
@@ -392,7 +392,7 @@ For these waves, longer wavelengths actually travel \emph{slower}, in contrast t
 
 \begin{figure}
 \centering\includegraphics[width=0.9\linewidth]{Figures/Chapter5/fig_cap_ripples}
-\caption{Capillary waves created by dropping a tiny pebble into water.  Notice that the shorter wavelengths have travelled further than the longer ones.}
+\caption{Capillary waves created by dropping tiny pebbles into water.  Notice that the shorter wavelengths have travelled further than the longer ones.}
 \label{fig_cap_ripples}
 \end{figure}
 
@@ -486,11 +486,11 @@ We've seen, then, that it's possible to represent more complicated wave shapes b
 
 \subsection{Wave Packets}
 
-The Fourier integral is the generalization of the Fourier series (equation \ref{eq_fourier_series}) by letting the indexed parameter $n$ becomes a continuous parameter $k$.  In that case the sum becomes an integral, and any function (including non-periodic ones) can be written as
+The Fourier integral is the generalization of the Fourier series (equation \ref{eq_fourier_series}) by letting the indexed parameter $n$ become a continuous parameter $k$.  In that case the sum becomes an integral, and any function (including non-periodic ones) can be written as
 \begin{equation}
 f(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} a(k) e^{ikx} \, dk.
 \end{equation}
-Here $a(k)$ (which is a complex function even if $f(x)$ is real) is called the \emph{Fourier transform} of the function $f(x)$, and can be calculated by 
+Here $a(k)$ (which in general is a complex function even if $f(x)$ is real) is called the \emph{Fourier transform} of the function $f(x)$, and can be calculated by 
 \[
 a(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(x) e^{-ikx} \, dx.
 \]
@@ -505,7 +505,7 @@ As an example, consider the function
 \[
 f(x) = \cos(k_0 x) e^{-x^2},
 \]
-shown in the left panel of Figure \ref{fig_fourier_example}.  In the plot, I've set $k_0 = 10$.  This is a classic ``wave packet'' shape, and is not periodic.  We'll explore surface waves that look like this in a moment; the key feature we'll use is shown in the right hand panel, which is the Fourier transform $a(k)$ (actually, it's the absolute value $|a(k)|$ since it's a complex function).  Imagine the original function $f(x)$ consisting of a series of sinusoidal waves, like we did above, except this time the index is continuous -- hence the integral instead of the summation.  The Fourier transform of the wave packet tells us the wave numbers of those sinusoidal waves; in this case we see that most of the waves have a wave number close to $k_0 = 10$, but that's not the only wave number involved.  In fact, to make up this wave packet shape, we need a whole range of wave numbers.  Despite that, finite wave packets like this do typically have a fairly narrow range of wave numbers, and we'll make use of this property in a moment.
+shown in the left panel of Figure \ref{fig_fourier_example}.  In the plot, I've set $k_0 = 10$.  This is a classic ``wave packet'' shape, and is not periodic.  We'll explore surface waves that look like this in a moment; the key feature we'll use is shown in the right hand panel, which is the Fourier transform $a(k)$ (actually, it's the absolute value $|a(k)|$ since it's a complex function).  Imagine the original function $f(x)$ consisting of a series of sinusoidal waves, like we did in the previous Section, except this time the index is continuous -- hence the integral instead of the summation.  The Fourier transform of the wave packet tells us the wave numbers of those sinusoidal waves; in this case we see that most of the waves have a wave number close to $k_0 = 10$, but that's not the only wave number involved.  In fact, to make up this wave packet shape, we need a whole range of wave numbers.  Despite that, finite wave packets like this do typically have a fairly narrow range of wave numbers, and we'll make use of this property in a moment.
 
 By the way, if you've studied basic quantum mechanics, you would have seen this at play with the uncertainty principle, with wave number here standing in for momentum.  The better we know the position of the wave -- the less ``spread out'' it is -- the less we know the wave number, and vice versa.  
 
@@ -648,7 +648,7 @@ P = \int_{-\infty}^\eta pu \, dy.
 \end{equation}
 The value of the pressure in this integral is that which is a result of the waves themselves, not the hydrostatic pressure due to gravity that was discussed in Section \ref{sec_static}.  We can find that from Euler's equation in the form of (\ref{eq_euler_wave}); rearranging for pressure (and dropping the quadratically small velocity term), it is
 \begin{equation}
-\frac{dE}{dt} = -\rho \dfdx{\varphi}{dt}.
+p = -\rho \dfdx{\varphi}{dt}.
 \end{equation}
 Substituting this and $u = \partial \varphi / \partial x$ into the integral, we get
 \[
@@ -796,7 +796,7 @@ That gives us two equations, but we actually have three unknowns:  the velocity 
 
 The ideal gas law is the equation of state for an ideal or perfect gas (which of course is idealized but can model real gases under a range of conditions), and is the familiar equation
 \[
-PV = nRT,
+pV = nRT,
 \]
 where $V$ is the volume of the gas, $n$ is the number of moles, and $T$ is the temperature.  It can also be written in terms of the density as
 \begin{equation}
@@ -804,7 +804,7 @@ p = \rho \kappa T,
 \end{equation}
 where $\kappa = R/M$ and $M$ is the molar mass.
 
-This gives us a third equation, linking the pressure and density, but unfortunately it also gives us another state variable:  the temperature $T$.  However, if we make another assumption -- that each fluid element conserves its \emph{entropy} -- there is a simpler relation we can use.  In this case, any change in the gas is \emph{adiabatic}, meaning no heat will flow between fluid elements.  This is reasonable as long as any compression or expansion of the fluid is much faster than heat can be conducted.  From basic thermodynamics of ideal gases\footnote{As always, I'm giving only the bare essentials here; any basic thermodynamics textbook can fill in the gaps for you.}, adiabatic processes obey the relation
+This gives us a third equation, linking the pressure and density, but unfortunately it also gives us another state variable:  the temperature $T$.  However, if we make another assumption -- that each fluid element conserves its \emph{entropy} -- there is a simpler relation we can use.  In this case, any change in the gas is \emph{adiabatic}, meaning no heat will flow between fluid elements.  This is reasonable as long as any compression or expansion of the fluid is much faster than heat can be conducted.  From basic thermodynamics of ideal gases,\footnote{As always, I'm giving only the bare essentials here; any basic thermodynamics textbook can fill in the gaps for you.} adiabatic processes obey the relation
 \begin{equation}
 \label{eq_adiabat}
 pV^\gamma = \text{constant},
@@ -966,7 +966,7 @@ Although the examples above dealt with the pressure wave, notice that the densit
 \addcontentsline{toc}{section}{Problems}
 \markright{Problems}%
 
-\begin{problem}[Effects of finite depth]
+\begin{problem}[Effects of finite depth, part I]
 \label{prob_finite_depth}
 Consider small-amplitude sinusoidal water waves, as in Section \ref{sec_sin_waves}, but assume the water has a finite depth at $y = -h$.  Ignore any surface tension effects.
 
@@ -981,6 +981,15 @@ Consider small-amplitude sinusoidal water waves, as in Section \ref{sec_sin_wave
 
 \end{problem}
 
+\begin{problem}[Effects of finite depth, part II]
+\label{prob_finite_depth_2}
+
+(a) For the case of finite depth, as in Problem \ref{prob_finite_depth}, find the velocity potential $\varphi(x, y, t)$.  
+
+(b) Assuming that it doesn't deviate too much from a mean position $(\bar{x}, \bar{y})$, find the path a fluid particle takes under the surface.  Plot the paths for a few different values of mean depth $\bar{y}$.
+
+\end{problem}
+
 \begin{problem}[Gravity-capillary dispersion relation]
 \label{prob_grav_cap_dispersion}
 Using the pressure condition with surface tension, equation (\ref{eq_pressure_cond_cap_lin}), show that the dispersion relation for sinusoidal gravity-capillary waves is given by
@@ -989,6 +998,11 @@ Using the pressure condition with surface tension, equation (\ref{eq_pressure_co
 \]
 Calculate and plot the phase speed $c$ and group speed $c_g$ of these waves.
 \end{problem}
+
+\begin{problem}[Capillary wave packets]
+Show that for pure capillary waves the group speed $c_g$ is \emph{twice} the phase speed $c$.  What does this suggest for the motion of an individual peak in a wave packet of capillary waves?  This, by the way, is why the capillary waves generated by the pole in the stream (Figure \ref{fig_stream_obstacle}) travel upstream.
+\end{problem}
+
 
 \begin{problem}[Adding two cosines]
 \label{prob_two_cosines}
@@ -1024,10 +1038,6 @@ Following Example \ref{ex_deep_water_waves}, suppose a small disturbance in a po
 Plot the surface at two different times.
 \end{problem}
 
-
-\begin{problem}[Wave packet problem?]
-Maybe?
-\end{problem}
 
 
 \begin{problem}[Solving the wave equation]

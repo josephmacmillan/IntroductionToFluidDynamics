@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  25 AUG 2022 12:05
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  29 AUG 2022 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3022,10 +3022,14 @@ File: Figures/Chapter5/fig_gravity_ripples.jpg Graphic file (type bmp)
  [128]
 File: Figures/Chapter5/fig_circle_paths.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_circle_paths.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [129]
 File: Figures/Chapter5/fig_surface_tension.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_surface_tension.pdf>
- [130] [131] [132]
+
+[130] [131] [132]
 File: Figures/Chapter5/fig_cap_ripples.jpg Graphic file (type bmp)
 <Figures/Chapter5/fig_cap_ripples.jpg>
 File: Figures/Chapter5/fig_grav_and_cap.pdf Graphic file (type pdf)
@@ -3104,10 +3108,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 435546F7E64EBF07EF7F9B882086D6C1;13731.
  ) 
 Here is how much of TeX's memory you used:
- 39457 strings out of 478774
- 812427 string characters out of 5864471
- 1376830 words of memory out of 6000000
- 58713 multiletter control sequences out of 15000+600000
+ 39458 strings out of 478774
+ 812448 string characters out of 5864471
+ 1376878 words of memory out of 6000000
+ 58714 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1263b,978s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -341,34 +341,174 @@ This equation must be solved numerically, but it can be tricky to do so while ma
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\linewidth]{Figures/Chapter2/fig_boundary_result1}
+\includegraphics[width=0.7\linewidth]{Figures/Chapter6/fig_boundary_result1}
 \caption{The function $f(\eta)$ (black) and $f'(\eta)$ (red).  Note that the boundary layer is clear -- it extends out to around $\eta \sim 2$.  After that, $f(\eta) \approx \eta$. }
 \label{fig_boundary_result1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{Figures/Chapter2/fig_boundary_result2}
-\caption{Vector plots of the invisid flow (left) and viscous flow (right).  The boundary layer can be clearly seen in the flow -- the red area indicates small velocity. }
+\includegraphics[width=\linewidth]{Figures/Chapter6/fig_boundary_result2}
+\caption{Vector plots of the invisid flow (left) and viscous flow (right).  The boundary layer can be clearly seen in the flow -- the blue colour indicates small velocity. }
 \label{fig_boundary_result2}
 \end{figure}
 
-
+%
+% --- SECTION - ADVANCED TOPIC 3 ---
+% 
 
 \section{The Dam Break Problem}
 
 Coming soon.
 
 
+%
+% --- SECTION - ADVANCED TOPIC 4 ---
+% 
+
+
 \section{Spherical Flows}
 
-Axisymmetric whatever.
+Coming soon.
+
+%
+% --- SECTION - ADVANCED TOPIC 5 ---
+% 
+
+\section{Stellar Structure}
+
+In this section we turn our attention to using fluid dynamics to explore the structure of \emph{stars}.  There are two pretty big things which we'll to include in addition to the usual theory:  the presence of \emph{self-gravity}, meaning that the star is massive enough that we have to take its own gravity into account, and the presence of energy generation and transport -- stars create energy through nuclear fusion at their core and transport it to the surface via mechanisms like radiative transport and convection.
+
+\subsection{Newtonian Gravity}
+
+We've already discussed, way back in Chapter 3, using a \emph{gravitational potential} to describe gravity, and we'll continue that here.  If $\vec{g}$ is the gravitation field as usual, then we can write it in terms of a gradient of a scalar,
+\begin{equation}
+\vec{g} = -\grad \Phi.
+\end{equation}
+It'll be much easier to work with the gravitational potential rather than the field.  
+
+One difference from what we've done before, however, is the form that the field $\vec{g}$ takes; after all, we're not on the surface of the Earth anymore, where $\vec{g} = [0, 0, -g]$, for example.  Instead, it's due to the entire star itself, and we have to add up all the contributions from each bit of it.  From Newton's law of gravity, the force on a mass $m$ due to a mass $m'$ is 
+\[
+\vec{F}(\vec{r}) = -\frac{G m m'}{|\vec{r} - \vec{r}'|^3} (\vec{r} - \vec{r}'),
+\]
+where $\vec{r}$ is the location of mass $m$ and $\vec{r}'$ is the location of mass $m'$.  From Newton's second law, the mass feels an acceleration
+\[
+\vec{g}(\vec{r}) = \frac{\vec{F}(\vec{r})}{m} = -\frac{G m'}{|\vec{r} - \vec{r}'|^3} (\vec{r} - \vec{r}')
+\]
+(and $\vec{g}$ is often called the gravitational field).  At this point it's simple to generalize to get the field due to a continuous mass distribution like a star:
+\begin{equation}
+\vec{g}(\vec{r}) = -G \int_V \frac{ \rho(\vec{r}') (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3} \, d\tau'.
+\end{equation}
+
+This is the connection between the mass density $\rho(\vec{r})$ and the field $\vec{g}(\vec{r})$; what about the potential $\Phi(\vec{r})$?  We find the potential via Poisson's equation,
+\begin{equation}
+\label{eq_poisson}
+\boxed{
+\nabla^2 \Phi(\vec{r}) = 4 \pi G \rho(\vec{r}).
+}
+\end{equation}
+This is the main equation of Newtonian gravity.
 
 
+\subsection{Energy Transport}
 
-\section{Astrophysical Flows}
+A star generates energy at its core through fusion; stars on the so-called main sequence burn hydrogen to helium.  This process is of course quite complicated, requiring understanding of the various nuclear processes that happen, but if we ignore the details, suppose that $\epsilon$ is the total energy released through fusion per unit mass per unit time -- that means
+\[
+\int_V \epsilon \rho \, d\tau
+\]
+is the \emph{rate} at which energy is generated within the star.
 
-Or stellar atmospheres?
+The star then transports that energy to the surface.  There are two main processes that accomplish this:  radiative transport, in which energy is carried by photons, and adiabatic convection, in which energy is carried by matter.  Again, ignoring the details for now, we'll call $\vec{F}$ the \emph{flux} of energy, and the quantity
+\[
+\int_S \vec{F} \cdot d\vec{a}
+\]
+represents the rate that energy is transported through a surface $S$ with area vector $d\vec{a}$.
+
+In addition to these two processes, the energy within a star can change due to the work done by the pressure in the fluid and the work done by gravity.  If we add up all the contributions, the total rate of energy change is
+\begin{equation}
+\label{eq_energy_all}
+\frac{dE}{dt} = - \int_S p \vec{u} \cdot d\vec{a} + \int_V \vec{g} \cdot \vec{u} \rho d\tau + \int_V \epsilon \rho d\tau - \int_S \vec{F} \cdot d\vec{a}
+\end{equation}
+(note the negative sign on the pressure and flux terms to account for the fact that the area vector $d\vec{a}$ points outward).
+
+The total energy $E$ can be written as the sum of the kinetic energy $T$ and the internal thermal energy (per unit mass) $U$, so the change in energy is
+\[
+\frac{dE}{dt} = \frac{d}{dt}\int_V \left( \frac{1}{2} \vec{u}^2 + U \right) \rho d\tau.
+\]
+If we move the derivative inside the integral, it becomes the material derivative, 
+\[
+\frac{dE}{dt} = \int_V \left[ \frac{D}{Dt}\left( \frac{1}{2} \vec{u}^2 \right) + \frac{DU}{Dt} \right] \rho d\tau.
+\]
+We can then use the divergence theorem to turn the surface integrals in equation (\ref{eq_energy_all}) into volume integrals, and, since the volume is arbitrary, drop the integrals to get
+\begin{equation}
+\label{eq_energy_all2}
+\rho \left[ \frac{D}{Dt}\left( \frac{1}{2} \vec{u}^2 \right) + \frac{DU}{Dt} \right] = -\grad \cdot (p\vec{u}) + \rho \vec{g} \cdot \vec{u} + \rho \epsilon - \grad \cdot \vec{F}.
+\end{equation}
+
+One last thing:  we can use Euler's equation (assuming the star is made of an ideal fluid, a good assumption) to get rid of the kinetic energy term, and the continuity equation to clean things up a bit more.  Problem \ref{prob_energy_change} has the details; equation (\ref{eq_energy_all2}) becomes
+\begin{equation}
+\label{eq_thermal_energy}
+\boxed{
+\frac{DU}{Dt} = \frac{p}{\rho^2} \frac{D\rho}{Dt} + \epsilon - \frac{1}{\rho} \grad \cdot \vec{F}.
+}
+\end{equation}
+This equation says that the internal thermal energy of a fluid element can change in three different ways:  by a change in density, by generating energy via fusion, or by transporting energy away. 
+
+\subsection{Equations of Stellar Structure}
+
+Equations (\ref{eq_poisson}) and (\ref{eq_thermal_energy}), along with Euler's equation and the continuity equation, constitute the theory of stellar structure.  For convenience, I'll put them all together:
+\begin{align*}
+\frac{D \uu}{Dt} = -\frac{1}{\rho} \grad p + \vec{g} & \quad \text{(Euler's equation),} \\
+\frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{u} ) = 0 & \quad \text{(continuity equation),} \\
+\nabla^2 \Phi = 4 \pi G \rho & \quad \text{(self-gravity),} \\
+\frac{DU}{Dt} = \frac{p}{\rho^2} \frac{D\rho}{Dt} + \epsilon - \frac{1}{\rho}  \grad \cdot \vec{F} & \quad \text{(Thermal enegry).}
+\end{align*}
+
+Now, that's four equations, but if you count the unknowns, they're actually five:  the velocity $\vec{u}$, the pressure $p$, the density $\rho$, the gravitational potential $\Phi$ (or the field $\vec{g}$), and the thermal energy $U$.  Note that $\epsilon$, the rate of energy generation, and $\vec{F}$, the flux of energy, aren't strictly unknowns here; they require additional theory to compute, depending on what exactly we're modelling, so think of them as \emph{inputs} into the theory of stellar structure. But what's the fifth equation?  As discussed back in Section \ref{sec_comp_fluids}, we need an \emph{equation of state}.  More on what we'll use in a bit.
+
+These equations are extremely complicated to solve, even numerically.  But we can make some headway and produce simple but useful models of stars and other objects with a few assumptions:
+\begin{itemize}
+\item That the fluid has no time dependence -- it's \emph{steady flow}.  But we'll also assume no time dependence for every variable, including energy $U$.
+\item Even stronger, we'll assume the fluid is \emph{static} -- that $\vec{u} = 0$.  Our stars will be made up of a fluid that doesn't actually flow.
+\item And we'll assume spherical symmetry -- there's only a dependence on the distance from the origin, $r$.
+\end{itemize}
+
+As you might guess, these assumptions drastically simplify our equations; they become
+\begin{align*}
+\frac{dp}{dr} = -\rho \frac{d\Phi}{dr}  & \quad \text{(Euler's equation),} \\
+0 = 0 & \quad \text{(continuity equation),} \\
+\frac{1}{r^2} \frac{d}{dr} \left(r^2 \frac{d\Phi}{dr} \right) = 4 \pi G \rho & \quad \text{(self-gravity),} \\
+0 =  \epsilon - \frac{1}{\rho}  \grad \cdot \vec{F} & \quad \text{(Thermal enegry).}
+\end{align*}
+But even better, we can combine the first and third equation in the following way.  First, integrate the third equation for self-gravity, so that
+\[
+r^2 \frac{d\Phi}{dr} = \int_0^r 4\pi G \rho(r') r'^2 \, dr'.
+\]
+But the right hand side is (almost) just the mass contained inside a radius $r$:
+\[
+M(r) = 4\pi \int_0^r \rho(r') r'^2 \, dr',
+\]
+so the third equation can be written
+\begin{equation}
+\frac{d\Phi}{dr} = \frac{GM(r)}{r^2},
+\end{equation}
+and substituted into the first equation, giving
+\begin{equation}
+\boxed{
+\frac{dp}{dr} = - \frac{GM(r) \rho}{r^2}.
+}
+\end{equation}
+This is the equation for \emph{hydrostatic equilibrium}: the inward force of gravity is balanced by the outward pressure of the fluid, allowing the star to be static.
+
+
+\subsection{Polytropic Models}
+
+\subsection{Stellar Formation}
+
+
+%
+% --- SECTION - ADVANCED TOPIC 6 ---
+% 
 
 \section{Numerical Methods}
 
@@ -383,4 +523,22 @@ Or stellar atmospheres?
 \begin{problem}[Pressure and the Stress Tensor]
 \label{prob_pressure} 
 Show that, for the Newtonian stress tensor (equation \ref{eq_stress_newtonian}), the pressure is the negative of the average of the three normal stresses.  Explain why this makes sense.
+\end{problem}
+
+\begin{problem}[Rate of change of thermal energy]
+\label{prob_energy_change} 
+
+(a) From Euler's equation (\ref{eq_euler}), derive the \emph{mechanical energy equation},
+\[
+\frac{D}{Dt} \left( \frac{1}{2} \vec{u}^2 \right) = -\frac{1}{\rho} \vec{u} \cdot \grad p + \vec{u} \cdot \vec{g}.
+\]
+(\emph{Hint}: Start by taking the dot product of Euler's equation with $\vec{u}$.)
+
+(b) From the continuity equation (\ref{eq_continuity}), show that you can write the divergence of the velocity as
+\[
+\grad \cdot \vec{u} = -\frac{1}{\rho} \frac{D\rho}{Dt}.
+\]
+
+(c) Thus, show that equation (\ref{eq_energy_all2}) becomes equation (\ref{eq_thermal_energy}).
+
 \end{problem}

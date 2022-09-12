@@ -461,7 +461,7 @@ Equations (\ref{eq_poisson}) and (\ref{eq_thermal_energy}), along with Euler's e
 \frac{D \uu}{Dt} = -\frac{1}{\rho} \grad p + \vec{g} & \quad \text{(Euler's equation),} \\
 \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{u} ) = 0 & \quad \text{(continuity equation),} \\
 \nabla^2 \Phi = 4 \pi G \rho & \quad \text{(self-gravity),} \\
-\frac{DU}{Dt} = \frac{p}{\rho^2} \frac{D\rho}{Dt} + \epsilon - \frac{1}{\rho}  \grad \cdot \vec{F} & \quad \text{(Thermal enegry).}
+\frac{DU}{Dt} = \frac{p}{\rho^2} \frac{D\rho}{Dt} + \epsilon - \frac{1}{\rho}  \grad \cdot \vec{F} & \quad \text{(thermal enegry).}
 \end{align*}
 
 Now, that's four equations, but if you count the unknowns, they're actually five:  the velocity $\vec{u}$, the pressure $p$, the density $\rho$, the gravitational potential $\Phi$ (or the field $\vec{g}$), and the thermal energy $U$.  Note that $\epsilon$, the rate of energy generation, and $\vec{F}$, the flux of energy, aren't strictly unknowns here; they require additional theory to compute, depending on what exactly we're modelling, so think of them as \emph{inputs} into the theory of stellar structure. But what's the fifth equation?  As discussed back in Section \ref{sec_comp_fluids}, we need an \emph{equation of state}.  More on what we'll use in a bit.
@@ -474,12 +474,12 @@ These equations are extremely complicated to solve, even numerically.  But we ca
 \end{itemize}
 
 As you might guess, these assumptions drastically simplify our equations; they become
-\begin{align*}
-\frac{dp}{dr} = -\rho \frac{d\Phi}{dr}  & \quad \text{(Euler's equation),} \\
+\begin{align}
+\frac{dp}{dr} = -\rho \frac{d\Phi}{dr}  & \quad \text{(Euler's equation),} \label{eq_star_1} \\
 0 = 0 & \quad \text{(continuity equation),} \\
-\frac{1}{r^2} \frac{d}{dr} \left(r^2 \frac{d\Phi}{dr} \right) = 4 \pi G \rho & \quad \text{(self-gravity),} \\
-0 =  \epsilon - \frac{1}{\rho}  \grad \cdot \vec{F} & \quad \text{(Thermal enegry).}
-\end{align*}
+\frac{1}{r^2} \frac{d}{dr} \left(r^2 \frac{d\Phi}{dr} \right) = 4 \pi G \rho & \quad \text{(self-gravity),} \label{eq_star_3} \\
+\epsilon = \frac{1}{\rho} \frac{1}{r^2} \frac{d}{dr} ( r^2 F) & \quad \text{(thermal enegry).} \label{eq_star_4}
+\end{align}
 But even better, we can combine the first and third equation in the following way.  First, integrate the third equation for self-gravity, so that
 \[
 r^2 \frac{d\Phi}{dr} = \int_0^r 4\pi G \rho(r') r'^2 \, dr'.
@@ -494,16 +494,177 @@ so the third equation can be written
 \end{equation}
 and substituted into the first equation, giving
 \begin{equation}
+\label{eq_star_1b}
 \boxed{
 \frac{dp}{dr} = - \frac{GM(r) \rho}{r^2}.
 }
 \end{equation}
 This is the equation for \emph{hydrostatic equilibrium}: the inward force of gravity is balanced by the outward pressure of the fluid, allowing the star to be static.
 
+The fourth equation, for thermal energy, says that any energy produced ($\epsilon$) within the star must be balanced by the energy flux ($F$) -- this is a statement of \emph{thermal equilibrium}.  It's more common to write this in terms of the \emph{luminosity} $L$, which is the energy emitted per unit time by a radial shell of the fluid, in which case the flux is
+\begin{equation}
+F = \frac{L}{4\pi r^2}.
+\end{equation}
+Then the fourth equation becomes, in terms of the luminosity,
+\begin{equation}
+\boxed{
+\frac{dL}{dr} = 4\pi r^2 \rho \epsilon.
+}
+\end{equation}
+
+Finally, we need to discuss the equation of state -- but there are two possibilities.  If we assume the pressure in the fluid is provided purely by the radiation emitted by the gas, then the equation of state is
+\begin{equation}
+p_\text{rad} = \frac{1}{3} aT^4,
+\end{equation}
+where $a = 7.566 \times 10^{-16}$ J m$^{-3}$ K$^{-4}$ is called the radiation constant (it's related to the Stefan-Boltzmann constant if you're more familiar with that).  There could also be a contribution to the pressure from the fluid itself.  If we assume it's an ideal gas, then we have the usual (see Section \ref{sec_comp_fluids}) gas law
+\begin{equation}
+p_\text{gas} = \rho \kappa T.
+\end{equation}
+
+In general, both of these sources of pressure are important, and we should include them both:
+\begin{equation}
+p = p_\text{rad} + p_\text{gas} = \frac{1}{3} aT^4 + \rho \kappa T.
+\end{equation}
+Suppose that the gas pressure makes up some fraction of the total -- call the fraction $\beta$, so that
+\[
+p_\text{gas} = \beta p = \rho \kappa T.
+\]
+Radiation pressure makes up the rest:
+\[
+p_\text{rad} = (1 - \beta) p = \frac{1}{3} aT^4.
+\]
+We can use these two equations to eliminate the temperature, giving the pressure in terms of the density alone.  It turns out to take on the simple form
+\begin{equation}
+\label{eq_eos_edd}
+p = k \rho^{4/3},
+\end{equation}
+where the constant $k$ is given by
+\[
+k = \left[ \frac{3 (1-\beta) \kappa^4}{a \beta^4} \right]^{1/3}.
+\]
+Stars with an equation of state given by equation (\ref{eq_eos_edd}) are called \emph{Eddington standard models}.  But it turns out that the general form of the equation of state, that $p \propto \rho^\gamma$, arises in many situations -- we've seen one already in Section \ref{sec_comp_fluids} with adiabatic processes, where $\gamma$ is related to the ratio of specific heats.  Models which have this form are called \emph{polytropes} and deserve a bit more discussion.
 
 \subsection{Polytropic Models}
 
-\subsection{Stellar Formation}
+Suppose, then, we take as our equation of state the general form
+\begin{equation}
+\label{eq_polytrope}
+p = k \rho^\gamma.
+\end{equation}
+What does this do for us?  We can use it to eliminate either pressure or density from equation (\ref{eq_star_1b}).  First rearrange and take the derivative of equation (\ref{eq_star_1b}) to get
+\[
+\frac{d}{dr} \left( \frac{r^2}{\rho} \frac{dp}{dr} \right) = -G \frac{dM}{dr},
+\]
+and then use $dM/dr = 4\pi r^2 \rho$ to get
+\[
+\frac{d}{dr} \left( \frac{r^2}{\rho} \frac{dp}{dr} \right) = - 4 \pi G \rho.
+\]
+Now we can replace the pressure using equation (\ref{eq_polytrope}); the derivative of it is
+\[
+\frac{dp}{dr} = k \gamma \rho^{\gamma - 1} \frac{d\rho}{dr}.
+\]
+Plugging this into the equation above gives us an expression involving only the density:
+\begin{equation}
+\label{eq_star_density}
+\frac{k\gamma}{r^2} \frac{d}{dr} \left( r^2 \rho^{\gamma - 2} \frac{d\rho}{dr} \right) = -4\pi G \rho.
+\end{equation}
+
+We could in principle solve this differential equation for the density $\rho(r)$, but this is not a very simple-looking equation.  We can clean it up a bit by introducing two dimensionless parameters.  The first is a scaled density parameter, $\varrho$, such that
+\begin{equation}
+\label{eq_varrho}
+\rho(r) = \rho_c \varrho^n(r),
+\end{equation}
+where $\rho_c$ is a constant (with units of density) and the index $n$ is related to the parameter $\gamma$ by
+\begin{equation}
+\gamma = \frac{n+1}{n}.
+\end{equation}
+The second parameter is a scaled radius; define 
+\begin{equation}
+\eta = \frac{r}{\lambda},
+\end{equation}
+where $\lambda$ is a constant dependent on the index $n$:
+\begin{equation}
+\lambda^2 = \frac{(n+1) k \rho_c^{(1-n)/n}}{4\pi G}.
+\end{equation}
+In terms of these two new variables, equation (\ref{eq_star_density}) becomes
+\begin{equation}
+\boxed{
+\frac{1}{\eta^2} \frac{d}{d\eta} \left( \eta^2 \frac{d\varrho}{d\eta} \right) = - \varrho^n.
+}
+\end{equation}
+This is called the \emph{Lane-Emden equation}, and the solutions to it are polytropic models of stars.
+
+We'll solve the Lane-Emden equation in a moment, but first we need to discuss the boundary conditions.  The first is pretty simple: we want the density at the centre of the star to be \emph{finite}, so we'll choose
+\begin{equation}
+\varrho(0) = 1.
+\end{equation}
+This makes the constant $\rho_c$ the value of the density at the centre of the star (hence the subscript $c$), something that can be fit to model a particular system.  The second boundary condition needs a bit more motivation.  
+
+Consider a small volume at the centre of the star with radius $\delta$.  The volume within $\delta$ is
+\[
+V = \frac{4}{3} \pi \delta^3,
+\]
+and the mass enclosed by that radius is
+\[
+M = \frac{4\pi}{3} \bar{\rho} \delta^3,
+\]
+where $\bar{\rho}$ is the \emph{average} density within the volume.  From equation (\ref{eq_star_1b}), the change in pressure is then
+\[
+\frac{dp}{dr} = -\frac{4\pi}{3} G \bar{\rho}^2 \delta.
+\]
+In the limit as $\delta \to 0$, then, we have that
+\[
+\frac{dp}{dr} \to 0.
+\]
+Now, for a polytropic model, the density is proportional to the pressure, so this also says
+\[
+\frac{d\rho}{dr} \to 0 \quad \text{as} \quad r \to 0.
+\]
+In terms of the dimensionless variables, our second boundary condition becomes
+\begin{equation}
+\frac{d\varrho}{d\eta} = 0 \quad \text{at} \quad \eta = 0.
+\end{equation}
+
+We're ready to solve the Lane-Emden equation and produce our first models for a star.  It turns out, however, that there's only a few cases for which it can be solved analytically:  for values of $n = 0, 1, 5,$ and $n = \infty$.  I'll walk you through a couple here, and you can work on Problem \ref{prob_lane_emden} for others.
+
+\begin{example}[n = 0]
+The easiest case is $n = 0$, in which case the Lane-Emden equation becomes
+\[
+\frac{1}{\eta^2} \frac{d}{d\eta} \left( \eta^2 \frac{d\varrho}{d\eta} \right) = -1.
+\]
+This case be solved by integrating twice, giving
+\[
+\varrho(\eta) = c_1 - \frac{c_2}{\eta} - \frac{1}{6} \eta^2.
+\]
+Fitting the boundary conditions requires $c_1 = 1$ and $c_2 = 0$, and the dimensionless density is
+\[
+\varrho(\eta) = 1 - \frac{1}{6} \eta^2.
+\]
+Notice that the density drops to zero at a radius $\eta_s = \sqrt{6}$ -- this is the surface of the star.  
+
+But this is a strange model for star, since, according to equation (\ref{eq_varrho}), the density is actually constant $\rho_c$ throughout.  So, not a very good model of a star -- but it does turn out to be a reasonable model of a rocky planet like the Earth.
+\end{example}
+
+\begin{example}[n = 5]
+If $n = 5$, the Lane-Emden equation becomes
+\[
+\frac{1}{\eta^2} \frac{d}{d\eta} \left( \eta^2 \frac{d\varrho}{d\eta} \right) = -\varrho^5.
+\]
+This has the solution
+\[
+\varrho(\eta) = \frac{1}{\sqrt{1 + \eta^2/3}}.
+\]
+Unlike the previous example, where the density dropped to zero at a certain point, in this case the density becomes zero at infinity -- evidently $n=5$ models an infinitely large star!  Actually, this case -- usually called a \emph{Plummer sphere} -- can be a simple model of systems of stars like globular clusters or galaxies.
+\end{example}
+
+Neither of these two examples were particularly good model for \emph{stars}, the objects we set out to investigate in the first place.  Other values of $n$ do a better job of that:  $n = 1.5$ provides a good model of convective star cores as well as low mass white dwarfs, for example, and $n = 3$, which correspond to the Eddington standard model, models the radiation zones of main-sequence stars as well as high mass white dwarfs.  However, those cases don't have an analytic solution and the Lane-Emden equation must be solved numerically.  The densities of some of these models are shown in Figure \ref{fig_polytropes}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{Figures/Chapter6/fig_polytropes}
+\caption{Density profiles for various polytropes.  Left: the dimensionless density parameter $\varrho(\eta)$.  Right: the density $\rho(r)$, using solar values for various constants, plotted in terms of the central density of the sun and solar radii.  Blue: $n = 1$.  Orange: $n = 1.5$. Green: $n=3$.  Red: $n=5$. }
+\label{fig_polytropes}
+\end{figure}
 
 
 %
@@ -542,3 +703,25 @@ Show that, for the Newtonian stress tensor (equation \ref{eq_stress_newtonian}),
 (c) Thus, show that equation (\ref{eq_energy_all2}) becomes equation (\ref{eq_thermal_energy}).
 
 \end{problem}
+
+
+\begin{problem}[Polytrope with $n=1$]
+\label{prob_lane_emden} 
+Consider a polytrope with $n=1$.  
+
+(a) Solve the Lane-Emden equation to find the dimensionless density $\varrho(\eta)$ and calculate the value of the surface $\eta_s$.
+
+(b) Show that the total mass within the star is $M = 4\pi^2 \rho_c \lambda^3$.
+
+(c) Define the dimensionless pressure as 
+\[
+\mathscr{p} = \frac{p}{k\rho_c^n}
+\]
+and find $\mathscr{p}(\eta)$ for this case.
+
+(d) Plot the dimensionless density and dimensionless pressure.
+\end{problem}
+
+
+
+

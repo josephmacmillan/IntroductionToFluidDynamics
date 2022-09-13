@@ -357,9 +357,152 @@ This equation must be solved numerically, but it can be tricky to do so while ma
 % --- SECTION - ADVANCED TOPIC 3 ---
 % 
 
-\section{The Dam Break Problem}
+\section{Nonlinear Waves}
 
-Coming soon.
+In our discussion of waves, we were careful to focus those of small-amplitude -- which linearized the equations that describe waves and allowed us to investigate various different properties.  In general, the full theory of waves is quite difficult, but if we limit ourselves to shallow water, we can handle some interesting cases where the amplitude is large.
+
+\subsection{The Shallow Water Equations}
+
+We'll follow the basic set up we had back in Chapter \ref{chap_waves}, but make a few small changes.  First, rather than using $\eta$ for the height of the wave, I'll use $y = h(x, t)$ -- mostly to remind us that these are not small amplitude waves.  And we'll put a flat bottom at $y = 0$; see Figure \ref{fig_nonlinear_wave}.  Furthermore, we won't assume that the amplitude of the wave is small compared to the wavelength.  Instead, we'll make the \emph{shallow water approximation} -- that the depth of the water is much less than typical horizontal scales of the waves themselves.
+
+
+As with the earlier work on waves, Euler's equation in two dimensions is the starting point, with $\vec{g} = [0, -g, 0]$:
+\begin{align}
+\frac{Du}{Dt} & = -\frac{1}{\rho} \dfdx{p}{x}, \label{eq_euler_non_u}\\
+\frac{Dv}{Dt} & = - \frac{1}{\rho} \dfdx{p}{y} - g. \label{eq_euler_non_v}
+\end{align}
+But the shallow water approximation suggests we can drop the $Dv/Dt$ term from the second equation -- basically, the acceleration in the vertical direction will be much less than the acceleration due to gravity, and can be neglected.  Equation (\ref{eq_euler_non_v}) then becomes
+\[
+\dfdx{p}{y} = -\rho g,
+\]
+which integrates to
+\[
+p(x, y, t) = -\rho g y + f_1(x, t),
+\]
+where $f_1(x, t)$ is the integration ``constant'' (which could depend on $x$ or $t$ since we had a partial derivative).  We can find the constant though boundary conditions as usual; in this case we have atmospheric pressure $p_0$ at the surface, $y = h(x, t)$.  This leads to $f_1 = p_0 + \rho g h$, giving us the pressure
+\begin{equation}
+p(x, y, t) = p_0 - \rho g [ y - h(x, t)].
+\end{equation}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_nonlinear_wave}
+\caption{The surface of the fluid is given by $y = h(x, t)$, with the bottom at $y=0$.  These waves can be large in amplitude but the fluid itself is shallow. }
+\label{fig_nonlinear_wave}
+\end{figure}
+
+If we substitute this pressure into equation (\ref{eq_euler_non_u}), we get
+\[
+\frac{Du}{Dt} = -g \dfdx{h}{x}.
+\]
+Now, $h$ is a function of $x$ and $t$ only, we suggests that the \emph{change} in $u$ depends only on those variables.  As long as $u$ doesn't start out depending on $y$, it will never pick up a $y$ dependency as time goes on.  That means we can write $u = u(x, t)$, and, writing out the full material derivative and dropping the $\partial u / \partial y$ term, the above equation becomes
+\begin{equation}
+\label{eq_shallow1}
+\boxed{
+\dfdx{u}{t} + u\dfdx{u}{x} = -g \dfdx{h}{x}.
+}
+\end{equation}
+
+This is the first of two important equations we'll use to describe nonlinear shallow waves.  The second comes from the incompressibility condition, which in two dimensions says
+\[
+\dfdx{u}{x} + \dfdx{v}{y} = 0.
+\]
+If we integrate this for $v$, we get
+\[
+v(x, y, t) = -\dfdx{u}{x} y + f_2(x, t),
+\]
+where $f_2$ is again an integration constant.  To find this one, we use the boundary condition at the bottom:  we must have $v = 0$ at $y=0$, which means $f_2 = 0$, and
+\begin{equation}
+\label{eq_nonlin_v}
+v = -\dfdx{u}{x} y.
+\end{equation}
+
+In addition to this, we can bring in the kinematic condition that we derived back in Section \ref{sec_kin_press_cond}.  Before linearizing, it was (replacing $\eta$ with $h$)
+\[
+v = \dfdx{h}{t} + u\dfdx{h}{x} \quad \text{at} \quad y = h(x, t).
+\]
+Combining this with equation (\ref{eq_nonlin_v}) above and rearranging a bit gives
+\begin{equation}
+\label{eq_shallow2}
+\boxed{
+\dfdx{h}{t} + u\dfdx{h}{x} + h\dfdx{u}{x} = 0.
+}
+\end{equation}
+Equations (\ref{eq_shallow1}) and (\ref{eq_shallow2}) are called the \emph{shallow water equations}, and are a set of two coupled partial differential equations for the functions $u(x, t)$ (which is the horizontal speed of the fluid) and $h(x, t)$ (which is the height of the surface).  
+
+
+\subsection{Method of Characteristics}
+
+To solve these shallow water equations, we'll apply a technique called the method of characteristics, which will reduce the two partial differential equations to two ordinary differential equations.  We'll do that by finding a set of \emph{characteristic curves}.
+
+To begin, define a new variable $c(x, t)$ as
+\begin{equation}
+c(x, t) = \sqrt{gh(x, t)}.
+\end{equation}
+This new variable is essentially a scaled height of the wave but will help us in making the two shallow water equations more symmetric.  In terms of $c$, they become
+\begin{equation}
+\dfdx{u}{t} + u\dfdx{u}{x} + 2x \dfdx{c}{x} = 0
+\end{equation}
+and
+\begin{equation}
+2\dfdx{c}{t} + 2u\dfdx{c}{x} + c \dfdx{u}{x} = 0.
+\end{equation}
+If we add these two equations together, we can write the result (with a bit of rearranging) as
+\begin{equation}
+\label{eq_char_pos}
+\left[ \dfdx{}{t} + (u + c) \dfdx{}{x} \right] (u + 2c) = 0.
+\end{equation}
+Similarly, if we subtract them, we get
+\begin{equation}
+\label{eq_char_neg}
+\left[ \dfdx{}{t} + (u - c) \dfdx{}{x} \right] (u - 2c) = 0.
+\end{equation}
+
+These equations look pretty symmetric and are in good shape to use the method of characteristics on.  Here's how that's done -- but be careful, I think this is a tricky argument so try to follow along.
+
+Consider just the positive equation (\ref{eq_char_pos}) above.  Define a parametric curve -- called the \emph{positive characteristic curve} -- in the $x$-$t$ plane using the parameter $\xi$, so that
+\[
+x = x(\xi) \quad \text{and} \quad t = t(\xi).
+\]
+The curve will be defined by two properties:  that 
+\[
+\frac{dt}{d\xi} = 1,
+\]
+(so that the parameter $\xi$ is proportional to the time) and that
+\[
+\frac{dx}{d\xi} = u+c.
+\]
+We'll start the curve at some point $(x_0, t_0)$ (see the blue line in Figure \ref{fig_nonlinear_curves}).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/Chapter6/fig_nonlinear_curves}
+\caption{The positive characteristic curve (blue) is defined by $dx/d\xi = u+c$, and along the curve the quantity $u+2c$ is constant.  The negative characteristic curve (red) is defined by $dx/d\xi = u-c$, and along the curve the quantity $u - 2c$ is constant. }
+\label{fig_nonlinear_curves}
+\end{figure}
+
+Why this definition?  So that we can write the positive equation (\ref{eq_char_pos}) as
+\[
+\left[ \frac{dt}{d\xi} \dfdx{}{t} + \frac{dx}{d\xi} \dfdx{}{x} \right] (u + 2c) = 0.
+\]
+Now the term in the square brackets looks like a chain rule, meaning we can write this as simply
+\begin{equation}
+\boxed{
+\frac{d}{d\xi} (u + 2c) = 0.
+}
+\end{equation}
+What does this mean?  As the positive characteristic curve is traced out, the quantity $u+2c$ stays \emph{constant}; see the blue curve in Figure \ref{fig_nonlinear_curves}.  Notice that we've reduced our original partial differential equation to an ordinary one; the penalty is that this equation is true only along the curve defined by $dx/d\xi = u+c$.
+
+The whole argument above can be repeated with the negative equation (\ref{eq_char_neg}), leading to a characteristic curve defined by $dx/d\xi = u-c$ and along the curve
+\begin{equation}
+\boxed{
+\frac{d}{d\xi} (u - 2c) = 0.
+}
+\end{equation}
+
+Although the details at this point might be a little difficult to follow, the method of characteristics can be a powerful tool.  A classic example should illustrate what's going on nicely.
+
+\subsection{The Dam Break Problem}
 
 
 %
@@ -662,7 +805,7 @@ Neither of these two examples were particularly good model for \emph{stars}, the
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{Figures/Chapter6/fig_polytropes}
-\caption{Density profiles for various polytropes.  Left: the dimensionless density parameter $\varrho(\eta)$.  Right: the density $\rho(r)$, using solar values for various constants, plotted in terms of the central density of the sun and solar radii.  Blue: $n = 1$.  Orange: $n = 1.5$. Green: $n=3$.  Red: $n=5$. }
+\caption{Density profiles for various polytropes.  Left: the dimensionless density parameter $\varrho(\eta)$.  Right: the density $\rho(r)$, using solar values for various constants, plotted in terms of the central density of the sun and solar radii.  Note that the horizontal axis is log scaled. Blue: $n = 1$.  Orange: $n = 1.5$. Green: $n=3$.  Red: $n=5$. }
 \label{fig_polytropes}
 \end{figure}
 
@@ -705,7 +848,7 @@ Show that, for the Newtonian stress tensor (equation \ref{eq_stress_newtonian}),
 \end{problem}
 
 
-\begin{problem}[Polytrope with $n=1$]
+\begin{problem}[Polytropes]
 \label{prob_lane_emden} 
 Consider a polytrope with $n=1$.  
 

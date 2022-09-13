@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  12 SEP 2022 16:00
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  13 SEP 2022 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3041,7 +3041,7 @@ File: Figures/Chapter5/fig_stream_obstacle.jpg Graphic file (type bmp)
 File: Figures/Chapter5/fig_two_cosines.pdf Graphic file (type pdf)
 <use Figures/Chapter5/fig_two_cosines.pdf>
 
-Overfull \hbox (0.15608pt too wide) in paragraph at lines 472--474
+Overfull \hbox (0.15608pt too wide) in paragraph at lines 473--475
 \TU/LibertinusSerif(1)/m/n/10 If we substitute these expressions into equation 
 ([]5.31[]), we can write
  []
@@ -3069,7 +3069,7 @@ File: Figures/Chapter5/fig_local_wave_example.pdf Graphic file (type pdf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [152]
-Overfull \hbox (0.27612pt too wide) in paragraph at lines 981--982
+Overfull \hbox (0.27612pt too wide) in paragraph at lines 982--983
 []\TU/LibertinusSerif(1)/m/n/10 (c) For \TU/LibertinusSerif(0)/m/it/10 shallow 
 \TU/LibertinusSerif(1)/m/n/10 water, $[] [] []$, show that these waves are non-
 dispersive.
@@ -3097,11 +3097,23 @@ File: Figures/Chapter6/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_boundary_result1.pdf>
 File: Figures/Chapter6/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_boundary_result2.pdf>
- [165] [166] [167] [168] [169] [170] [171] [172]
-[173]
+
+Overfull \hbox (10.36673pt too wide) in paragraph at lines 362--363
+\TU/LibertinusSerif(1)/m/n/10 In our discussion of waves, we were careful to fo
+cus those of small-amplitude
+ []
+
+[165] [166]
+File: Figures/Chapter6/fig_nonlinear_wave.pdf Graphic file (type pdf)
+<use Figures/Chapter6/fig_nonlinear_wave.pdf>
+ [167] [168]
+File: Figures/Chapter6/fig_nonlinear_curves.pdf Graphic file (type pdf)
+<use Figures/Chapter6/fig_nonlinear_curves.pdf>
+ [169] [170] [171] [172] [173] [174] [175] [176]
+[177] [178]
 File: Figures/Chapter6/fig_polytropes.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_polytropes.pdf>
- [174] [175]) [176]
+ [179]) [180]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -3109,15 +3121,15 @@ File: Figures/Chapter6/fig_polytropes.pdf Graphic file (type pdf)
 (./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
 (./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 04C761249D40893115101E87881D982F;14387.
+(rerunfilecheck)             Checksum: 924A4B10A61879039697F80FB85A81F3;14926.
  ) 
 Here is how much of TeX's memory you used:
- 39490 strings out of 478774
- 813160 string characters out of 5864471
- 1379091 words of memory out of 6000000
- 58744 multiletter control sequences out of 15000+600000
+ 39521 strings out of 478774
+ 814200 string characters out of 5864471
+ 1381085 words of memory out of 6000000
+ 58773 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1263b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (182 pages).
+Output written on main.pdf (186 pages).

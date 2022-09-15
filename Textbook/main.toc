@@ -83,11 +83,11 @@
 \contentsline {subsection}{\numberline {6.3.1}The Shallow Water Equations}{166}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Method of Characteristics}{168}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}The Dam Break Problem}{170}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Spherical Flows}{170}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Stellar Structure}{170}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Newtonian Gravity}{171}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Energy Transport}{171}{subsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.5.3}Equations of Stellar Structure}{173}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Polytropic Models}{176}{subsection.6.5.4}%
-\contentsline {section}{\numberline {6.6}Numerical Methods}{179}{section.6.6}%
-\contentsline {section}{Problems}{179}{section*.97}%
+\contentsline {section}{\numberline {6.4}Spherical Flows}{175}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Stellar Structure}{175}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Newtonian Gravity}{175}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Energy Transport}{176}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Equations of Stellar Structure}{178}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Polytropic Models}{181}{subsection.6.5.4}%
+\contentsline {section}{\numberline {6.6}Numerical Methods}{184}{section.6.6}%
+\contentsline {section}{Problems}{184}{section*.100}%

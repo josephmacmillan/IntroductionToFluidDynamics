@@ -493,7 +493,7 @@ Now the term in the square brackets looks like a chain rule, meaning we can writ
 \end{equation}
 What does this mean?  As the positive characteristic curve is traced out, the quantity $u+2c$ stays \emph{constant}; see the blue curve in Figure \ref{fig_nonlinear_curves}.  Notice that we've reduced our original partial differential equation to an ordinary one; the penalty is that this equation is true only along the curve defined by $dx/d\xi = u+c$.
 
-The whole argument above can be repeated with the negative equation (\ref{eq_char_neg}), leading to a characteristic curve defined by $dx/d\xi = u-c$ and along the curve
+The whole argument above can be repeated with the negative equation (\ref{eq_char_neg}), leading to a characteristic curve defined by $dx/d\xi = u-c$, and along this curve
 \begin{equation}
 \boxed{
 \frac{d}{d\xi} (u - 2c) = 0.
@@ -503,6 +503,135 @@ The whole argument above can be repeated with the negative equation (\ref{eq_cha
 Although the details at this point might be a little difficult to follow, the method of characteristics can be a powerful tool.  A classic example should illustrate what's going on nicely.
 
 \subsection{The Dam Break Problem}
+
+Suppose a large dam holds back water of height $h_0$ as shown in Figure \ref{fig_dam_start}.  The dam is located at $x=0$, and the water is to the left, but at $t=0$, the dam breaks -- in our case, that means disappears instantly -- and the water can rush out to the right.  We want to find two things: the horizontal speed of the water $u(x, t)$ and its height $h(x, t)$.  This is a famous problem in fluid dynamics, not least because of the deadly and destructive nature of dam breaks, and was first solved in 1892 by Ritter.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{Figures/Chapter6/fig_dam_start}
+\caption{A dam at $x=0$ holds back water of a height $h_0$.  At $t=0$, the dam breaks and the water rushes forward.}
+\label{fig_dam_start}
+\end{figure}
+
+Consider the state of the water \emph{before} the dam breaks:  for $x<0$ and $t<0$.  Since the water is at rest, we know that $u = 0$ and $c = \sqrt{gh_0} = c_0$.  We can start to build the characteristic curves with this information; let's do the positive curve first, defined by $dx/d\xi = u+c$.  In this region, then, we have
+\[
+\frac{dx}{d\xi} = c_0,
+\]
+or, since $dt/d\xi = 1$, 
+\[
+\frac{dx}{dt} = c_0.
+\]
+Thus the positive characteristic curves in $x<0$, $t<0$ are straight lines of slope $c_0 = \sqrt{gh_0}$.  I've plotted a few of these curves in Figure \ref{fig_char_curves} (a) (the blue lines); each has the same slope but different intercepts.  We can use similar reasoning for the negative characteristic curves to find that they have a slope of $-c_0$ (the red lines).
+
+Now, we know that along the positive curves the quantity $u + 2c$ is constant.  But in this region we know that $u + 2c = 2c_0$ since $u=0$; similarly for the negative curves: $u - 2c = -2c_0$ along them.  Here's the trick: this is true even for those curves that extend \emph{beyond} the region $x<0, t<0$.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Figures/Chapter6/fig_char_curves}
+\caption{Constructing the characteristic curves for the dam break problem. }
+\label{fig_char_curves}
+\end{figure}
+
+For example, take a look at point P$_1$ in Figure \ref{fig_char_curves} (a) -- it happens to be at an intersection of the two curves shown as dashed lines, one positive and one negative.  Now, I don't know that those characteristic curves are still straight lines -- when $t<0$ the fluid has started to move, so our analysis above no longer holds.  But we do know that along the positive line 
+\[
+u + 2c = 2c_0
+\]
+and along the negative
+\[
+u - 2c = -2c_0.
+\]
+Right at point P$_1$, both of these conditions are true, and we can rearrange and solve for $u$ and $c$ there.  It turns out that
+\[
+u = 0 \quad \text{and} \quad c = c_0
+\]
+at point P$_1$ -- but that means the lines \emph{are} straight there, and will be throughout the region where the positive and negative curves intersect.
+
+That's where the next twist comes in -- the negative curves can't cover then entire second quadrant, since they must start from the third where the fluid is at rest.  So the last negative characteristic curve is given by
+\[
+x = -c_0 t,
+\]
+and all curves below this line -- the thick red line in Figure \ref{fig_char_curves} (b) -- are straight.  That means for positions less than $-c_0 t$ the fluid is \emph{still} at rest; this is to the left of the original dam location, and evidently the knowledge that the dam is no longer there has not yet been communicated beyond this point and the water there is undisturbed.
+
+Beyond this line, though, things get a little more complicated.  Consider the point P$_2$ in Figure \ref{fig_char_curves} (b).  It lies along a positive characteristic curve that originally started in the third quadrant, so even though this line is no longer straight, is still has
+\[
+u + 2c = 2c_0
+\]
+along it.  There will be some negative curve passing through this point as well -- but we don't know anything about this one other than $u-2c$ is constant along it.  Let's call the constant $k$, so that
+\[
+u - 2c = k
+\]
+along this negative curve.  At point P$_2$, then, we can use these two equations to solve for $u$ and $c$; they are
+\[
+u = c_0 + \frac{k}{2} \quad \text{and} \quad c = \frac{c_0}{2} - \frac{k}{4}.
+\]
+The important thing to note is that along the negative characteristic curve, both $u$ and $c$ are constant (since $k$ is constant along that curve; the same is \emph{not} true for the positive curve).  Once again we find that the negative characteristic curves are straight lines with slope
+\[
+\frac{dx}{dt} = u - c = \frac{c_0}{2} + \frac{k}{4}.
+\]
+
+That's great but -- what do these straight lines actually look like?  Well, with a bit of thought you might realize that the negative characteristic curves can never cross (and the same is true of the positive, although obviously positive and negative can cross).  If they did intersect at some point, the water there would have two different values of $u$ or $c$.  Normally the velocity and height are single-valued functions, so this is not allowed -- except at one point: at $x = 0$, $t=0$ we have a discontinuity in the height of the water.  Thus the negative characteristic curves \emph{can} cross at that point.  So although we can't specify the slope of these lines, we do know that they start at the origin.  This is shown in \ref{fig_char_curves} (c). 
+
+Let's quickly recap what we know in the region above the line $x = -c_0 t$.  Along the negative curves, 
+\[
+\frac{dx}{dt} = u - c = \text{constant},
+\]
+which we can integrate to get
+\[
+x = (u-c) t
+\]
+(the integration constant is zero since the line passes through the origin).
+Along the positive curves, we have 
+\[
+u + 2c = c_0.
+\]
+If we rearrange these two equations are solve for $u$ and $c$ we get
+\begin{equation}
+\label{eq_dam_dist}
+u(x, t) = \frac{2c_0}{3} + \frac{2x}{3t} \quad \text{and} \quad c(x, t) = \frac{2c_0}{3} - \frac{x}{3t}.
+\end{equation}
+This is the velocity and height in the region $x>-c_0 t$.  But note that $c = \sqrt{gh}$ can never go negative -- so we must have, from the above equation
+\[
+\frac{2c_0}{3} > \frac{x}{3t},
+\]
+or $x < 2c_0 t$.  This gives us the furthest extent of the water rushing from the dam -- as time goes on, the water travels further.  This is shown as the thick red line in Figure \ref{fig_char_curves} (c) and (d).
+
+We're all finished at this point -- the fluid is either undisturbed or described by equation (\ref{eq_dam_dist}) -- but before summarizing, let's finish off the positive characteristic curves in the region $x>-c_0 t$.  The slope of these curves is given by
+\[
+\frac{dx}{dt} = u+c = \frac{4c_0}{3} + \frac{x}{3t},
+\]
+and we can solve this differential equation to get
+\begin{equation}
+x(t) = c_1 x^{1/3} + 2c_0 x,
+\end{equation}
+where $c_1$ is an integration constant and varies from positive curve to positive curve.  These lines are shown in Figure \ref{fig_char_curves} (d) and complete the characteristic curve diagram for the dam break problem.
+
+In summary, then, the height of the surface of the water is given by
+\begin{equation}
+h(x, t) = \begin{cases}
+h_0, & x < -\sqrt{gh_0} t \\
+\frac{1}{g} \left[ \frac{2}{3} \sqrt{gh_0} - \frac{x}{3t} \right]^2, &  -\sqrt{gh_0} t < x < 2\sqrt{gh_0} t \\
+0, & x > 2\sqrt{gh_0} t,
+\end{cases}
+\end{equation}
+and the velocity is
+\begin{equation}
+u(x, t) = \begin{cases}
+0, & x < -\sqrt{gh_0} t \\
+\frac{2}{3} \sqrt{gh_0} + \frac{2x}{3t}, & -\sqrt{gh_0} t < x < 2\sqrt{gh_0} t.
+\end{cases}
+\end{equation}
+The surface is plotted in Figure \ref{fig_dam_heights} for two different times.  
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth]{Figures/Chapter6/fig_dam_heights}
+\caption{The height profile $h(x, t)$ for the water from a dam break at two different times.  Distance units at in meters; at 2 s, the water has already reached 30 m from the original dam location.}
+\label{fig_dam_heights}
+\end{figure}
+
+Notice that the speeds for typical modern dam heights can get very large; in Figure \ref{fig_dam_heights}, I used a height of $h_0 = 10$ m, and at 2 s after the break, the leading edge of the water ($x = 2c_0 t \sim 40$ m) is travelling around 20 m/s.  For larger dams, which can have heights of well over 100 m, the speed is in the hundreds of kilometers per hour.
+
+
 
 
 %

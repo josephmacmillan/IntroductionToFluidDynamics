@@ -639,9 +639,139 @@ Notice that the speeds for typical modern dam heights can get very large; in Fig
 % 
 
 
-\section{Spherical Flows}
+\section{Flow About a Sphere}
 
-Coming soon.
+Throughout almost the entire book we've dealt only with flows that are two dimensional, but there's a classic problem involving flow around a \emph{sphere} -- decidedly not a two dimensional object -- that's worth tackling.  We'll start with the simpler case of ideal fluid flowing around a sphere, which is very similar to the cylinder problem we've already done in Section \ref{sec_cylinder}, and build up to the flow of very viscous fluid past a sphere.
+
+\subsection{Ideal Flow}
+\label{sec_sphere_ideal}
+
+Consider first, then, the ideal flow around a sphere of radius $a$.  The fluid starts out, far away from the sphere, in uniform flow with speed $U$.  We'll put the sphere at the origin and arrange our coordinate system such that the uniform flow is along the $z$ axis, so far away $\vec{u} = [0, 0, U]$; see Figure \ref{fig_sphere_setup}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_sphere_setup}
+\caption{Fluid that is uniform at infinity flows past a sphere.}
+\label{fig_sphere_setup}
+\end{figure}
+
+Now, this flow is \emph{irrotational} for the same reason ideal flow about a cylinder is -- since the flow is uniform at infinity, it obviously has zero vorticity there, and Kelvin's circulation theorem (Section \ref{sec_circulation} says that it will remain irrotational as it flows past the sphere.  That means we can describe the flow with a velocity potential $\varphi$ as usual and, since the flow is incompressible, it must satisfy Laplace's equation,
+\[
+\nabla^2 \varphi = 0.
+\]
+
+Before we start the heavy machinery of solving Laplace's equation via separation of variables, though, it's worthwhile to look at two things:  whether there's any symmetry in the problem we can exploit, and what our boundary conditions are.  We \emph{do} in fact have symmetry here:  since we could rotate the flow and sphere by any angle we wish around the $z$ axis and not change the problem, there must not be any dependence on the spherical $\phi$ coordinate (that's the azimuthal angle, measured from the $x$ axis around the $z$ axis).  This is called \emph{axisymmetry}.  In spherical coordinates, then, we can write
+\begin{equation}
+\vec{u} = \vec{u}(r, \theta),
+\end{equation}
+and write Laplace's equation as
+\begin{equation}
+\label{eq_laplace_sph}
+\nabla^2 \varphi = \frac{1}{r^2} \dfdx{}{r} \left( r^2 \dfdx{\varphi}{r} \right) + \frac{1}{r^2 \sin \theta} \dfdx{}{\theta} \left(\sin \theta \dfdx{\varphi}{\theta} \right).
+\end{equation}
+
+The boundary conditions turn out to the similar to those for flow around a cylinder (Section \ref{sec_cylinder} again).  We need the fluid to slip along the boundary of the sphere, which means there can't be a radial component there, so the first boundary condition is
+\begin{equation}
+\label{eq_sphere_bc1}
+u_r(a, \theta) = 0 \quad \text{or} \quad \left. \dfdx{\varphi}{r} \right|_{r=a} = 0.
+\end{equation}
+The second condition is that the flow far away from the sphere must be uniform along the $z$ direction.  The velocity potential for uniform flow is 
+\[
+\varphi_\text{uni} = U r \cos \theta,
+\]
+(this follows from $\vec{u} = \grad \varphi$), and so the boundary condition is
+\begin{equation}
+\label{eq_sphere_bc2}
+\varphi(r, \theta) \to Ur \cos \theta \quad \text{as} \quad r \to \infty.
+\end{equation}
+
+Laplace's equation in spherical coordinates with axisymmetry is a well-studied problem in numerous physics subjects; the angular part of the solution is the Legendre polynomials $P_\ell (\cos\theta)$.  However, we can skip the full separation of variables if we examine that second boundary condition and suppose that our solution must take on the form
+\begin{equation}
+\label{eq_pot_form}
+\varphi(r, \theta) = f(r) \cos \theta,
+\end{equation}
+where $f(r)$ is some unknown function.  This is just the $\ell = 1$ Legendre polynomial.  
+
+We can find $f(r)$ by plugging equation (\ref{eq_pot_form}) into Laplace's equation as given in equation (\ref{eq_laplace_sph}).  After some work, it reduces to the ordinary differential equation
+\begin{equation}
+r^2 \frac{d^2f}{dr^2} + 2r \frac{df}{dr} - 2f = 0.
+\end{equation}
+This equation can be solved by guessing that the solution is a power-law, $f(r) = r^m$.  Plugging this form in gives us the quadratic
+\[
+m^2 + m - 2 = 0,
+\]
+which has solutions $m = 1$ and $m = -2$.  Thus the general solution is
+\[
+f(r) = Ar + \frac{B}{r^2},
+\]
+and the velocity potential is then
+\[
+\varphi(r, \theta) = \left(Ar + \frac{B}{r^2} \right) \cos \theta.
+\]
+
+Fitting the boundary conditions, equations (\ref{eq_sphere_bc1}) and (\ref{eq_sphere_bc2}), gives
+\[
+A = U \quad \text{and} \quad B = \frac{Ua^3}{2},
+\]
+so the final velocity potential for ideal flow around a sphere is
+\begin{equation}
+\label{eq_sphere_pot}
+\varphi(r, \theta) = U \left( r + \frac{a^3}{2r^2} \right) \cos \theta.
+\end{equation}
+
+Given the potential, we can find the velocity $\vec{u}$ by taking the gradient; Problem \ref{prob_sphere} asks you to do it, and the result is
+\begin{equation}
+u_r(r, \theta) = U \left( 1 - \frac{a^3}{r^3} \right) \cos \theta
+\end{equation}
+and
+\begin{equation}
+u_\theta(r, \theta) = -U \left( 1 + \frac{a^3}{2r^3} \right) \sin \theta.
+\end{equation}
+Feel free to compare this solution with that for the cylinder in Section \ref{sec_cylinder}.  
+
+We could, at this point, calculate the pressure on the sphere and find the force that the fluid exerts on it.  However, I'll skip the details there and just mention that the end result is exactly the same as in the cylinder case:  the net force is zero.  This is just d'Alembert's paradox showing up again because we'll dealing with an ideal fluid.
+
+\subsection{Stokes Stream Function}
+
+How do we plot the streamlines for the fluid?  For two dimensional, incompressible, irrotational flow we had the stream function $\psi$, which was constant on streamlines and made it simple to plot them.  For axisymmetric flow, the same stream function no longer works.  However, there is an analog for this case, called \emph{Stokes stream function}\footnote{The two dimensional stream function $\psi$ is then sometimes called the Lagrange stream function.  Then again, some places call both versions Stokes stream functions, or just stream functions, so be careful.} $\Psi$, defined such that
+\begin{equation}
+\vec{u} = \grad \times \left( \frac{1}{r\sin \theta} \Psi \unit{\phi} \right).
+\end{equation}
+Compare with equation (\ref{eq_stream_def}).  In spherical coordinates, the definition becomes
+\begin{equation}
+u_r = \frac{1}{r^2 \sin \theta} \dfdx{\Psi}{\theta} \quad \text{and} \quad u_\theta = -\frac{1}{r \sin \theta} \dfdx{\Psi}{r}.
+\end{equation}
+
+You can show for yourself (Problem \ref{prob_sphere}) that with this definition and for axisymmetric flow, 
+\[
+(\vec{u} \cdot \grad) \Psi = 0,
+\]
+so that $\Psi$ is indeed constant along streamlines as we wanted.  
+
+For the sphere, you can show that (Problem \ref{prob_sphere} again)
+\begin{equation}
+\Psi (r, \theta) = \frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \sin^2 \theta.
+\end{equation}
+The streamlines are plotted in Figure \ref{fig_sphere_lines}; again, you might want to compare with the streamlines for flow around a cylinder in Figure \ref{fig_cyl_streamlines}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_sphere_lines}
+\caption{Streamlines for ideal flow about a sphere.}
+\label{fig_sphere_lines}
+\end{figure}
+
+\subsection{Very Viscous Flow}
+
+\subsection{Viscous Flow Around a Sphere}
+
+
+
+
+
+
+
+
 
 %
 % --- SECTION - ADVANCED TOPIC 5 ---
@@ -956,6 +1086,32 @@ Or stellar atmospheres?
 \begin{problem}[Pressure and the Stress Tensor]
 \label{prob_pressure} 
 Show that, for the Newtonian stress tensor (equation \ref{eq_stress_newtonian}), the pressure is the negative of the average of the three normal stresses.  Explain why this makes sense.
+\end{problem}
+
+\begin{problem}[Flow around a sphere]
+\label{prob_sphere} 
+Consider ideal incompressible flow, uniform at infinity, around a sphere of radius $a$, as in Section \ref{sec_sphere_ideal}.
+
+(a) From the velocity potential $\varphi(r, \theta)$ in equation \ref{eq_sphere_pot}, show that the velocity of the flow is
+\[
+u_r (r, \theta) = U \cos \theta \left( 1 - \frac{a^3}{r^3} \right) \quad \text{and} \quad u_\theta(r, \theta) = -U \sin \theta \left( 1 + \frac{a^3}{2r^3} \right).
+\]
+
+(b) Show in spherical coordinates that the Stokes stream function satisfies
+\[
+(\vec{u} \cdot \grad) \Psi = 0
+\]
+and is thus constant on streamlines.
+
+(c) Show that for the flow around a sphere, the Stokes stream function can be written as
+\[
+\Psi (r, \theta) = -\frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \cos \theta
+\]
+or
+\[
+\Psi (r, \theta) = \frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \sin \theta.
+\]
+Are these equivalent?  Why or why not?
 \end{problem}
 
 \begin{problem}[Rate of change of thermal energy]

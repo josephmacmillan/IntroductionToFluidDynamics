@@ -83,11 +83,15 @@
 \contentsline {subsection}{\numberline {6.3.1}The Shallow Water Equations}{166}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Method of Characteristics}{168}{subsection.6.3.2}%
 \contentsline {subsection}{\numberline {6.3.3}The Dam Break Problem}{170}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Spherical Flows}{175}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Stellar Structure}{175}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Newtonian Gravity}{175}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}Energy Transport}{176}{subsection.6.5.2}%
-\contentsline {subsection}{\numberline {6.5.3}Equations of Stellar Structure}{178}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Polytropic Models}{181}{subsection.6.5.4}%
-\contentsline {section}{\numberline {6.6}Numerical Methods}{184}{section.6.6}%
-\contentsline {section}{Problems}{184}{section*.100}%
+\contentsline {section}{\numberline {6.4}Flow About a Sphere}{175}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Ideal Flow}{175}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Stokes Stream Function}{178}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Very Viscous Flow}{179}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Viscous Flow Around a Sphere}{179}{subsection.6.4.4}%
+\contentsline {section}{\numberline {6.5}Stellar Structure}{179}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Newtonian Gravity}{179}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Energy Transport}{180}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Equations of Stellar Structure}{181}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Polytropic Models}{184}{subsection.6.5.4}%
+\contentsline {section}{\numberline {6.6}Numerical Methods}{188}{section.6.6}%
+\contentsline {section}{Problems}{188}{section*.102}%

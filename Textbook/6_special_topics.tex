@@ -10,6 +10,7 @@
 As we'll see, the Navier-Stokes equation follows directly from Newton's second law; however, because it depends on the \emph{deformation} of fluid elements, we need a whole new framework to describe the forces at work. 
 
 \subsection{The Stress Tensor and Vector}
+\label{sec_stress}
 
 To start, let's consider a fluid element -- I'll draw it as a cube for simplicity but it can be any shape (Figure \ref{fig_deform}).  If we apply a force that's normal to a surface, we'd expect the fluid element to deform by stretching and thinning.  On the other hand, if the \emph{same} force, in the same direction, is applied to a surface that's parallel to it, the deformation will be very different -- the force in this case is called a ``shear force.''  Evidently, the deformation of a fluid element depends not only on the force direction but also on the \emph{surface} direction. 
 
@@ -88,18 +89,19 @@ which makes sense -- the dot product picks out the forces that act on the surfac
 
 \subsection{Cauchy's Equation of Motion}
 
-Now we're ready to use Newton's second law to derive a general equation of motion for fluids and other deformable materials.  Consider some ``blob'' of our fluid, with volume $V$ and enclosed by surface $S$; this blob can deform in shape as the fluid moves, but we'll assume our fluid is incompressible, so the total volume can't change.  The force across one small element of area, $dS$, due to the fluid above it, is given by the stress vector $\vec{t}$ multiplied by the area $dS$.  The total force acting on the entire blob due to the surrounding fluid is therefore
+Now we're ready to use Newton's second law to derive a general equation of motion for fluids and other deformable materials.  Consider some ``blob'' of our fluid, with volume $V$ and enclosed by surface $S$; this blob can deform in shape as the fluid moves, but we'll assume our fluid is incompressible, so the total volume can't change.  The force across one small element of area, $da$, due to the fluid above it, is given by the stress vector $\vec{t}$ multiplied by the area $da$.  The total force acting on the entire blob due to the surrounding fluid is therefore
 \begin{equation}
-\vec{F} = \int_S \vec{t} \, dS = \int_S (\tens{T} \cdot \unit{n}) \, dS,
+\label{eq_stress_tensor_force}
+\vec{F} = \int_S \vec{t} \, da = \int_S (\tens{T} \cdot \unit{n}) \, da,
 \end{equation}
-where I used equation \ref{eq_stress} to write the force in terms of the stress tensor instead of the stress vector.  Now, we can apply the divergence theorem to turn this into an integral over the volume -- even though this is a tensor, it works pretty much the same way:
+where I used equation \ref{eq_stress} to write the force in terms of the stress tensor instead of the stress vector.  Now, we can apply the divergence theorem to turn this into an integral over the volume $d\tau$ -- even though this is a tensor, it works pretty much the same way:
 \[
-\vec{F} =  \int_S (\tens{T} \cdot \unit{n}) \, dS = \int_V (\grad \cdot \tens{T} ) \, dV.
+\vec{F} =  \int_S (\tens{T} \cdot \unit{n}) \, da = \int_V (\grad \cdot \tens{T} ) \, d\tau.
 \]
 
-So far, we've ignored any forces external to the fluid, but we can add them in now.  I'll stick with gravity; for a small volume of the fluid, the force of gravity will be $\rho dV \vec{g}$, and we can combine this with the stress force above to get
+So far, we've ignored any forces external to the fluid, but we can add them in now.  I'll stick with gravity; for a small volume of the fluid, the force of gravity will be $\rho d\tau \vec{g}$, and we can combine this with the stress force above to get
 \[
-\vec{F} = \int_V (\grad \cdot \tens{T} + \rho \vec{g} ) \, dV.
+\vec{F} = \int_V (\grad \cdot \tens{T} + \rho \vec{g} ) \, d\tau.
 \]
 
 That's the total force acting on our fluid, and we already know how to write out the acceleration -- that was equation \ref{eq_accel},
@@ -108,7 +110,7 @@ That's the total force acting on our fluid, and we already know how to write out
 \]
 Newton's second law then gives
 \[
-\int_V \rho \frac{D \vec{u}}{Dt} \, dV = \int_V (\grad \cdot \tens{T} + \rho \vec{g} ) \, dV.
+\int_V \rho \frac{D \vec{u}}{Dt} \, d\tau = \int_V (\grad \cdot \tens{T} + \rho \vec{g} ) \, d\tau.
 \]
 But this equation holds for \emph{any} volume of any size within our fluid, so the integrands must be equal:
 \begin{equation}
@@ -174,6 +176,7 @@ where $\mu$ is the constant of proportionality and is called (of course) the \em
 
 Adding in the ideal component, the total stress tensor is
 \begin{equation}
+\label{eq_stress_tensor}
 \boxed{
 T_{ij} = -p \delta_{ij} +  \mu \left( \frac{\partial u_j}{\partial x_i} + \frac{\partial u_i}{\partial x_j} \right).
 }
@@ -639,7 +642,7 @@ Notice that the speeds for typical modern dam heights can get very large; in Fig
 % 
 
 
-\section{Flow About a Sphere}
+\section{Flow Past a Sphere}
 
 Throughout almost the entire book we've dealt only with flows that are two dimensional, but there's a classic problem involving flow around a \emph{sphere} -- decidedly not a two dimensional object -- that's worth tackling.  We'll start with the simpler case of ideal fluid flowing around a sphere, which is very similar to the cylinder problem we've already done in Section \ref{sec_cylinder}, and build up to the flow of very viscous fluid past a sphere.
 
@@ -675,11 +678,20 @@ The boundary conditions turn out to the similar to those for flow around a cylin
 \label{eq_sphere_bc1}
 u_r(a, \theta) = 0 \quad \text{or} \quad \left. \dfdx{\varphi}{r} \right|_{r=a} = 0.
 \end{equation}
-The second condition is that the flow far away from the sphere must be uniform along the $z$ direction.  The velocity potential for uniform flow is 
+The second condition is that the flow far away from the sphere must be uniform along the $z$ direction.  In spherical coordinates, this uniform flow is given by
+\begin{equation}
+\label{eq_sphere_uni}
+u_r(r, \theta) = U\cos \theta \quad \text{and} \quad u_\theta(r, \theta) = -U \sin \theta.
+\end{equation}
+From $\vec{u} = \grad \varphi$, which in spherical coordinates is
 \[
-\varphi_\text{uni} = U r \cos \theta,
+u_r = \dfdx{\varphi}{r} \quad \text{and} \quad u_\theta = \frac{1}{r} \dfdx{\varphi}{\theta},
 \]
-(this follows from $\vec{u} = \grad \varphi$), and so the boundary condition is
+we get that the velocity potential for uniform flow is 
+\[
+\varphi_\text{uni} = U r \cos \theta.
+\]
+The boundary condition is therefore
 \begin{equation}
 \label{eq_sphere_bc2}
 \varphi(r, \theta) \to Ur \cos \theta \quad \text{as} \quad r \to \infty.
@@ -739,6 +751,7 @@ How do we plot the streamlines for the fluid?  For two dimensional, incompressib
 \end{equation}
 Compare with equation (\ref{eq_stream_def}).  In spherical coordinates, the definition becomes
 \begin{equation}
+\label{eq_stokes_stream}
 u_r = \frac{1}{r^2 \sin \theta} \dfdx{\Psi}{\theta} \quad \text{and} \quad u_\theta = -\frac{1}{r \sin \theta} \dfdx{\Psi}{r}.
 \end{equation}
 
@@ -763,13 +776,356 @@ The streamlines are plotted in Figure \ref{fig_sphere_lines}; again, you might w
 
 \subsection{Very Viscous Flow}
 
-\subsection{Viscous Flow Around a Sphere}
+Suppose instead of ideal fluid flowing past the sphere, we have Newtonian viscous flow instead.  If the flow is \emph{steady} and we ignore the effect of gravity, the Navier-Stokes equation (equation \ref{eq_navier_stokes}) is then
+\begin{equation}
+\label{eq_ns_steady}
+(\vec{u} \cdot \grad ) \vec{u} = -\frac{1}{\rho} \grad p + \nu \nabla^2 \vec{u}.
+\end{equation}
+
+There are two terms involving velocity in this equation, and their relative strength determines how a fluid will flow.  We've already studied at length flows for which the \emph{inertial term} $(\vec{u} \cdot \grad ) \vec{u}$ is dominant over the \emph{viscous term} $\nu \nabla^2 \vec{u}$ -- that's just ideal fluid flow.  Here we turn to the case where the viscous term is much larger than the inertial, in which case we'll drop that term and equation (\ref{eq_ns_steady} simply becomes
+\begin{equation}
+\label{eq_ns_slow}
+\grad p = \mu \nabla^2 \vec{u}
+\end{equation}
+(notice that this has the dynamics viscosity $\mu = \nu / \rho$ in it).  This equation is of course supplemented as always by the incompressibility condition,
+\begin{equation}
+\grad \cdot \vec{u}.
+\end{equation}
+Together, these equations are sometimes called the \emph{slow flow equations} -- they are a good description of fluid flow that is \emph{very viscous} or, alternatively, has a small Reynolds number,
+\[
+R = \frac{UL}{\nu} \ll 1.
+\]
+
+Before we proceed with slow flow past a sphere, I want to rewrite equation (\ref{eq_ns_slow}) to get rid of the pressure term.  We can do that by using the vector identity 
+\[
+\nabla^2 \vec{u} = \grad (\grad \cdot \vec{u}) - \grad \times (\grad \times \vec{u}).
+\]
+Plugging this into the slow flow equation (\ref{eq_ns_slow}), dropping the first term (sine we have incompressible flow), and writing it in terms of the vorticity $\vec{\omega} = \grad \times \vec{u}$, we get
+\begin{equation}
+\label{eq_ns_slow_p}
+\grad p =  -\mu \grad \times \vec{\omega}.
+\end{equation}
+Finally, if we take the curl of both sides, the left hand side becomes zero (since the curl of a gradient is identically zero; see Problem \ref{prob_vc2}), and we get
+\begin{equation}
+\label{eq_slow_flow_curl}
+\boxed{
+\grad \times (\grad \times \vec{\omega}) = \vec{0}.
+}
+\end{equation}
+This is the equation we'll solve; it actually looks simpler than it is, since in terms of the velocity $\vec{u}$ it has \emph{three} curls.
+
+\subsection{Slow Flow Past a Sphere}
+
+Now we can attempt a solution for the case of very viscous flow past a sphere.  This is a classic problem in fluid dynamics, first done by Stokes in 1851.  It's not too difficult, but it \emph{is} length and a little complicated, so I'll go slow and carefully.
+
+The set up will look just like the ideal case as shown in Figure \ref{fig_sphere_setup}: the fluid will be uniform at infinity with speed $U$, and our coordinate system will be such that the flow is along the $z$ direction and the sphere of radius $a$ at the origin.  So, once again we have axisymmetry, and the velocity will not depend on $\phi$ at all:
+\[
+\vec{u} = u_r(r, \theta) \unit{r} + u_\theta(r, \theta) \unit{\theta}.
+\]
+
+Unfortunately, though, this problem is no longer irrotational, so Laplace's equation is no longer appropriate, and our similarity to the ideal case stops.  However, we \emph{do} still have incompressible, axisymmetric flow, so Stokes stream function $\Psi(r, \theta)$ can be used to describe the fluid.  Equation (\ref{eq_stokes_stream}) gives the velocity in terms of $\Psi$, and I'll rewrite it here so you don't have to flip back to see it:
+\[
+u_r = \frac{1}{r^2 \sin \theta} \dfdx{\Psi}{\theta} \quad \text{and} \quad u_\theta = -\frac{1}{r \sin \theta} \dfdx{\Psi}{r}.
+\]
+
+\subsubsection{The Equation of Motion}
+
+Our first goal is to write the slow flow equation (\ref{eq_slow_flow_curl}) in terms of the stream function $\Psi$.  That's a lot of curls we have to work through, but the end result isn't too bad.
+
+We can calculate the vorticity easily enough; since there's no $u_\phi$ or any $\phi$ dependence, the curl of $\vec{u}$ will only have a component in the $\unit{\phi}$ direction.  In spherical coordinates, this is
+\begin{equation}
+\vec{\omega} = \grad \times \vec{u} = \frac{1}{r} \left[ \dfdx{(r u_\theta)}{r}  - \dfdx{u_r}{\theta} \right] \, \unit{\phi}.
+\end{equation}
+Plugging in $u_r$ and $u_\theta$ from above, this becomes, in terms of $\Psi$,
+\[
+\vec{\omega} = -\frac{1}{r\sin\theta} \left[ \ddfdx{\Psi}{r} + \frac{\sin\theta}{r^2} \dfdx{}{\theta} \left( \frac{1}{\sin\theta} \dfdx{\Psi}{\theta} \right) \right] \, \unit{\phi}.
+\]
+Now, this is a complicated expression, so we're going to use a little trick to make the subsequent work easier.  It's not much of a trick: define an operator $\LL$ as 
+\begin{equation}
+\LL = \ddfdx{}{r} + \frac{\sin\theta}{r^2} \dfdx{}{\theta} \left( \frac{1}{\sin\theta} \dfdx{}{\theta} \right),
+\end{equation}
+so that the vorticity becomes
+\[
+\vec{\omega} = -\frac{1}{\sin\theta} \, \LL \Psi \, \unit{\phi}.
+\]
+We're just hiding some complexity inside of that new operator, but it turns out that this pattern will repeat.
+
+Next we need to take the curl of the vorticity.  With some tedious but not difficult work, you can show that it is
+\begin{equation}
+\label{eq_curl_vort}
+\grad \times \vec{\omega} = -\frac{1}{r^2 \sin\theta} \dfdx{}{\theta} (\LL \Psi) \, \unit{r} + \frac{1}{r\sin\theta} \dfdx{}{r} ( \LL\Psi) \, \unit{\theta}.
+\end{equation}
+Now we just need one more curl.  Since $\grad \times \vec{\omega}$ only has $r$ and $\theta$ directions and dependence, once again the curl will only have a $\unit{\phi}$ direction.  It is
+\[
+\grad \times \grad \times \vec{\omega} = \frac{1}{r \sin\theta} \left[ \ddfdx{}{r} (\LL \Psi) + \frac{\sin \theta}{r^2} \dfdx{}{\theta} \left( \frac{1}{\sin\theta} \dfdx{}{\theta} (\LL \Psi) \right) \right] \, \unit{\phi}.
+\]
+See the pattern?  This is just
+\[
+\grad \times \grad \times \vec{\omega} = \frac{1}{r \sin\theta} \LL (\LL \Psi) \, \unit{\phi},
+\]
+or, extending the notation in an obvious way,
+\[
+\grad \times \grad \times \vec{\omega} = \frac{1}{r \sin\theta} \LLLL \Psi \, \unit{\phi}.
+\]
+
+We have, then, our equation of motion for very viscous fluid moving past a sphere; plugging this into equation (\ref{eq_slow_flow_curl}), we have
+\begin{equation}
+\label{eq_slow_flow_psi}
+\boxed{
+\LLLL \Psi = 0.
+}
+\end{equation}
+This might \emph{look} simple, but don't be fooled:  this is a fourth order partial differential equation.
 
 
+\subsubsection{The Boundary Conditions}
+
+As with the ideal case above, looking at the boundary conditions can give us a hint on how to proceed with actually solving this fourth order equation.  The boundary conditions are actually pretty similar to that ideal fluid problem.
+
+First, we need to apply the no-slip condition to the surface of the sphere -- the fluid must have zero velocity there, so
+\[
+u_r(a, \theta) = 0 \quad \text{and} \quad u_\theta(a, \theta) = 0.
+\]
+We can write this condition in terms of the stream function $\Psi$ using equation (\ref{eq_stokes_stream}) and get
+\begin{equation}
+\label{eq_slow_bc1}
+\dfdx{\Phi}{\theta} \bigg|_{r=a} = 0 \quad \text{and} \quad \dfdx{\Phi}{r} \bigg|_{r=a} = 0.
+\end{equation}
+
+Second, the flow needs to be uniform in the $z$ direction far away from the sphere.  That means we need
+\[
+\vec{u}(r \to \infty) = U \, \unit{z},
+\]
+or, in spherical coordinates,
+\[
+u_r \to U\cos\theta \quad \text{and} \quad u_\theta \to  - U \sin\theta \quad \text{as} \quad r \to \infty.
+\]
+In terms of the Stokes stream function, this boundary condition is
+\begin{equation}
+\label{eq_slow_bc2}
+\Psi \to \frac{1}{2} U r^2 \sin^2 \theta.
+\end{equation}
+
+\subsubsection{The Solution}
+
+This second boundary condition suggests that our solution will take the form
+\begin{equation}
+\Psi(r, \theta) = f(r) \sin^2\theta.
+\end{equation}
+This form of $\Psi$ will simplify things quite a bit.  Let's start by applying the operator $\LL$ to this form of $\Psi$; after a few lines of work, I get
+\[
+\LL \Psi = \left( f'' - \frac{2}{r^2} f \right) \sin^2\theta,
+\]
+where the double prime indicates two derivatives with respect to $r$.
+
+We can make the next step a little easier if we define a new function 
+\begin{equation}
+\label{eq_sfs_F}
+F(r) = f'' - \frac{2}{r^2} f.
+\end{equation}
+Then applying the $\LL$ operator again obviously gives us the same result:
+\[
+\LL (\LL \Psi) =  \left( F'' - \frac{2}{r^2} F \right) \sin^2\theta,
+\]
+just in terms of $F$ rather then $f$.  Equation (\ref{eq_slow_flow_psi}),
+\[
+\LLLL \Psi = 0,
+\]
+becomes 
+\[
+F'' - \frac{2}{r^2} F = 0.
+\]
+Plugging in equation (\ref{eq_sfs_F}) gives us 
+\begin{equation}
+f^{\prime\prime\prime\prime} - \frac{4}{r^2} f'' + \frac{8}{r^3} f' - \frac{8}{r^4} f = 0.
+\end{equation}
+
+As promised, this is a fourth order differential equation that we need to solve.  However, this is easier than you might guess; first, multiply by $r^4$ to get
+\[
+r^4 \frac{r^4f}{dr^4} - 4r^2 \frac{d^2f}{dr^2} + 8r \frac{df}{dr} - 8f = 0.
+\]
+Notice that each term is paired with a similar order $r$ and derivative; this suggests we try a power-law solution of the form 
+\[
+f(r) = r^m.
+\]
+Plugging this into the differential equation above gives us a fourth-order polynomial,
+\[
+(m-3)(m-2)(m-1)m - 4(m-1)m + 8m - 8 = 0,
+\]
+which has the four roots
+\[
+m = -1, 1, 2, \text{ and } 4.
+\]
+Thus the general solution for $f(r)$ is
+\begin{equation}
+f(r) = \frac{A}{r} + Br + Cr^2 + Dr^4.
+\end{equation}
+Now we just have to find the constants $A, B, C,$ and $D$ using the boundary conditions.
+
+Let's start withe second, that the flow must be uniform at infinity -- so $\Psi \sim r^2$ there.  Of the four terms in the general solution, it doesn't really tell us anything about the first two, since the first ($A$) term goes to zero at infinity, and the second ($B$) doesn't get as big as $r^2$ so it can be neglected as $r\to\infty$.  But it does tell us that we need to drop the fourth term by setting $D = 0$, since that term blows up faster than $r^2$.  Then, looking at the form of the stream function in equation (\ref{eq_slow_bc2}), we must have for the third term
+\[
+C = \frac{1}{2}U.
+\]
+
+The first boundary condition, equation (\ref{eq_slow_bc1}), is for the derivatives of $\Psi$ to go to zero at $r=a$.  I'll leave it to you to work out the derivatives themselves and show that
+\[
+A = \frac{1}{4} Ua^3 \quad \text{and} \quad B = -\frac{3}{4} U a.
+\]
+
+Finally, after much work, we come to our solution at last:  Stokes stream function for slow flow past a sphere is
+\begin{equation}
+\boxed{
+\Psi(r, \theta) = U \left( \frac{a^3}{4r} - \frac{3a}{4} r + \frac{1}{2} r^2 \right) \sin^2\theta.
+}
+\end{equation}
+From this we can immediately plot the streamlines of the flow (Figure \ref{fig_sphere_viscous_lines}),  and we can find the velocities from equation (\ref{eq_stokes_stream}),
+\begin{equation}
+\label{eq_sphere_viscous_vel1}
+u_r(r, \theta) = U \left( \frac{a^3}{2r^3} - \frac{3a}{2r} + 1 \right) \cos\theta,
+\end{equation}
+and
+\begin{equation}
+\label{eq_sphere_viscous_vel2}
+u_\theta(r, \theta) = U \left( \frac{a^3}{4r^3} + \frac{3a}{4r} - 1 \right) \sin\theta.
+\end{equation}
 
 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_sphere_viscous_lines}
+\caption{Streamlines for very viscous flow past a sphere.  The colours indicate relative pressure, with red areas being high pressure.}
+\label{fig_sphere_viscous_lines}
+\end{figure}
+
+\subsection{Stokes Law}
+
+More interesting in this case is the \emph{force} on the sphere from the fluid.  In our previous examples of ideal fluid flow past objects, the force was always zero, called d'Alembert's paradox.  But now that we have actual viscous fluid, there \emph{will} be a force.  Our goal is to calculate it, but be warned:  we could get away with just integrating over the pressure in past examples, but with viscous fluids there are additional forces to take into account.
+
+\subsubsection{The Pressure}
+
+We'll start with the pressure, though, since we have an simple expression for it in equation (\ref{eq_ns_slow_p}),
+\[
+\grad p = -\mu \grad \times \vec{\omega}.
+\]
+In spherical coordinates (and ignoring the $\phi$ component since we have axisymmetry) this is two equations,
+\begin{align}
+\dfdx{p}{r} & = -\mu [\grad \times \vec{\omega}]_r, \\
+\frac{1}{r}\dfdx{p}{\theta} & = -\mu [\grad \times \vec{\omega}]_\theta,
+\end{align}
+where I'm sorry for the poor notation indicating the components of $\grad \times \vec{\omega}$.  Those components are easy to find from equation (\ref{eq_curl_vort}), where
+\[
+\LL \Psi = \frac{3Ua}{2r} \sin^2\theta.
+\]
+So 
+\[
+[\grad \times \vec{\omega}]_r = -\frac{3Ua}{r^3} \cos\theta
+\]
+and
+\[
+[\grad \times \vec{\omega}]_\theta = -\frac{3Ua}{2r^3} \sin\theta,
+\]
+and the two pressure equations become
+\begin{align}
+\dfdx{p}{r} & =  \frac{3U\mu a}{r^3} \cos\theta, \\
+\frac{1}{r}\dfdx{p}{\theta} & = \frac{3U\mu a}{2r^3} \sin\theta.
+\end{align}
 
 
+Integrating gives the pressure,
+\begin{equation}
+\label{eq_sphere_slow_p}
+\boxed{
+p(r, \theta) = p_\infty - \frac{3U \mu a}{2r^2} \cos \theta,
+}
+\end{equation}
+where $p_\infty$ is the integration constant and is the pressure at infinity.  Figure \ref{fig_sphere_viscous_lines} shows the pressure field in the fluid surrounding the sphere, where red indicated high pressure and blue low.  Of course, for the force calculation we'll need the pressure evaluated at the surface of the sphere $r=a$; this is
+\begin{equation}
+\label{eq_sphere_p_a}
+p(a, \theta) = p_\infty -\frac{3U\mu}{2a} \cos \theta.
+\end{equation}
+As you can see in Figure \ref{fig_sphere_viscous_lines}, the pressure is a maximum at $\theta = \pi$ and a minimum when $\theta = 0$.  This pressure difference upstream and downstream of the flow accounts for part of the force on the sphere (but not all of it).  You should compare with Figure \ref{fig_cyl_pressure} for ideal flow past a cylinder, for which there is no force at all.
+
+\subsubsection{The Stress}
+
+In Section \ref{sec_ns_deriv} I introduced the stress tensor $\tens{T}$, which is a collection of nine different quantities $T_{ij}$ that quantify the force exerted by the fluid, including both the pressure and viscous forces.  For Newtonian fluids, this stress tensor can be written as (see equation \ref{eq_stress_tensor})
+\[
+\tens{T} = \begin{bmatrix}
+- p + 2 \mu \partial u / \partial x  &  \mu (\partial v / \partial x + \partial u / \partial y)  &   \mu (\partial w / \partial x + \partial u / \partial z) \\
+\mu (\partial u / \partial y + \partial v / \partial x)  & -p + 2\mu  \partial v / \partial y  &  \mu (\partial w / \partial y + \partial v / \partial z) \\
+\mu (\partial u / \partial z + \partial w / \partial x)  &  \mu (\partial v / \partial z + \partial w / \partial y) & -p + 2\mu  \partial w / \partial z
+\end{bmatrix}.
+\]
+
+Unfortunately, this is in Cartesian coordinates, and we're working with spherical -- and the corresponding tensor in spherical coordinates is very messy.  Luckily, as we'll see, we really only need two different components of the stress tensor:  $T_{rr}$, the force in the radial direction against a surface with normal in the radial direction, and $T_{\theta r}$, the force in the $\unit{\theta}$ direction against a surface with normal in the radial direction.  Deriving these two components is a little beyond the scope of this book,\footnote{I looked them up for this calculation; see, for example, \emph{Elementary Fluid Dynamics} by D. J. Acheson, appendix A.7.} but I can give them to you here:
+\begin{align}
+T_{rr} & = -p + 2\mu \dfdx{u_r}{r} \\
+T_{\theta r} & = \mu \left( \frac{1}{r} \dfdx{u_r}{\theta} + \dfdx{u_\theta}{r} - \frac{u_\theta}{r} \right).
+\end{align}
+
+For our case, with the velocities given by equations (\ref{eq_sphere_viscous_vel1}) and (\ref{eq_sphere_viscous_vel2}) and the pressure by equation (\ref{eq_sphere_p_a}), the stress tensor components become
+\begin{align*}
+T_{rr}(r, \theta) & = -p_\infty + \frac{9U \mu a}{2r^2} \cos\theta - \frac{6 U \mu a^3}{2r^4} \cos \theta, \\
+T_{\theta r}(r, \theta) & = -\frac{3 U \mu a^3}{2r^4} \sin\theta,
+\end{align*}
+and, when evaluated at $r = a$, we have
+\begin{align}
+\label{eq_stress_rr}
+T_{rr}(a, \theta) & = -p_\infty + \frac{3 U \mu}{2a} \cos \theta, \\
+\label{eq_stress_thetar}
+T_{\theta r}(a, \theta) & = -\frac{3 U \mu }{2a} \sin\theta.
+\end{align}
+
+
+\subsubsection{The Force on the Sphere}
+
+We're now finally in a position to calculate the force on the surface of the sphere from the surrounding fluid.  In terms of the stress tensor, this force is given by equation (\ref{eq_stress_tensor_force}),
+\[
+\vec{F} = \int_S (\tens{T} \cdot \unit{n} ) da.
+\]
+The surface of the sphere has a normal $\unit{n} = \unit{r}$, and remember that the dot product like this between a tensor and a vector gives us another vector, not a scalar.  This vector is the \emph{stress tensor} (see Section \ref{sec_stress}), which here I'll call $\vec{t_r}$:
+\[
+\vec{t_r} = \tens{T} \cdot \unit{r}.
+\]
+For clarity, I'll write out this calculation in matrix format so we can see exactly what is going on.  The stress tensor then has components
+\[
+\vec{t_r} = \begin{bmatrix}
+T_{rr} & T_{r\theta} & T_{r\phi} \\
+T_{\theta r} & T_{\theta \theta} & T_{\theta \phi} \\
+T_{\phi r} & T_{\phi \theta} & T_{\phi \phi} 
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix} = \begin{bmatrix}
+T_{rr} \\
+T_{\theta r} \\
+T_{\phi r}.
+\end{bmatrix}
+\]
+In other words, the dot product picks out the components of the stress tensor that apply to a surface in the radial $\unit{r}$ direction.  The net force is then the surface integral over each component.
+
+But we know from symmetry arguments that the net force on the sphere should be in the $z$ direction, so we can shorten our work a bit by only considering the $z$ component of this stress vector, in which case we want to calculate
+\[
+F_z = \int_S (\vec{t_r} \cdot \unit{z} ) da.
+\]
+In spherical coordinates, $\unit{z} = \cos\theta \unit{r} - \sin\theta \unit{\theta}$, so doing the dot product gives us
+\[
+F_z = \int_S ( T_{rr} \cos \theta - T_{\theta r} \sin \theta ) da.
+\]
+As mentioned above, we only need those two components of the stress tensor, coming from the direction of the surface ($\unit{r}$) and the direction of the net force (in both the $\unit{r}$ and $\unit{\theta}$ directions).
+
+Plugging in the components $T_{rr}$ and $T_{\theta r}$ (evaluated at $r=a$) and using $da = a^2 \sin\theta \, d\theta d\phi$ for the surface element of the sphere gives us the integral
+\[
+F_z = \int_0^{2\pi} \int_0^\pi \left( -p_\infty \cos\theta + \frac{3U \mu }{2a} \cos^2\theta + \frac{3U\mu }{2a} \sin^2\theta \right) a^2 \sin\theta \, d\theta d\phi.
+\]
+This isn't a difficult integral to do; the term with $p_\infty$ integrates to zero, and the rest combine to give
+\begin{equation}
+\boxed{
+F_z = 6 \pi U \mu a.
+}
+\end{equation}
+This is our big result -- it gives the drag force on a sphere moving through a very viscous fluid, and is called \emph{Stokes law}.  Notice that the force is proportional to the velocity $U$ as you might expect.
 
 
 
@@ -1113,6 +1469,16 @@ or
 \]
 Are these equivalent?  Why or why not?
 \end{problem}
+
+
+
+\begin{problem}[Terminal velocity for a dropped sphere]
+\label{prob_terminal_vel} 
+Suppose you drop a steel sphere, of radius $1$ cm, into a bucket of glycerine.  What is the terminal speed of the sphere in the glycerine in cm/s?
+\end{problem}
+
+
+
 
 \begin{problem}[Rate of change of thermal energy]
 \label{prob_energy_change} 

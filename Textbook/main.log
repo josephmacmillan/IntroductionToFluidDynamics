@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  19 SEP 2022 14:36
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  21 SEP 2022 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2317,27 +2317,27 @@ Sidefootvsep and sidefootheight: 12pt and 344.39996pt
 (./6_special_topics.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Info: Redefining \microtypecontext on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Info: Redefining \microtypecontext on input line 95.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -2351,7 +2351,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 93.
+Package hyperref Info: Link coloring OFF on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -2366,22 +2366,22 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 93.
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \nameref on input line 95.
+LaTeX Info: Redefining \ref on input line 95.
+LaTeX Info: Redefining \pageref on input line 95.
+LaTeX Info: Redefining \nameref on input line 95.
 (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 98.
+(Font)              scaled to size 14.4pt on input line 100.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 14.4pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 98.
+(Font)              scaled to size 10.95pt on input line 100.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2415,7 +2415,7 @@ Requested font "cmmi8" at 8.0pt
 Requested font "cmmi6" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 98.
+(Font)              scaled to size 10.95116pt on input line 100.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;mapp
 ing=tex-text;" at 10.95116pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2423,7 +2423,7 @@ e=dflt;;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 98.
+(Font)              scaled to size 8.00085pt on input line 100.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=0;mapping=tex-text;" at 8.00085pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2431,7 +2431,7 @@ e=dflt;;+ssty=0;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 98.
+(Font)              scaled to size 6.00064pt on input line 100.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=1;mapping=tex-text;" at 6.00064pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2439,7 +2439,7 @@ e=dflt;;+ssty=1;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 98.
+(Font)              scaled to size 10.94882pt on input line 100.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;mapp
 ing=tex-text;" at 10.94882pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2447,7 +2447,7 @@ e=dflt;;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 98.
+(Font)              scaled to size 7.99915pt on input line 100.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=0;mapping=tex-text;" at 7.99915pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
@@ -2455,15 +2455,15 @@ e=dflt;;+ssty=0;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 98.
+(Font)              scaled to size 5.99936pt on input line 100.
 Requested font "[LibertinusMath-Regular.otf]/OT:script=math;language=dflt;;+sst
 y=1;mapping=tex-text;" at 5.99936pt
 Unknown feature `' in font `[LibertinusMath-Regular.otf]/OT:script=math;languag
 e=dflt;;+ssty=1;mapping=tex-text;'.
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusMath-Regular.otf
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 100
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -2478,8 +2478,8 @@ Requested font "msam10" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 Requested font "msam7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 100
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2495,7 +2495,7 @@ Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 99.
+(Font)              scaled to size 9.0pt on input line 101.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2505,13 +2505,13 @@ inusSerif-Regular.otf
 
 ]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 112.
+(Font)              scaled to size 20.74pt on input line 114.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 20.74pt on input line 112.
+(Font)              scaled to size 20.74pt on input line 114.
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2742,7 +2742,7 @@ File: Figures/Chapter2/fig_poise_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_poise_setup.pdf>
  [18] [19] [20] [21]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 153.
+(Font)              scaled to size 8.0pt on input line 154.
 Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
 ;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2758,7 +2758,7 @@ File: Figures/Chapter2/fig_poise_imp.pdf Graphic file (type pdf)
 File: Figures/Chapter2/fig_self_sim_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_self_sim_setup.pdf>
  [29]
-Overfull \hbox (3.24892pt too wide) in paragraph at lines 398--399
+Overfull \hbox (3.24892pt too wide) in paragraph at lines 399--400
 []\TU/LibertinusSerif(1)/m/n/10 Consider, first, some dimensional analysis. Exa
 mining equations ([]2.28[])-
  []
@@ -2791,7 +2791,7 @@ File: Figures/Chapter2/fig_bessel.pdf Graphic file (type pdf)
 File: Figures/Chapter2/fig_spin_vel.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_spin_vel.pdf>
 
-Overfull \hbox (1.02788pt too wide) in paragraph at lines 810--811
+Overfull \hbox (1.02788pt too wide) in paragraph at lines 811--812
 \TU/LibertinusSerif(1)/m/n/10 Our last two examples involved fluid \TU/Libertin
 usSerif(0)/m/it/10 inside \TU/LibertinusSerif(1)/m/n/10 a cylinder; let’s flip 
 that around
@@ -3098,7 +3098,7 @@ File: Figures/Chapter6/fig_boundary_result1.pdf Graphic file (type pdf)
 File: Figures/Chapter6/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_boundary_result2.pdf>
 
-Overfull \hbox (10.36673pt too wide) in paragraph at lines 362--363
+Overfull \hbox (10.36673pt too wide) in paragraph at lines 365--366
 \TU/LibertinusSerif(1)/m/n/10 In our discussion of waves, we were careful to fo
 cus those of small-amplitude
  []
@@ -3122,33 +3122,39 @@ File: Figures/Chapter6/fig_dam_heights.pdf Graphic file (type pdf)
 File: Figures/Chapter6/fig_sphere_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_sphere_setup.pdf>
  [175] [176]
-[177]
+[177] [178]
 File: Figures/Chapter6/fig_sphere_lines.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_sphere_lines.pdf>
- [178] [179] [180] [181] [182] [183] [184] [185] [186]
+ [179]
+Overfull \hbox (12.53008pt too wide) in paragraph at lines 826--827
+[]\TU/LibertinusSerif(1)/m/n/10 Unfortunately, though, this problem is no longe
+r irrotational, so Laplace’s
+ []
+
+[180] [181] [182] [183] [184]
+File: Figures/Chapter6/fig_sphere_viscous_lines.pdf Graphic file (type pdf)
+<use Figures/Chapter6/fig_sphere_viscous_lines.pdf>
+ [185] [186] [187] [188] [189] [190] [191]
+[192] [193] [194] [195] [196]
 File: Figures/Chapter6/fig_polytropes.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_polytropes.pdf>
-
-Underfull \vbox (badness 2035) has occurred while \output is active []
-
- [187]
-[188]) [189]
+ [197] [198]) [199]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- (./main.aux (./1_introduction.aux) (./2_viscous_fluids.aux)
-(./3_ideal_fluids.aux) (./4_potential_flow.aux) (./5_waves.aux)
-(./6_special_topics.aux))
+ (./main.aux
+(./1_introduction.aux) (./2_viscous_fluids.aux) (./3_ideal_fluids.aux)
+(./4_potential_flow.aux) (./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5D97C2CD8870ED65F901B820D87C43E5;15613.
+(rerunfilecheck)             Checksum: 439D0B54D8DF9658D9F5434D09D6F420;16627.
  ) 
 Here is how much of TeX's memory you used:
- 39585 strings out of 478774
- 816406 string characters out of 5864471
- 1385323 words of memory out of 6000000
- 58832 multiletter control sequences out of 15000+600000
+ 39623 strings out of 478774
+ 817344 string characters out of 5864471
+ 1388841 words of memory out of 6000000
+ 58869 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1263b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (195 pages).
+Output written on main.pdf (205 pages).

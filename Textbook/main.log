@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  21 SEP 2022 14:48
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  26 SEP 2022 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3138,23 +3138,32 @@ File: Figures/Chapter6/fig_sphere_viscous_lines.pdf Graphic file (type pdf)
 [192] [193] [194] [195] [196]
 File: Figures/Chapter6/fig_polytropes.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_polytropes.pdf>
- [197] [198]) [199]
+ [197] [198] [199] [200]
+Overfull \hbox (1.0534pt too wide) in paragraph at lines 1481--1483
+\TU/LibertinusSerif(1)/m/n/10 where $[]$ represents any external forces present
+ (for example, gravity would
+ []
+
+[201]
+File: Figures/Chapter6/fig_sph_dam.pdf Graphic file (type pdf)
+<use Figures/Chapter6/fig_sph_dam.pdf>
+ [202] [203]) [204]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- (./main.aux
-(./1_introduction.aux) (./2_viscous_fluids.aux) (./3_ideal_fluids.aux)
-(./4_potential_flow.aux) (./5_waves.aux) (./6_special_topics.aux))
+ (./main.aux (./1_introduction.aux)
+(./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
+(./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 439D0B54D8DF9658D9F5434D09D6F420;16627.
+(rerunfilecheck)             Checksum: 572517E29F221E9E5EA5E4E9D10805C0;17269.
  ) 
 Here is how much of TeX's memory you used:
- 39623 strings out of 478774
- 817344 string characters out of 5864471
- 1388841 words of memory out of 6000000
- 58869 multiletter control sequences out of 15000+600000
+ 39637 strings out of 478774
+ 817757 string characters out of 5864471
+ 1390114 words of memory out of 6000000
+ 58882 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,16n,152p,1263b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (205 pages).
+Output written on main.pdf (210 pages).

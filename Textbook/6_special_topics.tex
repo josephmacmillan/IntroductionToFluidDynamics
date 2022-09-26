@@ -741,7 +741,7 @@ u_\theta(r, \theta) = -U \left( 1 + \frac{a^3}{2r^3} \right) \sin \theta.
 \end{equation}
 Feel free to compare this solution with that for the cylinder in Section \ref{sec_cylinder}.  
 
-We could, at this point, calculate the pressure on the sphere and find the force that the fluid exerts on it.  However, I'll skip the details there and just mention that the end result is exactly the same as in the cylinder case:  the net force is zero.  This is just d'Alembert's paradox showing up again because we'll dealing with an ideal fluid.
+We could, at this point, calculate the pressure on the sphere and find the force that the fluid exerts on it.  However, I'll skip the details here -- I've shown the pressure throughout the fluid in Figure \ref{fig_sphere_lines} if you're interested -- and just mention that the end result is exactly the same as in the cylinder case:  the net force is zero.  This is just d'Alembert's paradox showing up again since we'll dealing with an ideal fluid.
 
 \subsection{Stokes Stream Function}
 
@@ -770,7 +770,7 @@ The streamlines are plotted in Figure \ref{fig_sphere_lines}; again, you might w
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_sphere_lines}
-\caption{Streamlines for ideal flow about a sphere.}
+\caption{Streamlines for ideal flow about a sphere.  The pressure is shown as well, with red regions indicating high pressure and blue low.}
 \label{fig_sphere_lines}
 \end{figure}
 
@@ -993,7 +993,7 @@ u_\theta(r, \theta) = U \left( \frac{a^3}{4r^3} + \frac{3a}{4r} - 1 \right) \sin
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_sphere_viscous_lines}
-\caption{Streamlines for very viscous flow past a sphere.  The colours indicate relative pressure, with red areas being high pressure.}
+\caption{Streamlines for very viscous flow past a sphere.  The colours indicate pressure, with red areas being high pressure.}
 \label{fig_sphere_viscous_lines}
 \end{figure}
 
@@ -1429,9 +1429,107 @@ Neither of these two examples were particularly good model for \emph{stars}, the
 % --- SECTION - ADVANCED TOPIC 6 ---
 % 
 
-\section{Numerical Methods}
+\section{Computational Methods}
 
-Or stellar atmospheres?
+Although we've now spent almost 200 pages talking about and solving fluid dynamics problems, it should be clear that what we've covered is actually drastically limited in scope.  Here's what we've been able to solve:
+\begin{itemize}
+\item Viscous fluid flowing in a straight line or in a circle
+\item Ideal flow past various simple objects, like circular cylinders or infinitely long aerofoils
+\item The motion and interaction of idealized vortexes
+\item Small amplitude surface waves
+\item Small amplitude sound waves
+\item The free surface of a rotating fluid or a dam break
+\item And a few other advanced topics in this chapter: a simple boundary layer model, very viscous flow past a sphere, a simple model for a static star.
+\end{itemize}
+
+That list is both impressive and also short.  Although there's more theory we could talk about -- boundary layers could fill its own chapter, and we could at least touch on instability and turbulence -- the fact is that most applications of fluid dynamics today are much too complicated to handle by solving equations by hand, even with the impressive set of tools we've learned here.  If we want to understand the lift and drag forces on a real airplane, model weather and climate, examine high-speed plasma outflows from accretion disks surrounding black holes, or check how close our dam breaking theory matches an actual dam break (without causing one in actuality), we need to turn to computational methods of solving the Navier-Stokes and related equations. 
+
+These methods are outside the scope of this textbook, so I won't be providing too much detail, but they're worth discussing even a little because of their importance.  
+
+\subsection{Computational Fluid Dynamics}
+
+Traditionally, computational methods involved solving the Navier-Stokes equation, along with the continuity equation and conservation of energy, by discretizing them on a grid of some sort.  This process can be made computationally easier by combining all three of these equations into one:
+\begin{equation}
+\label{eq_ns_comp}
+\dfdx{(\rho \phi)}{t} + \grad \cdot (\rho \phi \vec{u}) = \grad \cdot (\Gamma \grad \phi) + S_\phi,
+\end{equation}
+where the variable $\phi$\footnote{This $\phi$ is not the velocity potential, sorry once again for overusing this letter.} stands for either $1$ (in which case this equation reduces to the continuity equation), a component of velocity (for example, if $\phi = u$, the equation reduces to the $x$ component of the Navier-Stokes equation), or the internal energy (in which case it becomes conservation of energy).  The variable $\Gamma$, called the diffusion coefficient, is just the viscosity if $\phi$ is a velocity component and is the thermal conductivity if it is the energy.  The last term, $S_\phi$, is called the \emph{source term}, and could represent a force or an energy source.
+
+Turning this equation into a form suitable for solving it computational is a complex problem, and various schemes are in use.  The simplest is the \emph{finite difference method}, in which quantities are evaluated on a grid in space.  The derivatives in equation (\ref{eq_ns_comp}) become finite differences (hence the name); for example, the \emph{forward difference} scheme approximates
+\[
+\frac{df}{dx} \approx \frac{f(x+\Delta x) - f(x)}{\Delta x}.
+\]
+Any ordinary differential equations I solved numerically in the course of this textbook were done using a finite difference method.  For the Navier-Stokes equation, though, this method is not particularly flexible and isn't often used except in cases where a regular grid is appropriate -- for example, simulations of weather.
+
+The \emph{finite volume method} is more popular for solving fluid dynamics problems.  In this method, the fluid domain is divided into small \emph{control volumes}; for each control volume -- or \emph{cell} -- the volume average of the fluid variables can be evaluated.  Variables can change due to a flux entering into the volume, and this must be balanced by a corresponding flux out of the volume to ensure conservation of that quantity.  This method requires rewriting equation (\ref{eq_ns_comp}) by integrating over the volume, and using the divergence theorem to reduce the volume integrals to surface integrals where there are divergences.  The main equation then becomes
+\[
+\dfdx{}{t} \left( \int_V \rho \phi \, d\tau \right) =- \int_S \rho \phi \vec{u} \cdot d\vec{a} + \int_S \Gamma \grad \phi \cdot d\vec{a} + \int_V S_\phi \, d\tau,
+\]
+which we can interpret as saying that any increase in $\phi$ inside the cell must be because of \emph{convection} (first term on the right hand side) or \emph{diffusion} (second term) or the generation of more $\phi$ (the third term).  Finite volume methods are more flexible than finite differences, and can be used with both a regular mesh of cells or an irregular one -- useful in solving problems involving complicated shapes like the surface of a car. 
+
+A third technique is the \emph{finite element method}, in which the fluid domain is again divided up into smaller elements.   However, unlike the previous two methods, each element is modelled independently assuming each variable changes according to a simple function.  The models for each element are then combined into a larger system of equations that models the entire system.
+
+If you're interested in exploring computational fluid dynamics, I recommend the software SU2 (\url{su2code.github.io}), an open source package written in c++ and Python.  SU2 can solve Euler's equation and the Navier-Stokes equation for both incompressible and compressible fluids, and is very flexible:  although designed originally for aerodynamic shape optimization, it can handle potential flow, elasticity, and flows containing electrodynamics or chemical reactions.  Figure \ref{fig_vortex_shedding} was created using SU2 -- it solved the Navier-Stokes equations on an irregular multi-level grid using a finite volume method for flow past a cylinder.
+
+\subsection{Smoothed Particle Hydrodynamics}
+
+A very different approach to solving the Navier-Stokes and related equations is taken by \emph{smoothed particle hydrodynamics,} first developed to simulate polytropic models of stars. Rather than using a grid or mesh, this method uses particle-based techniques to simulate interactions between volume elements -- sometimes in this cases called \emph{control masses.}  The particles carry all physical properties of the system as they move; this viewpoint, in which the coordinates system follows the particles, is called \emph{Lagrangian}.  Throughout this textbook, on the other hand, I've used a \emph{Eulerian} viewpoint in which the fluid properties are described at fixed points.
+
+How exactly does this work?  Well, consider for simplicity Euler's equation,
+\[
+\frac{D\vec{u}}{Dt} = -\frac{1}{\rho} \grad p + \frac{1}{\rho} \vec{f},
+\]
+where $\vec{f}$ represents any external forces present (for example, gravity would be $\rho \vec{g}$ as usual).  Because of the Lagrangian viewpoint, we can treat the material derivative as $d\vec{u}/dt$, where $\vec{u} = d\vec{r}/dt$.  Given an initial configuration of the fluid, represented as particles at particular positions, Euler's equation tells us how to update those positions and other quantities by approximating the derivatives as finite differences.  One particular particle, for example, would have its position and velocity updated according to
+\begin{align*}
+\Delta \vec{r} &= \vec{u} \Delta t, \\
+\Delta \vec{u} &= \left( -\frac{1}{\rho} \grad p + \frac{1}{\rho} \vec{f} \right) \Delta t,
+\end{align*}
+where $\Delta t$ is the time step.
+
+One issue with this scheme, however, is how to compute the derivatives that shown up in Euler's equation (or the Navier-Stokes, which has a second order derivative).  Consider the pressure; it can be written in terms of a \emph{interpolating or smoothing kernel} $W(\vec{r})$ as
+\[
+p(\vec{r}) \approx \int p(\vec{r'}) W(\vec{r} - \vec{r'}) \, d\tau'.
+\]
+Note that if $W(\vec{r}) = \delta^3(\vec{r})$, then this relation is exact; most commonly the kernel is a Gaussian,
+\[
+W(\vec{r}) = \left( \frac{1}{h \sqrt{\pi} } \right)^3 e^{-r^2/h^2},
+\]
+where $h$ is the smoothing length scale (in the limit $h\to 0$, the Gaussian becomes the Dirac delta).  Now, if we want to calculate the gradient of the pressure, the $\grad$ operator only acts on function of the coordinate $\vec{r}$ -- so we can write
+\[
+\grad p(\vec{r}) = \int p(\vec{r'}) \grad W(\vec{r} - \vec{r'}) \, d\tau,
+\]
+and perform the gradient by hand.  
+
+As with traditional CFD methods, SPH must be discretized for calculation on a computer.  In this case it's straightforward -- the integrals becomes sums in the usual way.  The volume element $d\tau$ can be written in terms of the density,
+\[
+d\tau = \frac{ m}{ \rho},
+\]
+where $m$ is the mass of the particle under consideration, and the pressure gradient takes the form
+\[
+\grad p \approx \sum_j m \frac{p(\vec{r}_j)}{\rho_j} \grad W(\vec{r} - \vec{r}_j).
+\]
+The sum is over all particles, and $\rho_j$ is the density of the $j$th particle, which can be found from
+\[
+\rho_i = \sum_j m_j W(\vec{r}_i - \vec{r_j}).
+\]
+Finally, then, Euler's equation for updating the velocity of the $i$th particle becomes
+\begin{equation}
+\frac{\Delta \vec{u}_i}{\Delta t} = -\frac{1}{\rho_i} \sum_j m_j \frac{p_j}{\rho_j} \grad W(\vec{r}_i - \vec{r}_j) + \frac{1}{\rho_i} \vec{f}_i
+\end{equation}
+(actually, this is usually written in a way that's more efficient for calculation, but this should give you an idea of what's involved).  If viscous forces are to be included, the Laplacian in the Navier-Stokes equation is handled in a similar manner to the gradient here.
+
+If you're interested in exploring smoothed particle hydrodynamics, I recommend taking a look at PySPH (\url{pysph.readthedocs.io}), an open source SPH package written in Python.  It can handle weakly compressible SPH for free surface flows (like the dam break shown in Figure \ref{fig_sph_dam}), incompressible fluids, elastic dynamics, various boundary conditions, and more.  
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Figures/Chapter6/fig_sph_dam}
+\caption{Smoothed particle hydrodynamics simulation of the two dimensional dam break problem with a right wall.  Simulations performed by Kyle Stewart and Omar Nusrat using PySPH. }
+\label{fig_sph_dam}
+\end{figure}
+
+
+\subsection{Lattice Boltzmann Method}
 
 
 
@@ -1461,11 +1559,11 @@ and is thus constant on streamlines.
 
 (c) Show that for the flow around a sphere, the Stokes stream function can be written as
 \[
-\Psi (r, \theta) = -\frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \cos \theta
+\Psi (r, \theta) = -\frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \cos^2 \theta
 \]
 or
 \[
-\Psi (r, \theta) = \frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \sin \theta.
+\Psi (r, \theta) = \frac{1}{2} U \left( r^2 - \frac{a^3}{r} \right) \sin^2 \theta.
 \]
 Are these equivalent?  Why or why not?
 \end{problem}

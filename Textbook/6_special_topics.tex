@@ -127,7 +127,7 @@ So far we've been very general with the stress tensor; specifying different tens
 \begin{equation}
 T_{ij} = -p \, \delta_{ij},
 \end{equation}
-where $p(x, y, z, t)$ is a scalar function -- it's the \emph{pressure} in the fluid -- and $\delta_{ij}$ is called the Kronecker delta.  If you're not familiar with it, this is a handy function (technically, it's a tensor) that is \emph{one} if the two indices are the same, and \emph{zero} if there's different:
+where $p(x, y, z, t)$ is a scalar function -- it's the \emph{pressure} in the fluid -- and $\delta_{ij}$ is called the Kronecker delta.  If you're not familiar with it, this is a handy function (technically, it's a tensor) that is \emph{one} if the two indices are the same, and \emph{zero} if they're different:
 \[
 \delta_{ij} = \begin{cases}
 0 & i \neq j, \\
@@ -144,7 +144,7 @@ As a matrix, this stress tensor therefore looks like
 \end{equation}
 This stress tensor defines \emph{ideal fluids}, which are inviscid (no viscosity) and don't include forces of deformation in the stress tensor.  Why the negative sign on the pressure?  Because this is the force of the fluid \emph{outside} the surface pushing on it -- in the opposite direction of the normal vector $\unit{n}$.
 
-Although ideal fluids will make up a large part of our discussion of fluid dynamics, we're here to derive the Navier-Stokes equations, which deal instead with \emph{Newtonian fluids}, which do include the deformation of fluid elements.  To incorporate that, we'll add a term to the ideal fluid stress tensor:
+Although ideal fluids have made up a large part of our discussion of fluid dynamics, we're here to derive the Navier-Stokes equations, which deal instead with \emph{Newtonian fluids} and which do include the deformation of fluid elements.  To incorporate that, we'll add a term to the ideal fluid stress tensor:
 \begin{equation}
 T_{ij} = T_{ij}^I + T_{ij}^D,
 \end{equation}
@@ -164,7 +164,7 @@ Now, the most general symmetric tensor that depends \emph{linearly} on these vel
 \begin{equation}
 T_{ij}^D = \mu \left( \frac{\partial u_j}{\partial x_i} + \frac{\partial u_i}{\partial x_j} \right),
 \end{equation}
-where $\mu$ is the constant of proportionality and is called (of course) the \emph{viscosity}.  Splitting the velocity gradients into two terms likes this ensures the tensor is symmetric.  Although it's cumbersome to do so, and doesn't really gain us anything, I'll write out this tensor in matrix form (you can at least compare with the ideal case in equation \ref{eq_stress_ideal}):
+where $\mu$ is the constant of proportionality and is called (of course) the \emph{viscosity}.  Splitting the velocity gradients into two terms like this ensures the tensor is symmetric.  Although it's cumbersome to do so, and doesn't really gain us anything, I'll write out this tensor in matrix form (you can at least compare with the ideal case in equation \ref{eq_stress_ideal}):
 \[
 \tens{T}^D = \begin{bmatrix}
 2 \mu \partial u / \partial x  &  \mu (\partial v / \partial x + \partial u / \partial y)  &   \mu (\partial w / \partial x + \partial u / \partial z) \\
@@ -216,7 +216,7 @@ We're finally ready to derive the Navier-Stokes equation, which is just Cauchy's
 \[
 \rho \frac{Du_i}{Dt} = \sum_{j=1}^3 \frac{\partial T_{ij}}{\partial x_j} + \rho g_i
 \]
-(compare with the vector version in equation \ref{eq_cauchy}).  We only tricky thing here is the divergence of the stress tensor,
+(compare with the vector version in equation \ref{eq_cauchy}).  The only tricky thing here is the divergence of the stress tensor,
 \[
 \sum_{j=1}^3 \frac{\partial T_{ij}}{\partial x_j} = \sum_{j=1}^3 \frac{\partial }{\partial x_j} \left[ -p \delta_{ij} + \mu \left( \frac{\partial u_j}{\partial x_i} + \frac{\partial u_i}{\partial x_j} \right) \right],
 \]
@@ -293,6 +293,13 @@ where
 \]
 is a dimensionless length parameter.  Here, the function $f(\eta)$ is an unknown function that we'll solve for shortly; notice that if $f(\eta) = \eta$, we get back our original flow about a stagnation point.  However, in order to satisfy the no-slip condition and get zero velocity at $y=0$, we need $f \to 0$ \emph{and} $f' \to 0$ when $\eta \to 0$.  Clearly $f(\eta) = \eta$ won't do the trick.  On the other hand, we do expect the flow far away from the boundary to look like our original stagnation point flow; we'll return to this later.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{Figures/Chapter6/fig_boundary_result1}
+\caption{The function $f(\eta)$ (black) and $f'(\eta)$ (red).  Note that the boundary layer is clear -- it extends out to around $\eta \sim 2$.  After that, $f(\eta) \approx \eta$. }
+\label{fig_boundary_result1}
+\end{figure}
+
 To find the function $f(\eta)$ properly, then, we need to make sure that this flow still satisfies the Navier-Stokes equation.  If we plug in the velocity in Equation (\ref{eq_boundary_trial}) into the Navier-Stokes equation, the $x$ and $z$ equations become
 \begin{equation}
 \label{eq_boundary_ns1}
@@ -324,6 +331,13 @@ where $g(x)$ is the integration ``constant.''  This is a useful result:  if we n
 \]
 In other words, $\partial p / \partial x$ is at best a function of $x$.
 
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{Figures/Chapter6/fig_boundary_result2}
+\caption{Vector plots of the invisid flow (left) and viscous flow (right).  The boundary layer can be clearly seen in the flow -- the blue colour indicates small velocity. }
+\label{fig_boundary_result2}
+\end{figure}
+
 We can now return to the other Navier-Stokes equation, Equation (\ref{eq_boundary_ns1}), and separate variables so that all $x$ terms are on one side and all $\eta$ terms are on the other:
 \[
 -\frac{1}{\alpha^2 \rho x} \frac{\partial p}{\partial x} = f'^2 - ff'' - f'''.
@@ -342,19 +356,9 @@ where the last condition ensures that we return to our original flow (with $f(\e
 
 This equation must be solved numerically, but it can be tricky to do so while making sure the boundary conditions match; the results are shown in Figures \ref{fig_boundary_result1} and \ref{fig_boundary_result2}.  As you can see, there is now a small boundary layer where the velocity drops to zero, but away from the boundary the flow is indistinguishable from the inviscid case.  Despite the complexity of this example, it's a good one for exploring exactly how the boundary layer develops for viscous flows.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/Chapter6/fig_boundary_result1}
-\caption{The function $f(\eta)$ (black) and $f'(\eta)$ (red).  Note that the boundary layer is clear -- it extends out to around $\eta \sim 2$.  After that, $f(\eta) \approx \eta$. }
-\label{fig_boundary_result1}
-\end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{Figures/Chapter6/fig_boundary_result2}
-\caption{Vector plots of the invisid flow (left) and viscous flow (right).  The boundary layer can be clearly seen in the flow -- the blue colour indicates small velocity. }
-\label{fig_boundary_result2}
-\end{figure}
+
+
 
 %
 % --- SECTION - ADVANCED TOPIC 3 ---
@@ -362,7 +366,7 @@ This equation must be solved numerically, but it can be tricky to do so while ma
 
 \section{Nonlinear Waves}
 
-In our discussion of waves, we were careful to focus those of small-amplitude -- which linearized the equations that describe waves and allowed us to investigate various different properties.  In general, the full theory of waves is quite difficult, but if we limit ourselves to shallow water, we can handle some interesting cases where the amplitude is large.
+In our discussion of waves, we were careful to focus on those of small-amplitude -- which linearized the equations that describe waves and allowed us to investigate various different properties.  In general, the full theory of waves is quite difficult, but if we limit ourselves to shallow water, we can handle some interesting cases where the amplitude is large.
 
 \subsection{The Shallow Water Equations}
 
@@ -382,7 +386,7 @@ which integrates to
 \[
 p(x, y, t) = -\rho g y + f_1(x, t),
 \]
-where $f_1(x, t)$ is the integration ``constant'' (which could depend on $x$ or $t$ since we had a partial derivative).  We can find the constant though boundary conditions as usual; in this case we have atmospheric pressure $p_0$ at the surface, $y = h(x, t)$.  This leads to $f_1 = p_0 + \rho g h$, giving us the pressure
+where $f_1(x, t)$ is the integration ``constant'' (which could depend on $x$ or $t$ since we had a partial derivative).  We can find the constant through boundary conditions as usual; in this case we have atmospheric pressure $p_0$ at the surface, $y = h(x, t)$.  This leads to $f_1 = p_0 + \rho g h$, giving us the pressure
 \begin{equation}
 p(x, y, t) = p_0 - \rho g [ y - h(x, t)].
 \end{equation}
@@ -398,7 +402,7 @@ If we substitute this pressure into equation (\ref{eq_euler_non_u}), we get
 \[
 \frac{Du}{Dt} = -g \dfdx{h}{x}.
 \]
-Now, $h$ is a function of $x$ and $t$ only, we suggests that the \emph{change} in $u$ depends only on those variables.  As long as $u$ doesn't start out depending on $y$, it will never pick up a $y$ dependency as time goes on.  That means we can write $u = u(x, t)$, and, writing out the full material derivative and dropping the $\partial u / \partial y$ term, the above equation becomes
+Now, $h$ is a function of $x$ and $t$ only, which suggests that the \emph{change} in $u$ depends only on those variables.  As long as $u$ doesn't start out depending on $y$, it will never pick up a $y$ dependency as time goes on.  That means we can write $u = u(x, t)$, and, writing out the full material derivative and dropping the $\partial u / \partial y$ term, the above equation becomes
 \begin{equation}
 \label{eq_shallow1}
 \boxed{
@@ -507,7 +511,7 @@ Although the details at this point might be a little difficult to follow, the me
 
 \subsection{The Dam Break Problem}
 
-Suppose a large dam holds back water of height $h_0$ as shown in Figure \ref{fig_dam_start}.  The dam is located at $x=0$, and the water is to the left, but at $t=0$, the dam breaks -- in our case, that means disappears instantly -- and the water can rush out to the right.  We want to find two things: the horizontal speed of the water $u(x, t)$ and its height $h(x, t)$.  This is a famous problem in fluid dynamics, not least because of the deadly and destructive nature of dam breaks, and was first solved in 1892 by Ritter.
+Suppose a large dam holds back water of height $h_0$ as shown in Figure \ref{fig_dam_start}.  The dam is located at $x=0$, and the water is to the left, but at $t=0$, the dam breaks -- in our case, that means it disappears instantly -- and the water can rush out to the right.  We want to find two things: the horizontal speed of the water $u(x, t)$ and its height $h(x, t)$.  This is a famous problem in fluid dynamics, not least because of the deadly and destructive nature of dam breaks, and was first solved in 1892 by Ritter.
 
 \begin{figure}
 \centering
@@ -535,7 +539,7 @@ Now, we know that along the positive curves the quantity $u + 2c$ is constant.  
 \label{fig_char_curves}
 \end{figure}
 
-For example, take a look at point P$_1$ in Figure \ref{fig_char_curves} (a) -- it happens to be at an intersection of the two curves shown as dashed lines, one positive and one negative.  Now, I don't know that those characteristic curves are still straight lines -- when $t<0$ the fluid has started to move, so our analysis above no longer holds.  But we do know that along the positive line 
+For example, take a look at point P$_1$ in Figure \ref{fig_char_curves} (a) -- it happens to be at an intersection of the two curves shown as dashed lines, one positive and one negative.  Now, I don't know that those characteristic curves are still straight lines -- when $t>0$ the fluid has started to move, so our analysis above no longer holds.  But we do know that along the positive line 
 \[
 u + 2c = 2c_0
 \]
@@ -567,12 +571,12 @@ along this negative curve.  At point P$_2$, then, we can use these two equations
 \[
 u = c_0 + \frac{k}{2} \quad \text{and} \quad c = \frac{c_0}{2} - \frac{k}{4}.
 \]
-The important thing to note is that along the negative characteristic curve, both $u$ and $c$ are constant (since $k$ is constant along that curve; the same is \emph{not} true for the positive curve).  Once again we find that the negative characteristic curves are straight lines with slope
+The important thing to note is that along the negative characteristic curve, both $u$ and $c$ are constant (since $k$ is constant along that curve; the same is \emph{not} true for the positive curve).  Once again we find that the negative characteristic curves are straight lines, this time with slope
 \[
 \frac{dx}{dt} = u - c = \frac{c_0}{2} + \frac{k}{4}.
 \]
 
-That's great but -- what do these straight lines actually look like?  Well, with a bit of thought you might realize that the negative characteristic curves can never cross (and the same is true of the positive, although obviously positive and negative can cross).  If they did intersect at some point, the water there would have two different values of $u$ or $c$.  Normally the velocity and height are single-valued functions, so this is not allowed -- except at one point: at $x = 0$, $t=0$ we have a discontinuity in the height of the water.  Thus the negative characteristic curves \emph{can} cross at that point.  So although we can't specify the slope of these lines, we do know that they start at the origin.  This is shown in \ref{fig_char_curves} (c). 
+That's great, but -- what do these straight lines actually look like?  Well, with a bit of thought you might realize that the negative characteristic curves can never cross (and the same is true of the positive, although obviously positive and negative can cross).  If they did intersect at some point, the water there would have two different values of $u$ or $c$.  Normally the velocity and height are single-valued functions, so this is not allowed -- except at one point: at $x = 0$, $t=0$ we have a discontinuity in the height of the water.  Thus the negative characteristic curves \emph{can} cross at that point.  So although we can't specify the slope of these lines, we do know that they start at the origin.  This is shown in \ref{fig_char_curves} (c). 
 
 Let's quickly recap what we know in the region above the line $x = -c_0 t$.  Along the negative curves, 
 \[
@@ -658,7 +662,7 @@ Consider first, then, the ideal flow around a sphere of radius $a$.  The fluid s
 \label{fig_sphere_setup}
 \end{figure}
 
-Now, this flow is \emph{irrotational} for the same reason ideal flow about a cylinder is -- since the flow is uniform at infinity, it obviously has zero vorticity there, and Kelvin's circulation theorem (Section \ref{sec_circulation} says that it will remain irrotational as it flows past the sphere.  That means we can describe the flow with a velocity potential $\varphi$ as usual and, since the flow is incompressible, it must satisfy Laplace's equation,
+Now, this flow is \emph{irrotational} for the same reason ideal flow about a cylinder is -- since the flow is uniform at infinity, it obviously has zero vorticity there, and Kelvin's circulation theorem (Section \ref{sec_circulation}) says that it will remain irrotational as it flows past the sphere.  That means we can describe the flow with a velocity potential $\varphi$ as usual and, since the flow is incompressible, it must satisfy Laplace's equation,
 \[
 \nabla^2 \varphi = 0.
 \]
@@ -673,7 +677,7 @@ and write Laplace's equation as
 \nabla^2 \varphi = \frac{1}{r^2} \dfdx{}{r} \left( r^2 \dfdx{\varphi}{r} \right) + \frac{1}{r^2 \sin \theta} \dfdx{}{\theta} \left(\sin \theta \dfdx{\varphi}{\theta} \right).
 \end{equation}
 
-The boundary conditions turn out to the similar to those for flow around a cylinder (Section \ref{sec_cylinder} again).  We need the fluid to slip along the boundary of the sphere, which means there can't be a radial component there, so the first boundary condition is
+The boundary conditions turn out to be similar to those for flow around a cylinder (Section \ref{sec_cylinder} again).  We need the fluid to slip along the boundary of the sphere, which means there can't be a radial component there, so the first boundary condition is
 \begin{equation}
 \label{eq_sphere_bc1}
 u_r(a, \theta) = 0 \quad \text{or} \quad \left. \dfdx{\varphi}{r} \right|_{r=a} = 0.
@@ -749,7 +753,7 @@ How do we plot the streamlines for the fluid?  For two dimensional, incompressib
 \begin{equation}
 \vec{u} = \grad \times \left( \frac{1}{r\sin \theta} \Psi \unit{\phi} \right).
 \end{equation}
-Compare with equation (\ref{eq_stream_def}).  In spherical coordinates, the definition becomes
+In spherical coordinates, this definition becomes
 \begin{equation}
 \label{eq_stokes_stream}
 u_r = \frac{1}{r^2 \sin \theta} \dfdx{\Psi}{\theta} \quad \text{and} \quad u_\theta = -\frac{1}{r \sin \theta} \dfdx{\Psi}{r}.
@@ -776,18 +780,18 @@ The streamlines are plotted in Figure \ref{fig_sphere_lines}; again, you might w
 
 \subsection{Very Viscous Flow}
 
-Suppose instead of ideal fluid flowing past the sphere, we have Newtonian viscous flow instead.  If the flow is \emph{steady} and we ignore the effect of gravity, the Navier-Stokes equation (equation \ref{eq_navier_stokes}) is then
+Suppose instead of ideal fluid flowing past the sphere, we have Newtonian viscous flow instead.  If the flow is \emph{steady} and we ignore the effect of gravity, the Navier-Stokes equation (\ref{eq_navier_stokes}) is then
 \begin{equation}
 \label{eq_ns_steady}
 (\vec{u} \cdot \grad ) \vec{u} = -\frac{1}{\rho} \grad p + \nu \nabla^2 \vec{u}.
 \end{equation}
 
-There are two terms involving velocity in this equation, and their relative strength determines how a fluid will flow.  We've already studied at length flows for which the \emph{inertial term} $(\vec{u} \cdot \grad ) \vec{u}$ is dominant over the \emph{viscous term} $\nu \nabla^2 \vec{u}$ -- that's just ideal fluid flow.  Here we turn to the case where the viscous term is much larger than the inertial, in which case we'll drop that term and equation (\ref{eq_ns_steady} simply becomes
+There are two terms involving velocity in this equation, and their relative strength determines how a fluid will flow.  We've already studied at length flows for which the \emph{inertial term} $(\vec{u} \cdot \grad ) \vec{u}$ is dominant over the \emph{viscous term} $\nu \nabla^2 \vec{u}$ -- that's just ideal fluid flow.  Here we turn to the case where the viscous term is much larger than the inertial, in which case we'll drop that term and equation (\ref{eq_ns_steady}) simply becomes
 \begin{equation}
 \label{eq_ns_slow}
 \grad p = \mu \nabla^2 \vec{u}
 \end{equation}
-(notice that this has the dynamics viscosity $\mu = \nu / \rho$ in it).  This equation is of course supplemented as always by the incompressibility condition,
+(notice that this has the dynamic viscosity $\mu = \nu / \rho$ in it).  This equation is of course supplemented as always by the incompressibility condition,
 \begin{equation}
 \grad \cdot \vec{u}.
 \end{equation}
@@ -816,9 +820,9 @@ This is the equation we'll solve; it actually looks simpler than it is, since in
 
 \subsection{Slow Flow Past a Sphere}
 
-Now we can attempt a solution for the case of very viscous flow past a sphere.  This is a classic problem in fluid dynamics, first done by Stokes in 1851.  It's not too difficult, but it \emph{is} length and a little complicated, so I'll go slow and carefully.
+Now we can attempt a solution for the case of very viscous flow past a sphere.  This is a classic problem in fluid dynamics, first done by Stokes in 1851.  It's not too difficult, but it \emph{is} lengthy and a little complicated, so I'll go slow and carefully.
 
-The set up will look just like the ideal case as shown in Figure \ref{fig_sphere_setup}: the fluid will be uniform at infinity with speed $U$, and our coordinate system will be such that the flow is along the $z$ direction and the sphere of radius $a$ at the origin.  So, once again we have axisymmetry, and the velocity will not depend on $\phi$ at all:
+The set up will look just like the ideal case as shown in Figure \ref{fig_sphere_setup}: the fluid will be uniform at infinity with speed $U$, and our coordinate system will be such that the flow is along the $z$ direction and the sphere of radius $a$ is at the origin.  So, once again we have axisymmetry, and the velocity will not depend on $\phi$ at all:
 \[
 \vec{u} = u_r(r, \theta) \unit{r} + u_\theta(r, \theta) \unit{\theta}.
 \]
@@ -889,7 +893,7 @@ u_r(a, \theta) = 0 \quad \text{and} \quad u_\theta(a, \theta) = 0.
 We can write this condition in terms of the stream function $\Psi$ using equation (\ref{eq_stokes_stream}) and get
 \begin{equation}
 \label{eq_slow_bc1}
-\dfdx{\Phi}{\theta} \bigg|_{r=a} = 0 \quad \text{and} \quad \dfdx{\Phi}{r} \bigg|_{r=a} = 0.
+\dfdx{\Psi}{\theta} \bigg|_{r=a} = 0 \quad \text{and} \quad \dfdx{\Psi}{r} \bigg|_{r=a} = 0.
 \end{equation}
 
 Second, the flow needs to be uniform in the $z$ direction far away from the sphere.  That means we need
@@ -942,7 +946,7 @@ f^{\prime\prime\prime\prime} - \frac{4}{r^2} f'' + \frac{8}{r^3} f' - \frac{8}{r
 
 As promised, this is a fourth order differential equation that we need to solve.  However, this is easier than you might guess; first, multiply by $r^4$ to get
 \[
-r^4 \frac{r^4f}{dr^4} - 4r^2 \frac{d^2f}{dr^2} + 8r \frac{df}{dr} - 8f = 0.
+r^4 \frac{d^4f}{dr^4} - 4r^2 \frac{d^2f}{dr^2} + 8r \frac{df}{dr} - 8f = 0.
 \]
 Notice that each term is paired with a similar order $r$ and derivative; this suggests we try a power-law solution of the form 
 \[
@@ -962,7 +966,7 @@ f(r) = \frac{A}{r} + Br + Cr^2 + Dr^4.
 \end{equation}
 Now we just have to find the constants $A, B, C,$ and $D$ using the boundary conditions.
 
-Let's start withe second, that the flow must be uniform at infinity -- so $\Psi \sim r^2$ there.  Of the four terms in the general solution, it doesn't really tell us anything about the first two, since the first ($A$) term goes to zero at infinity, and the second ($B$) doesn't get as big as $r^2$ so it can be neglected as $r\to\infty$.  But it does tell us that we need to drop the fourth term by setting $D = 0$, since that term blows up faster than $r^2$.  Then, looking at the form of the stream function in equation (\ref{eq_slow_bc2}), we must have for the third term
+Let's start with the second, that the flow must be uniform at infinity -- so $\Psi \sim r^2$ there.  Of the four terms in the general solution, it doesn't really tell us anything about the first two, since the first ($A$) term goes to zero at infinity, and the second ($B$) doesn't get as big as $r^2$ so it can be neglected as $r\to\infty$.  But it does tell us that we need to drop the fourth term by setting $D = 0$, since that term blows up faster than $r^2$.  Then, looking at the form of the stream function in equation (\ref{eq_slow_bc2}), we must have for the third term
 \[
 C = \frac{1}{2}U.
 \]
@@ -1038,7 +1042,7 @@ Integrating gives the pressure,
 p(r, \theta) = p_\infty - \frac{3U \mu a}{2r^2} \cos \theta,
 }
 \end{equation}
-where $p_\infty$ is the integration constant and is the pressure at infinity.  Figure \ref{fig_sphere_viscous_lines} shows the pressure field in the fluid surrounding the sphere, where red indicated high pressure and blue low.  Of course, for the force calculation we'll need the pressure evaluated at the surface of the sphere $r=a$; this is
+where $p_\infty$ is the integration constant and is the pressure at infinity.  Figure \ref{fig_sphere_viscous_lines} shows the pressure field in the fluid surrounding the sphere, where red indicates high pressure and blue low.  Of course, for the force calculation we'll need the pressure evaluated at the surface of the sphere $r=a$; this is
 \begin{equation}
 \label{eq_sphere_p_a}
 p(a, \theta) = p_\infty -\frac{3U\mu}{2a} \cos \theta.
@@ -1062,7 +1066,7 @@ T_{rr} & = -p + 2\mu \dfdx{u_r}{r} \\
 T_{\theta r} & = \mu \left( \frac{1}{r} \dfdx{u_r}{\theta} + \dfdx{u_\theta}{r} - \frac{u_\theta}{r} \right).
 \end{align}
 
-For our case, with the velocities given by equations (\ref{eq_sphere_viscous_vel1}) and (\ref{eq_sphere_viscous_vel2}) and the pressure by equation (\ref{eq_sphere_p_a}), the stress tensor components become
+For our case, with the velocities given by equations (\ref{eq_sphere_viscous_vel1}) and (\ref{eq_sphere_viscous_vel2}) and the pressure by equation (\ref{eq_sphere_slow_p}), the stress tensor components become
 \begin{align*}
 T_{rr}(r, \theta) & = -p_\infty + \frac{9U \mu a}{2r^2} \cos\theta - \frac{6 U \mu a^3}{2r^4} \cos \theta, \\
 T_{\theta r}(r, \theta) & = -\frac{3 U \mu a^3}{2r^4} \sin\theta,
@@ -1080,13 +1084,13 @@ T_{\theta r}(a, \theta) & = -\frac{3 U \mu }{2a} \sin\theta.
 
 We're now finally in a position to calculate the force on the surface of the sphere from the surrounding fluid.  In terms of the stress tensor, this force is given by equation (\ref{eq_stress_tensor_force}),
 \[
-\vec{F} = \int_S (\tens{T} \cdot \unit{n} ) da.
+\vec{F} = \int_S (\tens{T} \cdot \unit{n} ) \, da.
 \]
 The surface of the sphere has a normal $\unit{n} = \unit{r}$, and remember that the dot product like this between a tensor and a vector gives us another vector, not a scalar.  This vector is the \emph{stress tensor} (see Section \ref{sec_stress}), which here I'll call $\vec{t_r}$:
 \[
 \vec{t_r} = \tens{T} \cdot \unit{r}.
 \]
-For clarity, I'll write out this calculation in matrix format so we can see exactly what is going on.  The stress tensor then has components
+For clarity, I'll write out this calculation in matrix format so we can see exactly what is going on.  The stress vector then has components
 \[
 \vec{t_r} = \begin{bmatrix}
 T_{rr} & T_{r\theta} & T_{r\phi} \\
@@ -1107,11 +1111,11 @@ In other words, the dot product picks out the components of the stress tensor th
 
 But we know from symmetry arguments that the net force on the sphere should be in the $z$ direction, so we can shorten our work a bit by only considering the $z$ component of this stress vector, in which case we want to calculate
 \[
-F_z = \int_S (\vec{t_r} \cdot \unit{z} ) da.
+F_z = \int_S (\vec{t_r} \cdot \unit{z} ) \, da.
 \]
 In spherical coordinates, $\unit{z} = \cos\theta \unit{r} - \sin\theta \unit{\theta}$, so doing the dot product gives us
 \[
-F_z = \int_S ( T_{rr} \cos \theta - T_{\theta r} \sin \theta ) da.
+F_z = \int_S ( T_{rr} \cos \theta - T_{\theta r} \sin \theta ) \, da.
 \]
 As mentioned above, we only need those two components of the stress tensor, coming from the direction of the surface ($\unit{r}$) and the direction of the net force (in both the $\unit{r}$ and $\unit{\theta}$ directions).
 
@@ -1135,7 +1139,7 @@ This is our big result -- it gives the drag force on a sphere moving through a v
 
 \section{Stellar Structure}
 
-In this section we turn our attention to using fluid dynamics to explore the structure of \emph{stars}.  There are two pretty big things which we'll to include in addition to the usual theory:  the presence of \emph{self-gravity}, meaning that the star is massive enough that we have to take its own gravity into account, and the presence of energy generation and transport -- stars create energy through nuclear fusion at their core and transport it to the surface via mechanisms like radiative transport and convection.
+In this section we turn our attention to using fluid dynamics to explore the structure of \emph{stars}.  There are two pretty big things which we'll have to include in addition to the usual theory:  the presence of \emph{self-gravity}, meaning that the star is massive enough that we have to take its own gravity into account, and the presence of energy generation and transport -- stars create energy through nuclear fusion at their core and transport it to the surface via mechanisms like radiative transport and convection.
 
 \subsection{Newtonian Gravity}
 
@@ -1216,13 +1220,13 @@ This equation says that the internal thermal energy of a fluid element can chang
 
 Equations (\ref{eq_poisson}) and (\ref{eq_thermal_energy}), along with Euler's equation and the continuity equation, constitute the theory of stellar structure.  For convenience, I'll put them all together:
 \begin{align*}
-\frac{D \uu}{Dt} = -\frac{1}{\rho} \grad p + \vec{g} & \quad \text{(Euler's equation),} \\
+\frac{D \uu}{Dt} = -\frac{1}{\rho} \grad p - \grad \Phi & \quad \text{(Euler's equation),} \\
 \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{u} ) = 0 & \quad \text{(continuity equation),} \\
 \nabla^2 \Phi = 4 \pi G \rho & \quad \text{(self-gravity),} \\
 \frac{DU}{Dt} = \frac{p}{\rho^2} \frac{D\rho}{Dt} + \epsilon - \frac{1}{\rho}  \grad \cdot \vec{F} & \quad \text{(thermal enegry).}
 \end{align*}
 
-Now, that's four equations, but if you count the unknowns, they're actually five:  the velocity $\vec{u}$, the pressure $p$, the density $\rho$, the gravitational potential $\Phi$ (or the field $\vec{g}$), and the thermal energy $U$.  Note that $\epsilon$, the rate of energy generation, and $\vec{F}$, the flux of energy, aren't strictly unknowns here; they require additional theory to compute, depending on what exactly we're modelling, so think of them as \emph{inputs} into the theory of stellar structure. But what's the fifth equation?  As discussed back in Section \ref{sec_comp_fluids}, we need an \emph{equation of state}.  More on what we'll use in a bit.
+Now, that's four equations, but if you count the unknowns, there are actually five:  the velocity $\vec{u}$, the pressure $p$, the density $\rho$, the gravitational potential $\Phi$, and the thermal energy $U$.  Note that $\epsilon$, the rate of energy generation, and $\vec{F}$, the flux of energy, aren't strictly unknowns here; they require additional theory to compute, depending on what exactly we're modelling, so think of them as \emph{inputs} into the theory of stellar structure. But what's the fifth equation?  As discussed back in Section \ref{sec_comp_fluids}, we need an \emph{equation of state}.  More on what we'll use in a bit.
 
 These equations are extremely complicated to solve, even numerically.  But we can make some headway and produce simple but useful models of stars and other objects with a few assumptions:
 \begin{itemize}
@@ -1415,7 +1419,7 @@ This has the solution
 Unlike the previous example, where the density dropped to zero at a certain point, in this case the density becomes zero at infinity -- evidently $n=5$ models an infinitely large star!  Actually, this case -- usually called a \emph{Plummer sphere} -- can be a simple model of systems of stars like globular clusters or galaxies.
 \end{example}
 
-Neither of these two examples were particularly good model for \emph{stars}, the objects we set out to investigate in the first place.  Other values of $n$ do a better job of that:  $n = 1.5$ provides a good model of convective star cores as well as low mass white dwarfs, for example, and $n = 3$, which correspond to the Eddington standard model, models the radiation zones of main-sequence stars as well as high mass white dwarfs.  However, those cases don't have an analytic solution and the Lane-Emden equation must be solved numerically.  The densities of some of these models are shown in Figure \ref{fig_polytropes}.
+Neither of these two examples were particularly good model for \emph{stars}, the objects we set out to investigate in the first place.  Other values of $n$ do a better job of that:  $n = 1.5$ provides a good model of convective star cores as well as low mass white dwarfs, for example, and $n = 3$, which corresponds to the Eddington standard model, models the radiation zones of main-sequence stars as well as high mass white dwarfs.  However, those cases don't have an analytic solution and the Lane-Emden equation must be solved numerically.  The densities of some of these models are shown in Figure \ref{fig_polytropes}.
 
 \begin{figure}
 \centering
@@ -1453,9 +1457,9 @@ Traditionally, computational methods involved solving the Navier-Stokes equation
 \label{eq_ns_comp}
 \dfdx{(\rho \phi)}{t} + \grad \cdot (\rho \phi \vec{u}) = \grad \cdot (\Gamma \grad \phi) + S_\phi,
 \end{equation}
-where the variable $\phi$\footnote{This $\phi$ is not the velocity potential, sorry once again for overusing this letter.} stands for either $1$ (in which case this equation reduces to the continuity equation), a component of velocity (for example, if $\phi = u$, the equation reduces to the $x$ component of the Navier-Stokes equation), or the internal energy (in which case it becomes conservation of energy).  The variable $\Gamma$, called the diffusion coefficient, is just the viscosity if $\phi$ is a velocity component and is the thermal conductivity if it is the energy.  The last term, $S_\phi$, is called the \emph{source term}, and could represent a force or an energy source.
+where the variable\footnote{This $\phi$ is not the spherical coordinate or the velocity potential, sorry once again for overusing this letter.} $\phi$ stands for either $1$ (in which case this equation reduces to the continuity equation), a component of velocity (for example, if $\phi = u$, the equation reduces to the $x$ component of the Navier-Stokes equation), or the internal energy (in which case it becomes conservation of energy).  The variable $\Gamma$, called the diffusion coefficient, is just the viscosity if $\phi$ is a velocity component and is the thermal conductivity if it is the energy.  The last term, $S_\phi$, is called the \emph{source term}, and could represent a force or an energy source.
 
-Turning this equation into a form suitable for solving it computational is a complex problem, and various schemes are in use.  The simplest is the \emph{finite difference method}, in which quantities are evaluated on a grid in space.  The derivatives in equation (\ref{eq_ns_comp}) become finite differences (hence the name); for example, the \emph{forward difference} scheme approximates
+Turning this equation into a form suitable for solving it computationally is a complex problem, and various schemes are in use.  The simplest is the \emph{finite difference method}, in which quantities are evaluated on a grid in space.  The derivatives in equation (\ref{eq_ns_comp}) become finite differences (hence the name); for example, the \emph{forward difference} scheme approximates
 \[
 \frac{df}{dx} \approx \frac{f(x+\Delta x) - f(x)}{\Delta x}.
 \]
@@ -1469,11 +1473,11 @@ which we can interpret as saying that any increase in $\phi$ inside the cell mus
 
 A third technique is the \emph{finite element method}, in which the fluid domain is again divided up into smaller elements.   However, unlike the previous two methods, each element is modelled independently assuming each variable changes according to a simple function.  The models for each element are then combined into a larger system of equations that models the entire system.
 
-If you're interested in exploring computational fluid dynamics, I recommend the software SU2 (\url{su2code.github.io}), an open source package written in c++ and Python.  SU2 can solve Euler's equation and the Navier-Stokes equation for both incompressible and compressible fluids, and is very flexible:  although designed originally for aerodynamic shape optimization, it can handle potential flow, elasticity, and flows containing electrodynamics or chemical reactions.  Figure \ref{fig_vortex_shedding} was created using SU2 -- it solved the Navier-Stokes equations on an irregular multi-level grid using a finite volume method for flow past a cylinder.
+If you're interested in exploring computational fluid dynamics, I recommend the software SU2 (\href{https://su2code.github.io}{su2code.github.io}), an open source package written in c++ and Python.  SU2 can solve Euler's equation and the Navier-Stokes equation for both incompressible and compressible fluids, and is very flexible:  although designed originally for aerodynamic shape optimization, it can handle potential flow, elasticity, and flows containing electrodynamics or chemical reactions.  Figure \ref{fig_vortex_shedding} was created using SU2 -- it solved the Navier-Stokes equations on an irregular multi-level grid using a finite volume method for flow past a cylinder.
 
 \subsection{Smoothed Particle Hydrodynamics}
 
-A very different approach to solving the Navier-Stokes and related equations is taken by \emph{smoothed particle hydrodynamics,} first developed to simulate polytropic models of stars. Rather than using a grid or mesh, this method uses particle-based techniques to simulate interactions between volume elements -- sometimes in this cases called \emph{control masses.}  The particles carry all physical properties of the system as they move; this viewpoint, in which the coordinates system follows the particles, is called \emph{Lagrangian}.  Throughout this textbook, on the other hand, I've used a \emph{Eulerian} viewpoint in which the fluid properties are described at fixed points.
+A very different approach to solving the Navier-Stokes and related equations is taken by \emph{smoothed particle hydrodynamics,} first developed to simulate polytropic models of stars. Rather than using a grid or mesh, this method uses particle-based techniques to simulate interactions between volume elements -- sometimes in this case called \emph{control masses.}  The particles carry all physical properties of the system as they move; this viewpoint, in which the coordinate system follows the particles, is called \emph{Lagrangian}.  Throughout this textbook, on the other hand, I've used a \emph{Eulerian} viewpoint in which the fluid properties are described at fixed points.
 
 How exactly does this work?  Well, consider for simplicity Euler's equation,
 \[
@@ -1500,7 +1504,7 @@ where $h$ is the smoothing length scale (in the limit $h\to 0$, the Gaussian bec
 \]
 and perform the gradient by hand.  
 
-As with traditional CFD methods, SPH must be discretized for calculation on a computer.  In this case it's straightforward -- the integrals becomes sums in the usual way.  The volume element $d\tau$ can be written in terms of the density,
+As with traditional CFD methods, SPH must be discretized for calculation on a computer.  In this case it's straightforward -- the integrals become sums in the usual way.  The volume element $d\tau$ can be written in terms of the density,
 \[
 d\tau = \frac{ m}{ \rho},
 \]
@@ -1518,20 +1522,62 @@ Finally, then, Euler's equation for updating the velocity of the $i$th particle 
 \end{equation}
 (actually, this is usually written in a way that's more efficient for calculation, but this should give you an idea of what's involved).  If viscous forces are to be included, the Laplacian in the Navier-Stokes equation is handled in a similar manner to the gradient here.
 
-If you're interested in exploring smoothed particle hydrodynamics, I recommend taking a look at PySPH (\url{pysph.readthedocs.io}), an open source SPH package written in Python.  It can handle weakly compressible SPH for free surface flows (like the dam break shown in Figure \ref{fig_sph_dam}), incompressible fluids, elastic dynamics, various boundary conditions, and more.  
+If you're interested in exploring smoothed particle hydrodynamics, I recommend taking a look at PySPH (\href{https://pysph.readthedocs.io}{pysph.readthedocs.io}), an open source SPH package written in Python.  It can handle weakly compressible SPH for free surface flows (like the dam break shown in Figure \ref{fig_sph_dam}), incompressible fluids, elastic dynamics, various boundary conditions, and more.  
 
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{Figures/Chapter6/fig_sph_dam}
-\caption{Smoothed particle hydrodynamics simulation of the two dimensional dam break problem with a right wall.  Simulations performed by Kyle Stewart and Omar Nusrat using PySPH. }
+\includegraphics[width=\linewidth]{Figures/Chapter6/fig_sph_dam.png}
+\caption{Smoothed particle hydrodynamics simulation of the two dimensional dam break problem using PySPH.  The red colour indicates faster horizontal speed $u$. }
 \label{fig_sph_dam}
 \end{figure}
 
 
 \subsection{Lattice Boltzmann Method}
 
+Now for something completely different -- the lattice Boltzmann method doesn't even try to solve the Navier-Stokes equation.  It treats the fluid on a grid -- called a lattice in this case -- but limits fluid particles to only two behaviours: they can \emph{stream} or they can \emph{collide}.  It does this by considering the collisional Boltzmann equation,
+\begin{equation}
+\label{eq_boltzmann}
+\dfdx{f}{t} + (\vec{u} \cdot \grad) f + \grad \Phi \cdot \dfdx{f}{\vec{u}} = \left( \dfdx{f}{t} \right)_\text{coll},
+\end{equation}
+which is an equation for the \emph{distribution function} $f(\vec{r}, \vec{u}, t)$.  This function describes the phase-space density of the fluid.  This means that the quantity 
+\[
+f(\vec{r}, \vec{u}, t) \, d^3\vec{r} \, d^3\vec{u}
+\]
+is the mass of fluid particles having positions in the volume $d^3\vec{r}$ centred on $\vec{r}$ and with velocities in the range $d^3\vec{u}$ centred on $\vec{u}$.  Any physical quantity can be calculated from the distribution function; for example, the mass density is 
+\[
+\rho(\vec{r}, t) = \int f(\vec{r}, \vec{u}, t) \, d^3\vec{u}.
+\]
 
+In equation (\ref{eq_boltzmann}), you might recognize the material derivative of $f$ on the left hand side.  In the third term, $\Phi$ represents the potential due to some external force, if one is acting.  And the term on the right hand side is there to handle interactions between fluid particles -- in general, this term can be very difficult to calculate.  The so-called BGK approximation (from Bhatnagar, Gross, and Krook) models the collisions as
+\[
+\left( \dfdx{f}{t} \right)_\text{coll} = -\frac{f - f_\text{eq}}{\tau},
+\]
+where $f_\text{eq}$ is an equilibrium state and $\tau$ is the timescale for collisions to occur.  A common equilibrium state is an isothermal one, so that the collisions try to drive the fluid towards a state where the temperature is the same everywhere.
+
+If we drop the external potential term and use the BGK model, the Boltzmann equation becomes
+\[
+\dfdx{f}{t} + (\vec{u} \cdot \grad) f = -\frac{f - f_\text{eq}}{\tau}.
+\]
+The left hand side describes the movement of fluid particles and the right their collisions.  This is the heart of the lattice Boltzmann method.
+
+As with other methods, though, this equation needs to be discretized on a lattice so that the distribution function $f$ can be evolved in time.  Fluid quantities can then be found by summing over the nearby neighbours of the lattice site; for example, the density is
+\[
+\rho = \sum_i f_i,
+\]
+and the velocity is
+\[
+\vec{u} = \frac{1}{\rho} \sum_i f_i \vec{u}_i.
+\]
+
+This method can be simple to implement and, in cases where it's applicable, much faster than standard computational methods.  There are various software packages available, but a simple open source implementation is given by Philip Mocz (\href{https://github.com/pmocz/latticeboltzmann-python}{github.com/pmocz}).  Figure \ref{fig_lbm} shows a simulation based on this code for fluid flowing past a cylinder; streamlines and vorticity are shown for different times.  You can compare with Figure \ref{fig_vortex_shedding}, which does the same thing but with standard CFD.  The lattice Boltzmann method does a good job with vortex shedding and the formation of a vortex street.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{Figures/Chapter6/fig_lbm}
+\caption{Lattice Boltzmann method simulation of fluid flowing past a cylinder, shown at four different times.  Streamlines are shown, in addition to the vorticity in the fluid (with red begin positive vorticity and blue negative).}
+\label{fig_lbm}
+\end{figure}
 
 \section*{Problems}
 \addcontentsline{toc}{section}{Problems}

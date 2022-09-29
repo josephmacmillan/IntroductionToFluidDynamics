@@ -114,16 +114,46 @@
 
 \chapter{Preface}
 
-This is a textbook aimed at upper undergraduate students.  Notation is Griffiths.  Anything else a reader needs to know?
+I have to confess right away that I'm not an expert in the subject of fluid dyanmics; I was given an opportunity to teach a course about it a number of years ago and didn't want to refuse, and I assumed my single graduate-level course in fluids was enough preparation.  I'm an astrophysicist by trade, but not one who normally does astrophysical fluid research.  Regardless, I through myself into the course, and ended up teaching it numerous times, improving my notes each time.  I initially taught from Acheson's very fine \emph{Elementary Fluid Dynamics}, but found it a little too advanced for my students, who were upper undergraduate physics and math students.  Other fluid dynamics textbooks I found were either graduate-level like Acheson's or geared towards engineering and applied fluid mechanics.  So, as all textbooks are created as far as I'm aware, I resolved to turn my binder of notes into a textbook to fit the gap: I wanted a clear, concise, and readable book aimed at upper undergrads in physics and math.  I started it in 2014 or so, but didn't really make any progress until 2022 when I finally had time, in the form of a development leave, to focus on it.  It was a tremendous amount of fun to write.
 
-Prerequisites
+\section{Who is this book for?}
 
-math covered (who is this book for?)
+This is for undergraduate physics and math students interested in solving problems in fluid dynamics.  I assume some basic background -- you, the reader, should have some experience with vector calculus and solving ordinary differential equations -- but even then I'll remind you when necessary what you probably learned in your second year physics and math classes.  Otherwise, I introduce the math when we need it: there's a short section on complex numbers, I spend quite a bit of time going through the process of separation of variables to solve partial difference equations, and topics like Fourier analysis is introduced in the amount we need.
 
-What's not covered (what is this book for?)
+On the other hand, graduate students in physics or math likely won't find enough here to keep them interested beyond the basics -- there's no real discussion of instability or turbulence or other advanced topics, and the amount of time spent on computational methods is much too brief.  Similarly, engineering students likely won't find enough applied work here; the focus is consistently on theory and problem-solving, and many common engineering topics typical in fluid mechanics courses is missing.
 
-The special topics chapter (not enough room in other chapters or no place thematically, but want to include them because fun)
+To keep things familiar for undergrads, I've used notation from Griffiths' incredibly popular \emph{Introduction to Electrodynamics}, even when not commonly in use in the subject (I use $s$ for the radial coordinate in the cylindrical coordinate system, for example). And I've tried to keep a fairly informal tone throughout the book, so I hope students find it easy to read and not too dense.
 
+\section{What does this book cover?}
+
+The basics of fluid flow as I see them.  That means, after a brief introduction on notation, terms, and visualization, starting with the famous Navier-Stokes equation.  Most students at this point in their career have at least heard of it (and how hard it is to solve!), and solving the first example (Poiseuille flow) is a great introduction to PDEs.  But there's only so much you can do analytically with the Navier-Stokes, so we stop after some basic circular flow examples.  
+
+Then we turn to ideal flows and Euler's equation, and spend a lot of time on incompressible, irrotational flows.  Classic examples like flow past a cylinder are covered, both by solving Lapace's equation but then again in the complex plane with the Milne-Thompson circle theorem.  Conformal mapping is used to handle more complex shapes, and we even discuss a little bit of aerodynamics -- how does an airplane fly?  Ideal line vortexes are used to model vortex pairs and vortex streets.
+
+We end with a basic discussion of small-amplitude surface waves, including both gravity and capillary waves, as well as the classic derivation of sound waves.  The last chapter in the book is devoted to special topics that I deemed too advanced or too adjacent to fit into any of the first five chapters.  It's here that I actually derive the Navier-Stokes equations, talk a little bit about boundary layers, handle the classic dam breaking problem, and derive Stokes law for very viscous flow past a sphere.  I even put a little bit of astrophysics in there, deriving the Lane-Emden equation and discussing polytropic models of stars.  And the very last section of the very last chapter is about computational methods for fluid dynamics.
+
+But that's just the topics; maybe you're interested in what mathematics is covered.  It's a fun list: lots of vector calculus (I use the divergence theorem so many times it's burned into my brain); solving ODEs by the tried-and-true method of guessing a solution and plugging it in; solving PDEs by separation of variables (in Cartesian and cylindrical coordinates), by self-similarity, and by the method of characteristics; using the complex plane to describe basic flows, and more advanced complex analysis to interpret and advance those basic flows; linearization of nonlinear systems of equations; Fourier series and Fourier integrals to describe wave packets; and tensors in the derivation of the Navier-Stokes equation and calculation of the force on a sphere.  Along the way way we end up solving both a third-order ODE and a fourth-order ODE, a rarity in most physics problems.
+
+I should mention, however, that one thing the book doesn't cover (at least beyond a couple of pages of the briefest introduction): computational methods.  I'll explain why in a moment.
+
+\section{What else do you need to teach a course in fluid dynamics?}
+
+My feeling, after teaching this course so many times, is that fluid dynamics is really a convergence of three things: 
+\begin{itemize}
+\item Theory, of which the basic is covered in this textbook.
+\item Coding, which is not.  Although the field of computational fluid dynamics fills countless textbooks and has numerous popular software packages, I'm not even talking about \emph{that} -- I mean using code to supplement the theory.  Almost every figure in the textbook required coding, and I used code to solve ODEs and do complex algebra and understand Fourier transforms.  Being able to write a script that does these things is absolutely necessary for physics and math majors today.  But I didn't include any code or information on how to code in the book; I wanted it to stand on its own.  Instead, I created a series of Jupyter notebooks as tutorials in a number of different numerical topics.  These notebooks, and the ones I created all the figures in, are available online on \href{https://josephmacmillan.github.io/IntroductionToFluidDynamics/index.html}{the web page for the book}.
+\item Experiment, which also is not.  Fluid dynamics is an incredibly rich field when it comes to experiment, and there are many things you can do easily and on your own to supplement many of the things discussed in the book.  As with coding, this supplementary material can be found at \href{https://josephmacmillan.github.io/IntroductionToFluidDynamics/index.html}{the web page for the book}.
+\end{itemize}
+
+\section{Why Open Education?}
+
+This book and the supplementary material are released under a Creative Commons Attribution-ShareAlike 4.0 International License, which means you can do anything you want with this book:  cut out stuff you don't need, use it to build an even better book, download it for free off the web, print it out yourself, give it to your friends (they want a copy, trust me), and anything else you can think of.  The only stipulation is that you give credit where it's due, and release the derivative work under the same license.
+
+Why did I choose this?  Because I've taught university courses and have seen the issues with expensive textbooks: students not being able to afford them, students finding illegal PDF copies online and sharing them, the publishing companies fighting back with various schemes like renting digital copes, and so on.  Especially in advanced physics, little textbooks can be so expensive, and yet I think textbooks are an important and necessary resource, and I want my students to all have a copy.
+
+\section{Thanks}
+
+Thanks to all my colleagues and students, but especially to Kyle Mills, who was the first (by a long shot) to write up my course notes into a book.
 
 \mainmatter
 

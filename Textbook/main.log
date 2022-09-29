@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  26 SEP 2022 15:05
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  29 SEP 2022 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2551,9 +2551,32 @@ Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;slan
 t=0.2;+tnum;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
- [3]) [4] [5
+ [3] [4]) [5]
+LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 117.
+Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
+;+lnum;mapping=tex-text;" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Italic.otf
+LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 119.
+Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
+m;+lnum;mapping=tex-text;" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Regular.otf
+LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 119.
+Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
+lnum;mapping=tex-text;" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
+inusSerif-Bold.otf
+ [6
 
-] [6
+]
+Underfull \vbox (badness 1112) has occurred while \output is active []
+
+ [7]
+[8] [9] [10
 
 ]
 \openout2 = `1_introduction.aux'.
@@ -2571,24 +2594,6 @@ Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 17.28pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Bold.otf
-LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
-m;+lnum;mapping=tex-text;" at 12.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
-inusSerif-Regular.otf
-LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
-lnum;mapping=tex-text;" at 12.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
-inusSerif-Bold.otf
-LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 5.
-Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
-;+lnum;mapping=tex-text;" at 10.0pt
- -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
-inusSerif-Italic.otf
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
@@ -3092,18 +3097,13 @@ File: Figures/Chapter2/fig_stress_tensor.pdf Graphic file (type pdf)
 [161]
 File: Figures/Chapter2/fig_boundary_stream.pdf Graphic file (type pdf)
 <use Figures/Chapter2/fig_boundary_stream.pdf>
- [162] [163] [164]
+ [162]
 File: Figures/Chapter6/fig_boundary_result1.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_boundary_result1.pdf>
+ [163] [164]
 File: Figures/Chapter6/fig_boundary_result2.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_boundary_result2.pdf>
-
-Overfull \hbox (10.36673pt too wide) in paragraph at lines 365--366
-\TU/LibertinusSerif(1)/m/n/10 In our discussion of waves, we were careful to fo
-cus those of small-amplitude
- []
-
-[165] [166]
+ [165] [166]
 File: Figures/Chapter6/fig_nonlinear_wave.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_nonlinear_wave.pdf>
  [167] [168]
@@ -3115,18 +3115,24 @@ File: Figures/Chapter6/fig_dam_start.pdf Graphic file (type pdf)
  [170]
 File: Figures/Chapter6/fig_char_curves.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_char_curves.pdf>
- [171] [172] [173]
+ [171] [172]
+[173]
 File: Figures/Chapter6/fig_dam_heights.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_dam_heights.pdf>
  [174]
 File: Figures/Chapter6/fig_sphere_setup.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_sphere_setup.pdf>
- [175] [176]
-[177] [178]
+ [175]
+Overfull \hbox (2.87006pt too wide) in paragraph at lines 680--681
+[]\TU/LibertinusSerif(1)/m/n/10 The boundary conditions turn out to be similar 
+to those for flow around
+ []
+
+[176] [177] [178]
 File: Figures/Chapter6/fig_sphere_lines.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_sphere_lines.pdf>
  [179]
-Overfull \hbox (12.53008pt too wide) in paragraph at lines 826--827
+Overfull \hbox (12.53008pt too wide) in paragraph at lines 830--831
 []\TU/LibertinusSerif(1)/m/n/10 Unfortunately, though, this problem is no longe
 r irrotational, so Laplace’s
  []
@@ -3139,15 +3145,18 @@ File: Figures/Chapter6/fig_sphere_viscous_lines.pdf Graphic file (type pdf)
 File: Figures/Chapter6/fig_polytropes.pdf Graphic file (type pdf)
 <use Figures/Chapter6/fig_polytropes.pdf>
  [197] [198] [199] [200]
-Overfull \hbox (1.0534pt too wide) in paragraph at lines 1481--1483
+Overfull \hbox (1.0534pt too wide) in paragraph at lines 1485--1487
 \TU/LibertinusSerif(1)/m/n/10 where $[]$ represents any external forces present
  (for example, gravity would
  []
 
 [201]
-File: Figures/Chapter6/fig_sph_dam.pdf Graphic file (type pdf)
-<use Figures/Chapter6/fig_sph_dam.pdf>
- [202] [203]) [204]
+File: Figures/Chapter6/fig_sph_dam.png Graphic file (type bmp)
+<Figures/Chapter6/fig_sph_dam.png>
+ [202] [203]
+File: Figures/Chapter6/fig_lbm.pdf Graphic file (type pdf)
+<use Figures/Chapter6/fig_lbm.pdf>
+ [204] [205]) [206]
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
@@ -3155,15 +3164,15 @@ File: Figures/Chapter6/fig_sph_dam.pdf Graphic file (type pdf)
 (./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
 (./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 572517E29F221E9E5EA5E4E9D10805C0;17269.
+(rerunfilecheck)             Checksum: B341C4A94DF676A289867A1F089B5759;18262.
  ) 
 Here is how much of TeX's memory you used:
- 39637 strings out of 478774
- 817757 string characters out of 5864471
- 1390114 words of memory out of 6000000
- 58882 multiletter control sequences out of 15000+600000
+ 39647 strings out of 478774
+ 818009 string characters out of 5864471
+ 1391672 words of memory out of 6000000
+ 58891 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 115i,16n,152p,1263b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,16n,152p,1277b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (210 pages).
+Output written on main.pdf (216 pages).

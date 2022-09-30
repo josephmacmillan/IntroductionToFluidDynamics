@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  29 SEP 2022 13:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.5.24)  30 SEP 2022 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2495,7 +2495,7 @@ Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 101.
+(Font)              scaled to size 9.0pt on input line 104.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 9.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2505,13 +2505,13 @@ inusSerif-Regular.otf
 
 ]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 114.
+(Font)              scaled to size 20.74pt on input line 118.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 20.74pt on input line 114.
+(Font)              scaled to size 20.74pt on input line 118.
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2553,30 +2553,26 @@ t=0.2;+tnum;+lnum;mapping=tex-text;" at 10.0pt
 inusSerif-Regular.otf
  [3] [4]) [5]
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 117.
+(Font)              scaled to size 10.0pt on input line 121.
 Requested font "[LibertinusSerif-Italic.otf]/OT:script=latn;language=dflt;+tnum
 ;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Italic.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 119.
+(Font)              scaled to size 12.0pt on input line 123.
 Requested font "[LibertinusSerif-Regular.otf]/OT:script=latn;language=dflt;+tnu
 m;+lnum;mapping=tex-text;" at 12.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Regular.otf
 LaTeX Font Info:    Font shape `TU/LibertinusSerif(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 119.
+(Font)              scaled to size 12.0pt on input line 123.
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 12.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
 inusSerif-Bold.otf
  [6
 
-]
-Underfull \vbox (badness 1112) has occurred while \output is active []
-
- [7]
-[8] [9] [10
+] [7] [8] [9] [10
 
 ]
 \openout2 = `1_introduction.aux'.
@@ -2870,7 +2866,9 @@ Overfull \hbox (0.74893pt too wide) in paragraph at lines 681--683
 pressible flow. Although
  []
 
-[72]
+File: Figures/Chapter3/fig_hurricane_data.pdf Graphic file (type pdf)
+<use Figures/Chapter3/fig_hurricane_data.pdf>
+[72] [73]
 Requested font "[LibertinusSerif-Bold.otf]/OT:script=latn;language=dflt;+tnum;+
 lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libert
@@ -2881,7 +2879,6 @@ lnum;mapping=tex-text;" at 6.0pt
 inusSerif-Bold.otf
 File: Figures/Chapter3/fig_cyl_force.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_cyl_force.pdf>
- [73]
 File: Figures/Chapter3/fig_uniform_flow_angle.pdf Graphic file (type pdf)
 <use Figures/Chapter3/fig_uniform_flow_angle.pdf>
  [74]) [75]
@@ -3164,15 +3161,15 @@ File: Figures/Chapter6/fig_lbm.pdf Graphic file (type pdf)
 (./2_viscous_fluids.aux) (./3_ideal_fluids.aux) (./4_potential_flow.aux)
 (./5_waves.aux) (./6_special_topics.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B341C4A94DF676A289867A1F089B5759;18262.
+(rerunfilecheck)             Checksum: C8F5089ECA8A68A4AF39119A795DFB08;18262.
  ) 
 Here is how much of TeX's memory you used:
- 39647 strings out of 478774
- 818009 string characters out of 5864471
- 1391672 words of memory out of 6000000
- 58891 multiletter control sequences out of 15000+600000
+ 39658 strings out of 478774
+ 818457 string characters out of 5864471
+ 1393324 words of memory out of 6000000
+ 58901 multiletter control sequences out of 15000+600000
  409510 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 115i,16n,152p,1277b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,16n,152p,1272b,978s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (216 pages).

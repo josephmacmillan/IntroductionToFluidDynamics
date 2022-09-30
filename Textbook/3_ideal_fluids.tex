@@ -706,6 +706,13 @@ Show that, for any two vector fields $\symbfup{F}$ and $\symbfup{G}$, you can wr
 
 
 \begin{problem}[The Rankine Vortex as a Model for Hurricanes]
+
+\begin{figure}
+\centering\includegraphics[width=0.8\linewidth]{Figures/Chapter3/fig_hurricane_data}
+\caption{The azimuthal wind speed $u_\phi(s)$ and vorticity $\omega(s)$ for Hurricane Katrina.  Data from Corbosiero, K. ``Advanced Research WRF high resolution simulations of the inner core structures of Hurricanes Katrina, Rita, and Wilma (2005).'' \emph{Proceedings, 8th Annual WRF Users Workshop, Boulder, CO, NCAR.} 2007.}
+\label{fig_hurricane_data}
+\end{figure}
+
 A Rankine vortex is defined by the flow (in cylindrical coordinates)
 \[
 \symbfup{u}  = \left\{
@@ -718,13 +725,14 @@ where $\Omega$ and $a$ are constants (related to the wind speed and size of the 
 
 (a) Plot the wind speed as a function of distance, and calculate and plot the vorticity.
 
-(b) To decide whether it is a useful model for hurricanes, I've provided (online) azimuthal wind speed data and vorticity data for Hurricane Katrina, which devastated New Orleans and the surrounding area in 2005.  The wind speed data has the first column as distance $s$ (in km) and the second column as azimuthal wind speed $u_\phi$ (in m/s).  The vorticity data has the first column as distance $s$ (in km) and the second column as vorticity $\omega$ (in $10^{-4}$ s$^{-1}$).
-
-Use the Rankine vortex (RV) to model this hurricane; what values of $\Omega$ and $a$ give you the best fit?  Does the RV model the vorticity with those parameters as well?  Can you make any conclusions about how well the model does (e.g., is it better in some regions versus others?)
+(b) To decide whether it is a useful model for hurricanes, I've provided azimuthal wind speed data and vorticity data for Hurricane Katrina, which devastated New Orleans and the surrounding area in 2005, in Figure \ref{fig_hurricane_data} (you can extract this data using online tools such as PlotDigitizer). Use the Rankine vortex (RV) to model this hurricane; what values of $\Omega$ and $a$ give you the best fit?  Does the RV model the vorticity with those parameters as well?  Can you make any conclusions about how well the model does (e.g., is it better in some regions versus others?)
 
 (c) Calculate the pressure throughout the hurricane and find the difference in pressure between r = 0 (the eye of the hurricane) and $s \to \infty$ (outside the storm).
 
 (d) Finally, calculate the shape of the free surface (i.e., where the pressure is atmospheric). Plot the surface, and compare this with photos of Katrina -- how does it look?
+
+
+
 \end{problem}
 
 

@@ -98,15 +98,19 @@
 
 \maketitle
 
-{\small This work is licensed under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License}.}
+\vspace{1in}
 
-%\vspace{1in}
+\begin{center}
+{\small
 
-%This version of the book was created on \today. You can always find the most up-to-date version at 
-%\begin{itemize}
-%\item \url{https://josephmacmillan.github.io/IntroFluidDynamics} (web)
-%\item \url{https://josephmacmillan.github.io/IntroFluidDynamics/IntroFluidDynamics.pdf} (PDF)
-%\end{itemize}
+This version was compiled on \today.  For the most up-to-date version and supplementary material, see \href{https://josephmacmillan.github.io/IntroductionToFluidDynamics/index.html}{josephmacmillan.github.io/IntroductionToFluidDynamics}.
+
+\vspace{2in}
+
+This work is licensed under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License}.
+}
+\end{center}
+
 
 \newpage
 
@@ -114,15 +118,15 @@
 
 \chapter{Preface}
 
-I have to confess right away that I'm not an expert in the subject of fluid dyanmics; I was given an opportunity to teach a course about it a number of years ago and didn't want to refuse, and I assumed my single graduate-level course in fluids was enough preparation.  I'm an astrophysicist by trade, but not one who normally does astrophysical fluid research.  Regardless, I through myself into the course, and ended up teaching it numerous times, improving my notes each time.  I initially taught from Acheson's very fine \emph{Elementary Fluid Dynamics}, but found it a little too advanced for my students, who were upper undergraduate physics and math students.  Other fluid dynamics textbooks I found were either graduate-level like Acheson's or geared towards engineering and applied fluid mechanics.  So, as all textbooks are created as far as I'm aware, I resolved to turn my binder of notes into a textbook to fit the gap: I wanted a clear, concise, and readable book aimed at upper undergrads in physics and math.  I started it in 2014 or so, but didn't really make any progress until 2022 when I finally had time, in the form of a development leave, to focus on it.  It was a tremendous amount of fun to write.
+I have to confess right away that I'm not an expert in the subject of fluid dyanmics; I was given an opportunity to teach a course on it a number of years ago and didn't want to refuse, and I assumed my single graduate-level course in fluids was enough preparation.  I'm an astrophysicist by trade, but not one who normally does astrophysical fluid research.  Regardless, I threw myself into the course, and ended up teaching it numerous times, improving my notes each time.  I initially taught from Acheson's very fine \emph{Elementary Fluid Dynamics}, but found it a little too advanced for my students, who were upper undergraduate physics and math students.  Other fluid dynamics textbooks I found were either graduate-level like Acheson's or geared towards engineering and applied fluid mechanics.  So, as all textbooks are created as far as I'm aware, I resolved to turn my binder of notes into a textbook to fit the gap: I wanted a clear, concise, and readable book aimed at upper undergrads in physics and math.  I started it in 2014 or so, but didn't really make any progress until 2022 when I finally had time, in the form of a development leave, to focus on it.  It was a tremendous amount of fun to write.
 
 \section{Who is this book for?}
 
 This is for undergraduate physics and math students interested in solving problems in fluid dynamics.  I assume some basic background -- you, the reader, should have some experience with vector calculus and solving ordinary differential equations -- but even then I'll remind you when necessary what you probably learned in your second year physics and math classes.  Otherwise, I introduce the math when we need it: there's a short section on complex numbers, I spend quite a bit of time going through the process of separation of variables to solve partial difference equations, and topics like Fourier analysis is introduced in the amount we need.
 
-On the other hand, graduate students in physics or math likely won't find enough here to keep them interested beyond the basics -- there's no real discussion of instability or turbulence or other advanced topics, and the amount of time spent on computational methods is much too brief.  Similarly, engineering students likely won't find enough applied work here; the focus is consistently on theory and problem-solving, and many common engineering topics typical in fluid mechanics courses is missing.
+On the other hand, graduate students in physics or math likely won't find enough here to keep them interested beyond the basics -- there's no real discussion of instability or turbulence, or shock waves, or gas dynamics, or other advanced topics, and the amount of time spent on computational methods is much too brief.  Similarly, engineering students likely won't find enough applied work here; the focus is consistently on theory and problem-solving, and many common engineering topics typical in fluid mechanics courses is missing.
 
-To keep things familiar for undergrads, I've used notation from Griffiths' incredibly popular \emph{Introduction to Electrodynamics}, even when not commonly in use in the subject (I use $s$ for the radial coordinate in the cylindrical coordinate system, for example). And I've tried to keep a fairly informal tone throughout the book, so I hope students find it easy to read and not too dense.
+To keep things familiar for undergrads, I've used notation from Griffiths' very popular \emph{Introduction to Electrodynamics}, even when not commonly in use in the subject (I use $s$ for the radial coordinate in the cylindrical coordinate system, for example). And I've tried to keep a fairly informal tone throughout the book, so I hope students find it easy to read and not too dense.
 
 \section{What does this book cover?}
 
@@ -140,7 +144,7 @@ I should mention, however, that one thing the book doesn't cover (at least beyon
 
 My feeling, after teaching this course so many times, is that fluid dynamics is really a convergence of three things: 
 \begin{itemize}
-\item Theory, of which the basic is covered in this textbook.
+\item Theory, of which the basics is covered in this textbook.
 \item Coding, which is not.  Although the field of computational fluid dynamics fills countless textbooks and has numerous popular software packages, I'm not even talking about \emph{that} -- I mean using code to supplement the theory.  Almost every figure in the textbook required coding, and I used code to solve ODEs and do complex algebra and understand Fourier transforms.  Being able to write a script that does these things is absolutely necessary for physics and math majors today.  But I didn't include any code or information on how to code in the book; I wanted it to stand on its own.  Instead, I created a series of Jupyter notebooks as tutorials in a number of different numerical topics.  These notebooks, and the ones I created all the figures in, are available online on \href{https://josephmacmillan.github.io/IntroductionToFluidDynamics/index.html}{the web page for the book}.
 \item Experiment, which also is not.  Fluid dynamics is an incredibly rich field when it comes to experiment, and there are many things you can do easily and on your own to supplement many of the things discussed in the book.  As with coding, this supplementary material can be found at \href{https://josephmacmillan.github.io/IntroductionToFluidDynamics/index.html}{the web page for the book}.
 \end{itemize}
@@ -153,7 +157,9 @@ Why did I choose this?  Because I've taught university courses and have seen the
 
 \section{Thanks}
 
-Thanks to all my colleagues and students, but especially to Kyle Mills, who was the first (by a long shot) to write up my course notes into a book.
+Thanks to all my students over the years, but especially to Kyle Mills, who was the first (by a long shot) to write up my course notes into a book.  I'm hoping this document is much improved beyond those early years of notes, but it wouldn't be here without Kyle showing me that it could be done.
+
+
 
 \mainmatter
 
@@ -168,9 +174,5 @@ Thanks to all my colleagues and students, but especially to Kyle Mills, who was 
 \include{5_waves}
 
 \include{6_special_topics}
-
-%\appendix
-
-%\include{appendix1}
 
 \end{document}

@@ -51,18 +51,29 @@ p{
     padding: 10px 50px 20px 50px;
 }
 
+.top p {
+	 color: #023047;  
+	  margin: 0;
+    padding: 20px 50px 50px 50px;
+}
+
+.top a {
+	 color: #023047;  
+}
+
 
 .bottom {
 	margin: 0;
 	padding: 50px 50px 0 100px;
 	background-color: #219ebc;
 	height: 100%;
+    margin-bottom: 50px;
 }
 
 .bottom h2 {
     font-family: 'Lato', sans;
     font-size: 40px;
-    color: white;
+    color: #edf2f4;
     padding: 10px;
 }
 

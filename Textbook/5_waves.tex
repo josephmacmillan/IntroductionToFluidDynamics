@@ -243,11 +243,11 @@ or
 \omega^2 = gk.
 }
 \end{equation}
-This is an important relationship between the frequency of a wave and its wavelength, and is called the \emph{dispersion relation} for deep water gravity waves.  You might be more familiar with \emph{disperionless} waves like waves on a string or even electromagnetic waves.  In these kinds of waves, $\omega \propto k$.  Because sinusoidal waves travel with speed
+This is an important relationship between the frequency of a wave and its wavelength, and is called the \emph{dispersion relation} for deep water gravity waves.  You might be more familiar with \emph{dispersionless} waves like waves on a string or even electromagnetic waves.  In these kinds of waves, $\omega \propto k$.  Because sinusoidal waves travel with speed
 \begin{equation}
 c = \frac{\omega}{k}
 \end{equation}
-(called the \emph{phase velocity}), the speed of the wave won't depend on the wavelength.  But for water waves, with $\omega \propto \sqrt{k}$, different wavelengths will travel at different speeds, since
+(called the \emph{phase velocity}), the speed of a dispersionless wave won't depend on the wavelength.  But for water waves, with $\omega \propto \sqrt{k}$, different wavelengths will travel at different speeds, since
 \[
 c = \sqrt{\frac{g}{k}} = \sqrt{\frac{g\lambda}{2\pi}}.
 \]
@@ -273,7 +273,7 @@ v = \dfdx{\varphi}{y} = A \omega e^{ky} \sin (kx - \omega t).
 \]
 Fluid particles, of course, follow the fluid, so we can write the change in position of a particular fluid particle as
 \[
-\frac{dx}{dt} = u \quad \text{and} \quad \frac{dy}{dt} = y.
+\frac{dx}{dt} = u \quad \text{and} \quad \frac{dy}{dt} = v.
 \]
 This gives us two coupled differential equations to solve.  But we can uncouple them by making a reasonable assumption:  that the fluid particle doesn't deviate too much from its \emph{mean position} $(\bar{x}, \bar{y})$.  That is, 
 \[
@@ -405,7 +405,7 @@ For these waves, longer wavelengths actually travel \emph{slower}, in contrast t
 \end{figure}
 
 
-Keep in mind, however, that both gravity and capillary waves can be present in a general disturbance depending on the wavelength of the sinusoidal wave.  For water, for example, waves with a wavelength of $\lambda \sim 1.7$ cm have $\tau \sim 1$.  Waves with wavelengths longer than this have $\tau \ll 1$, so gravity waves will dominate, and waves with $\lambda > 1.7$ cm will have $\tau \gg 1$ and capillary waves will dominate.  Consider Figure \ref{fig_grav_and_cap}, which plots the wave speed $c$ as a function of wavelength $\lambda$ (using water for values of $\rho$ and $T$).  There is a \emph{minimum} speed at
+Keep in mind, however, that both gravity and capillary waves can be present in a general disturbance depending on the wavelength of the sinusoidal wave.  For water, for example, waves with a wavelength of $\lambda \sim 1.7$ cm have $\tau \sim 1$.  Waves with wavelengths longer than this have $\tau \ll 1$, so gravity waves will dominate, and waves with $\lambda < 1.7$ cm will have $\tau \gg 1$ and capillary waves will dominate.  Consider Figure \ref{fig_grav_and_cap}, which plots the wave speed $c$ as a function of wavelength $\lambda$ (using water for values of $\rho$ and $T$).  There is a \emph{minimum} speed at
 \[
 k = \sqrt{\frac{\rho g}{T}},
 \]
@@ -554,7 +554,7 @@ But the first exponential term is now \emph{constant} -- it doesn't depend on $k
 \eta (x, t) =  e^{i(k_0 x - \omega_0 t)} \int_{-\infty}^\infty a(k) e^{i(k - k_0) (x - c_g t)} \, dk.
 \end{equation}
 
-This might not seem like much of an accomplishment, but this equation is easy to interpret, especially if you compare with equation \ref{eq_two_cosines_ans} from our example with adding two cosines together.  Like that result, our equation here has two parts:  a pure sinusoidal wave, of wave number $k_0$ and frequency $\omega_0$, and an \emph{envelope} (the entire integral).  Now, in principle this integral could be difficult or impossible to compute, depending on how complicated the initial surface disturbance was, but the important point is this: \emph{the envelope moves with the group speed $c_g$.}
+This might not seem like much of an accomplishment, but this equation is easy to interpret, especially if you compare with equation (\ref{eq_two_cosines_ans}) from our example with adding two cosines together.  Like that result, our equation here has two parts:  a pure sinusoidal wave, of wave number $k_0$ and frequency $\omega_0$, and an \emph{envelope} (the entire integral).  Now, in principle this integral could be difficult or impossible to compute, depending on how complicated the initial surface disturbance was, but the important point is this: \emph{the envelope moves with the group speed $c_g$.}
 
 \begin{example}[Deep water waves]
 To illustrate this, let's suppose that we have gravity waves on deep water, in which case the dispersion relation is given by equation (\ref{eq_disp_relation})
@@ -649,7 +649,7 @@ P = \int_{-\infty}^\eta pu \, dy.
 \end{equation}
 The value of the pressure in this integral is that which is a result of the waves themselves, not the hydrostatic pressure due to gravity that was discussed in Section \ref{sec_static}.  We can find that from Euler's equation in the form of (\ref{eq_euler_wave}); rearranging for pressure (and dropping the quadratically small velocity term), it is
 \begin{equation}
-p = -\rho \dfdx{\varphi}{dt}.
+p = -\rho \dfdx{\varphi}{t}.
 \end{equation}
 Substituting this and $u = \partial \varphi / \partial x$ into the integral, we get
 \[

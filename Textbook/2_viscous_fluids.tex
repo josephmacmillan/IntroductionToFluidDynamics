@@ -71,7 +71,7 @@ Figure \ref{fig_poise_setup} shows the set-up and our coordinate system.
 
 This problem was first examined by Jean L\'eonard Marie Poiseuille, a physiologist interested in the flow of blood though capillaries and veins,\footnote{Actually, Poiseuille studied a slightly different problem -- see Problem \ref{prob_poise_cyl}.} although it also serves well as a model for air flowing through alveoli in lungs and fluid flowing through a straw.  It's also a great introduction to solving the Navier-Stokes equations, since it's essentially a one dimensional problem, as we'll see.  You can do the slightly more complicated two dimensional problem for homework (Problem \ref{prob_poise_2d}).
 
-The first step to solving the Navier-Stokes equations is to examine symmetries and dependencies.  For example, this is clearly a two dimensional flow, with no dependence on $z$ or flow in the $w$ direction.  This assumes the ``walls'' at $y=0$ and $y=h$ are infinite in extent along the $z$-direction, but that's okay -- it still makes this problem a good approximation in more realistic (finite) situations.  This is also explicitly \emph{steady} flow, so there's no time dependence at all.  All this suggests we can write our the fluid velocity $\vec{u}$ in terms of $x$ and $y$ only:
+The first step to solving the Navier-Stokes equations is to examine symmetries and dependencies.  For example, this is clearly a two dimensional flow, with no dependence on $z$ or flow in the $w$ direction.  This assumes the ``walls'' at $y=0$ and $y=h$ are infinite in extent along the $z$-direction, but that's okay -- it still makes this problem a good approximation in more realistic (finite) situations.  This is also explicitly \emph{steady} flow, so there's no time dependence at all.  All this suggests we can write out the fluid velocity $\vec{u}$ in terms of $x$ and $y$ only:
 \[
 \vec{u} = [ u(x, y), v(x, y), 0].
 \]
@@ -139,7 +139,7 @@ To add the time-dependence here we'll suppose that the steady flow we found in S
 \[
 P = - \frac{dp}{dx} = 0 \quad \text{for} \quad t>0.
 \]
-What happens to the fluid for $t>0$?  Well, presumably it will slowly come to rest; how long does it take, and what does the flow look like until then?  To answer, we'll set up the problem the same way as above (Figure \ref{fig_poise_setup} again), with the boundaries at $y=0$ and $y=h$.  This is still a plane parallel shear problem, but now that we have time-dependence, the Navier-Stokes equation becomes a partial difference equation,
+What happens to the fluid for $t>0$?  Well, presumably it will slowly come to rest; how long does it take, and what does the flow look like until then?  To answer, we'll set up the problem the same way as above (Figure \ref{fig_poise_setup} again), with the boundaries at $y=0$ and $y=h$.  This is still a plane parallel shear problem, but now that we have time-dependence, the Navier-Stokes equation becomes a partial differential equation,
 \begin{equation}
 \label{eq_poise_pde}
 \dfdx{u}{t} = \nu \ddfdx{u}{y}.
@@ -319,7 +319,7 @@ u(y, t) = u_\text{steady}(y) + u_1(y, t),
 \]
 where $u_1(y, t)$ is an unknown ``transient'' function; clearly, we want $u_1 \to 0$ as $t \to \infty$ so that we get our long-time steady state. 
 
-If we plug this form of $u(y,t)$ into Equation \ref{eq_imp_diffeq}, our differential equation becomes
+If we plug this form of $u(y,t)$ into equation (\ref{eq_imp_diffeq}), our differential equation becomes
 \begin{equation}
 \dfdx{u_1}{t} = \nu \ddfdx{u_1}{y}.
 \end{equation}
@@ -588,7 +588,7 @@ This means that the flow is always \emph{circular}, with streamlines that are ci
 \label{fig_cyl_setup}
 \end{figure}
 
-As you might expect, taking this form of the velocity drastically reduces the Navier-Stokes equations.  Equations \ref{eq_ns_r} - \ref{eq_ns_z} become
+As you might expect, taking this form of the velocity drastically reduces the Navier-Stokes equations.  Equations (\ref{eq_ns_r}) - (\ref{eq_ns_z}) become
 \begin{align}
 \frac{u_\phi^2}{s} & = \frac{1}{\rho} \dfdx{p}{s} \\
 \label{eq_ns_theta2}
@@ -755,7 +755,7 @@ where I've combined the two constants into $A$.  As is usual with separation of 
 u_\phi(s, t) = \sum_{n=1}^\infty A_n \, J_1(\lambda_n s / a) \, e^{-\lambda_n^2 \nu t /a^2}.
 \end{equation}
 
-Even though we've been dealing with Bessel function, the process of separation of variables is the same as we went through in Section \ref{sec_poise_time} -- if you can follow that discussion, you should be okay here, too.  We just have one more step:  finding the values of the constants $A_n$ that will match our initial conditions.  This part is similar to before, too, but does require a bit of advanced knowledge of Bessel functions, so watch carefully.
+Even though we've been dealing with Bessel functions, the process of separation of variables is the same as we went through in Section \ref{sec_poise_time} -- if you can follow that discussion, you should be okay here, too.  We just have one more step:  finding the values of the constants $A_n$ that will match our initial conditions.  This part is similar to before, too, but does require a bit of advanced knowledge of Bessel functions, so watch carefully.
 
 Our initial conditions, from equation (\ref{eq_spin_ic}), say
 \begin{equation}
@@ -861,7 +861,7 @@ Now we're ready to solve this problem.  Note that it's actually \emph{scale-free
 \begin{equation}
 \eta = \frac{s}{\sqrt{\nu t}},
 \end{equation}
-and assume that the solution is some function a $\eta$ alone,
+and assume that the solution is some function of $\eta$ alone,
 \[
 \Gamma(s, t) = f(\eta).
 \]

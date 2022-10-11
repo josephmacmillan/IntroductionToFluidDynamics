@@ -201,7 +201,7 @@ Consider a closed curve $C$ that lies in the fluid region as shown in Figure \re
 Notice the role the dot product plays in the integral -- as we go around the curve, only the fluid velcity that points in the direction of the curve is added, giving us the fluid that is circulating around that curve.
 
 \begin{example}[Line Vortex]
-We've explored the flow around al ine vortex before -- its vorticity in Example \ref{ex_vorticity_line_vortex} and its generation in Section \ref{sec_line_vortex} -- and we'll see it again later on.  Now let's find the circulation around it.
+We've explored the flow around a line vortex before -- its vorticity in Example \ref{ex_vorticity_line_vortex} and its generation in Section \ref{sec_line_vortex} -- and we'll see it again later on.  Now let's find the circulation around it.
 
 The flow is given by
 \[
@@ -363,7 +363,7 @@ so that the line integral of $\vec{u}$ around any closed loop in the fluid is ze
 \end{equation}
 where $\mathcal{O}$ is an arbitrary point in the fluid.  Incidentally, sorry for the notation -- I'm using the Greek letter phi for three things:  the gravitational potential $\Phi$, the cylindrical coordinate $\phi$, and now the velocity potential $\varphi$.  I hope it's not too confusing in context.
 
-This might be familiar to you from electrostatics, where the electric field is also irrotational and we can define an electric potential.  There's a subtle point that frequently arises in fluid dynamics, though, so be careful.  As long as the region is \emph{simply connected} -- that is, the fluid has no holes in it -- the path between $\mathcal{O}$ and $\vec{r}$ doesn't matter, and this leads to $\varphi$ being a single-valued function.  However, if the region is \emph{multiply connected} -- it has holes, regions where there is no fluid -- the integral \emph{could} depend on the path and $\varphi$ will be a multivalued function of position.  This can happen is the fluid is surrounding an object, something we'll start to encounter more frequently.  Let's investigate this in more detail with two examples.
+This might be familiar to you from electrostatics, where the electric field is also irrotational and we can define an electric potential.  There's a subtle point that frequently arises in fluid dynamics, though, so be careful.  As long as the region is \emph{simply connected} -- that is, the fluid has no holes in it -- the path between $\mathcal{O}$ and $\vec{r}$ doesn't matter, and this leads to $\varphi$ being a single-valued function.  However, if the region is \emph{multiply connected} -- it has holes, regions where there is no fluid -- the integral \emph{could} depend on the path and $\varphi$ will be a multivalued function of position.  This can happen if the fluid is surrounding an object, something we'll start to encounter more frequently.  Let's investigate this in more detail with two examples.
 
 \begin{example}[Flow past a stagnation point]
 \label{ex_stag_pot}
@@ -379,7 +379,7 @@ Integrating each term and combining gives
 \[
 \varphi(x, y) = \tfrac{1}{2} \alpha (x^2 - y^2) + c,
 \]
-where $c$ is the integration constant.  However, since it's the fluid velocity, not the potential, that is the physically meaningful quantity, we can set the constant $c$ to zero without losing anything -- after all, we'll take a derivative of $\varphi$ to get the velocity, and the constant will end up going anyway.
+where $c$ is the integration constant.  However, since it's the fluid velocity, not the potential, that is the physically meaningful quantity, we can set the constant $c$ to zero without losing anything -- after all, we'll take a derivative of $\varphi$ to get the velocity, and the constant will end up going away anyway.
 
 Note that, in this example, $\varphi$ is a single-valued function of $x$ and $y$.  That means that, for any point in the fluid, $\varphi$ has a single value.  This might not always be the case, as our next example will show.
 \end{example}
@@ -388,7 +388,7 @@ Note that, in this example, $\varphi$ is a single-valued function of $x$ and $y$
 \label{ex_pot_vortex}
 Next, consider the flow
 \[
-\uu = \frac{\Gamma}{2\pi s} \, \hat{\phi}.
+\uu = \frac{\Gamma}{2\pi s} \, \unit{\phi}.
 \]
 This is the flow around a line vortex, which we've also seen before.  We have to be a bit more careful for this flow -- it's irrotational (we showed that back in Problem \ref{prob_vortex_vorticity}), but not at the origin where it blows up.  To fix this problem, we'll suppose there's \emph{no} fluid there -- maybe there's a cylinder of radius $a$ there instead, covering up the problem area.  That means the fluid domain is $s \ge a$, but it also means there's now a hole in the fluid domain; it's multiply connected.
 
@@ -658,7 +658,7 @@ From the first equation we just find that $\psi$ has no $\phi$ dependence, and f
 \psi(s, \phi) = -\frac{\Gamma}{2\pi} \ln s.
 \]
 
-Once again we can find the streamlines from the stream function by setting $psi$ to a constant (call it $k$ again).  Doing so and solving for $s$ gives
+Once again we can find the streamlines from the stream function by setting $\psi$ to a constant (call it $k$ again).  Doing so and solving for $s$ gives
 \[
 s = e^{-2\pi k / \Gamma} = \text{constant}.
 \]
@@ -679,7 +679,7 @@ and, for two dimensional flow, the first term goes to zero, so we're left with
 \nabla^2 \psi = 0.
 }
 \end{equation}
-So both the velocity potential $\varphi$ and the stream function $\psi$ satisfy Laplace's equation for two dimensional, irrotational, incompressible flow.  Although not every problem in fluid dynamics satisfies these restriction, many do, and we'll exploit this in the next chapter to investigate some interesting and complex situations.
+So both the velocity potential $\varphi$ and the stream function $\psi$ satisfy Laplace's equation for two dimensional, irrotational, incompressible flow.  Although not every problem in fluid dynamics satisfies these restrictions, many do, and we'll exploit this in the next chapter to investigate some interesting and complex situations.
 
 
 
@@ -743,7 +743,7 @@ We've already calculated the pressure in the fluid around a cylinder in Section 
 
 Consider Figure \ref{fig_cylinder_force}:  the force (per unit length of the cylinder) on a small angular section of size $a \, d\phi$ is
 \[
-d\textbf{F} = - p \hat{n}.
+d\textbf{F} = - p a \, d\phi \, \hat{n}.
 \]
 Using this, show the total force on the cylinder is zero.  This is called \emph{D'Alembert's paradox} -- there's no drag on the cylinder, despite very obvious physical evidence to the contrary.  Does it make sense that the fluid exerts no force at all on the cylinder as it flows past?  Discuss.
 
@@ -757,7 +757,7 @@ Using this, show the total force on the cylinder is zero.  This is called \emph{
 
 \begin{problem}[Uniform Flow]
 \label{prob_uniform_pot}
-Consider two dimensional flow that is constant and flows in a direction at an angle $\alpha$ with respect to the $x$ axis (see Figure \ref{fig_uniform_flow_angle}).  
+Consider two dimensional flow that is constant with speed $U$ and flows in a direction at an angle $\alpha$ with respect to the $x$ axis (see Figure \ref{fig_uniform_flow_angle}).  
 
 (a) Find the velocity potential $\varphi(x, y)$.
 

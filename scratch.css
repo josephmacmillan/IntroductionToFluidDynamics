@@ -77,6 +77,13 @@ p{
     padding: 10px;
 }
 
+.bottom h3 {
+    font-family: 'Lato', sans;
+    font-size: 30px;
+    color: #edf2f4;
+    padding: 10px;
+}
+
 .bottom p {
 	
 	padding: 5px;

@@ -1,0 +1,111 @@
+%
+% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+%
+
+\documentclass[10pt, a5paper, twoside, openany]{memoir}
+
+\setsecnumdepth{subsection}
+
+\usepackage{graphicx}
+\usepackage{color} 
+\usepackage{amsmath, amssymb}
+\usepackage{libertinus}
+\usepackage{microtype}
+\usepackage{layout}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage[hang, small, bf]{caption}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{rm}
+
+
+% Set page margins, etc
+\setstocksize{9in}{6in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+\setlxvchars %define lenght 65 char of the used font
+\settypeblocksize{*}{1.05\lxvchars}{1.7}
+\setbinding{20pt} 
+\setlength{\headheight}{30pt}
+\setlength{\footskip}{20pt}
+
+\setulmargins{90pt}{*}{*}
+\setlrmargins{*}{*}{*}
+\setheaderspaces{*}{30pt}{*}
+
+\setmarginnotes{0.01pt}{20pt}{\onelineskip}
+\checkandfixthelayout
+
+\setcounter{tocdepth}{3}
+
+\newcommand{\uu}{\symbfup{u}}
+\newcommand{\grad}{\symbfup{\nabla}}
+\newcommand{\curl}{\symbfup{\nabla} \times}
+\newcommand{\dfdx}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\ddfdx}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\vort}{\symbfup{\omega}}
+\renewcommand\vec{\symbfup}
+\newcommand{\unit}[1]{\hat{\vec{#1}}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\LL}{\mathbb{L}^2}
+\newcommand{\LLLL}{\mathbb{L}^4}
+
+%\DeclareMathAlphabet{\mathbfsf}{\encodingdefault}{\sfdefault}{bx}{sl}
+\newcommand{\tens}[1]{\mathbfsfit{#1}}
+
+\newcounter{example}[chapter]
+\def\theexample{\thechapter.\arabic{example}}
+\newenvironment{example}[1][ ]{\refstepcounter{example}
+\begin{tcolorbox}[breakable, sharp corners, boxrule = 0pt, frame empty, opacityframe=0, parbox=false]
+\textbf{Example \theexample \ -- #1.}
+}
+{ 
+\end{tcolorbox}
+}
+
+\newenvironment{theorem}[1][ ]{
+\begin{tcolorbox}[breakable, sharp corners, boxrule = 0pt, frame empty, opacityframe=0, parbox=false]
+\textbf{#1.}
+}
+{ 
+\end{tcolorbox}
+}
+
+\newcounter{problem}[chapter]
+\def\theproblem{\thechapter.\arabic{problem}}
+\newenvironment{problem}[1][ ]{\noindent \textbf{Problem #1.}}{\vspace{0.1in}}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Your solution will go below; add your name and include the problem itself.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{problem}[1.1 -- Streamlines]
+Consider the flow given by 
+\[
+\vec{u} = [x, x(x-1)(y+1), 0].
+\]
+Find an equation for the streamlines of the flow and plot them.
+
+\end{problem}
+
+\hrule
+\vspace{0.1in}
+
+\noindent \textbf{Solution by Your Name Here}
+
+Blah blah blah
+
+
+
+\end{document}
